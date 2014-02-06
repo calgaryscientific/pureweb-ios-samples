@@ -7,5 +7,5 @@ xcodeproj 'DDx/DDx.xcodeproj'
 xcodeproj 'Scribble/Scribble.xcodeproj'
 xcodeproj 'PureWebUI/PureWebUI.xcodeproj'
 
-pod 'PureWeb', '4.1.0', :git => 'git@github.com:calgaryscientific/pureweb-ios.git'
+pod 'PureWeb', :git => 'git@github.com:calgaryscientific/pureweb-ios-sdk.git'
 
