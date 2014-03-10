@@ -7,16 +7,63 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43B7A0ED18CE580700B817C8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43B7A0EC18CE580700B817C8 /* Images.xcassets */; };
+		43B7A0EE18CE580700B817C8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43B7A0EC18CE580700B817C8 /* Images.xcassets */; };
+		43B7A0F018CE58A600B817C8 /* Scribble-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43B7A0EF18CE58A600B817C8 /* Scribble-Info.plist */; };
+		43B7A0F118CE58A600B817C8 /* Scribble-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43B7A0EF18CE58A600B817C8 /* Scribble-Info.plist */; };
+		43B7A0F718CE5A0000B817C8 /* libPureWebUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B7A0F618CE5A0000B817C8 /* libPureWebUI.a */; };
+		43EEED5918CE524200159074 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED5618CE524200159074 /* AppDelegate.m */; };
+		43EEED5A18CE524200159074 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED5618CE524200159074 /* AppDelegate.m */; };
+		43EEED5B18CE524200159074 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED5718CE524200159074 /* Main_iPhone.storyboard */; };
+		43EEED5C18CE524200159074 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED5718CE524200159074 /* Main_iPhone.storyboard */; };
+		43EEED5D18CE524200159074 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED5818CE524200159074 /* Main_iPad.storyboard */; };
+		43EEED5E18CE524200159074 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED5818CE524200159074 /* Main_iPad.storyboard */; };
+		43EEED6218CE52AE00159074 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6118CE52AE00159074 /* MasterViewController.m */; };
+		43EEED6318CE52AE00159074 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6118CE52AE00159074 /* MasterViewController.m */; };
+		43EEED6818CE52C900159074 /* ScribbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6518CE52C900159074 /* ScribbleViewController.m */; };
+		43EEED6918CE52C900159074 /* ScribbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6518CE52C900159074 /* ScribbleViewController.m */; };
+		43EEED6A18CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6718CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m */; };
+		43EEED6B18CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6718CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m */; };
+		43EEED6F18CE52DE00159074 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6E18CE52DE00159074 /* LoginViewController.m */; };
+		43EEED7018CE52DE00159074 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6E18CE52DE00159074 /* LoginViewController.m */; };
+		43EEED7418CE52F600159074 /* ColorSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED7318CE52F600159074 /* ColorSelectionViewController.m */; };
+		43EEED7518CE52F600159074 /* ColorSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED7318CE52F600159074 /* ColorSelectionViewController.m */; };
+		43EEED7B18CE531300159074 /* DiagnosticViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED7818CE531300159074 /* DiagnosticViewDelegate.m */; };
+		43EEED7C18CE531300159074 /* DiagnosticViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED7818CE531300159074 /* DiagnosticViewDelegate.m */; };
+		43EEED7D18CE531300159074 /* UIColor+HighlightedColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED7A18CE531300159074 /* UIColor+HighlightedColors.m */; };
+		43EEED7E18CE531300159074 /* UIColor+HighlightedColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED7A18CE531300159074 /* UIColor+HighlightedColors.m */; };
+		43EEED8218CE533600159074 /* DiagnosticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED8118CE533600159074 /* DiagnosticsViewController.m */; };
+		43EEED8318CE533600159074 /* DiagnosticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED8118CE533600159074 /* DiagnosticsViewController.m */; };
+		43EEED8718CE534B00159074 /* AppStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED8618CE534B00159074 /* AppStateViewController.m */; };
+		43EEED8818CE534B00159074 /* AppStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED8618CE534B00159074 /* AppStateViewController.m */; };
+		43EEED9018CE536600159074 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED8B18CE536600159074 /* OptionsViewController.m */; };
+		43EEED9118CE536600159074 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED8B18CE536600159074 /* OptionsViewController.m */; };
+		43EEED9218CE536600159074 /* OptionsViewController+UIPickerViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED8D18CE536600159074 /* OptionsViewController+UIPickerViewDataSource.m */; };
+		43EEED9318CE536600159074 /* OptionsViewController+UIPickerViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED8D18CE536600159074 /* OptionsViewController+UIPickerViewDataSource.m */; };
+		43EEED9418CE536600159074 /* OptionsViewController+UIPickerViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED8F18CE536600159074 /* OptionsViewController+UIPickerViewDelegate.m */; };
+		43EEED9518CE536600159074 /* OptionsViewController+UIPickerViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED8F18CE536600159074 /* OptionsViewController+UIPickerViewDelegate.m */; };
+		43EEED9918CE538800159074 /* TraceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED9818CE538800159074 /* TraceViewController.m */; };
+		43EEED9A18CE538800159074 /* TraceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED9818CE538800159074 /* TraceViewController.m */; };
+		43EEED9C18CE53A200159074 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED9B18CE53A200159074 /* Settings.bundle */; };
+		43EEED9D18CE53A200159074 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED9B18CE53A200159074 /* Settings.bundle */; };
+		43EEEDA518CE53B900159074 /* Bubble_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED9F18CE53B900159074 /* Bubble_Icon.png */; };
+		43EEEDA618CE53B900159074 /* Bubble_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED9F18CE53B900159074 /* Bubble_Icon.png */; };
+		43EEEDA718CE53B900159074 /* Bubble_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA018CE53B900159074 /* Bubble_Icon@2x.png */; };
+		43EEEDA818CE53B900159074 /* Bubble_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA018CE53B900159074 /* Bubble_Icon@2x.png */; };
+		43EEEDA918CE53B900159074 /* Files_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA118CE53B900159074 /* Files_Icon.png */; };
+		43EEEDAA18CE53B900159074 /* Files_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA118CE53B900159074 /* Files_Icon.png */; };
+		43EEEDAB18CE53B900159074 /* Gear_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA218CE53B900159074 /* Gear_Icon@2x.png */; };
+		43EEEDAC18CE53B900159074 /* Gear_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA218CE53B900159074 /* Gear_Icon@2x.png */; };
+		43EEEDAD18CE53B900159074 /* Gear_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA318CE53B900159074 /* Gear_Icon.png */; };
+		43EEEDAE18CE53B900159074 /* Gear_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA318CE53B900159074 /* Gear_Icon.png */; };
+		43EEEDAF18CE53B900159074 /* PureWeb_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA418CE53B900159074 /* PureWeb_Logo.png */; };
+		43EEEDB018CE53B900159074 /* PureWeb_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA418CE53B900159074 /* PureWeb_Logo.png */; };
+		6D3F958DE9A94276BBBD54F0 /* libPods-Scribble.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02257500CF3D483F8E125469 /* libPods-Scribble.a */; };
 		83F8534A18A3D4AF00AD0E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8534918A3D4AF00AD0E5E /* Foundation.framework */; };
 		83F8534C18A3D4AF00AD0E5E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8534B18A3D4AF00AD0E5E /* CoreGraphics.framework */; };
 		83F8534E18A3D4AF00AD0E5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8534D18A3D4AF00AD0E5E /* UIKit.framework */; };
 		83F8535418A3D4AF00AD0E5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83F8535218A3D4AF00AD0E5E /* InfoPlist.strings */; };
 		83F8535618A3D4AF00AD0E5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F8535518A3D4AF00AD0E5E /* main.m */; };
-		83F8535A18A3D4AF00AD0E5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F8535918A3D4AF00AD0E5E /* AppDelegate.m */; };
-		83F8535D18A3D4AF00AD0E5E /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83F8535B18A3D4AF00AD0E5E /* Main_iPhone.storyboard */; };
-		83F8536018A3D4AF00AD0E5E /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83F8535E18A3D4AF00AD0E5E /* Main_iPad.storyboard */; };
-		83F8536318A3D4AF00AD0E5E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F8536218A3D4AF00AD0E5E /* ViewController.m */; };
-		83F8536518A3D4AF00AD0E5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83F8536418A3D4AF00AD0E5E /* Images.xcassets */; };
 		83F8536C18A3D4AF00AD0E5E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8536B18A3D4AF00AD0E5E /* XCTest.framework */; };
 		83F8536D18A3D4AF00AD0E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8534918A3D4AF00AD0E5E /* Foundation.framework */; };
 		83F8536E18A3D4AF00AD0E5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8534D18A3D4AF00AD0E5E /* UIKit.framework */; };
@@ -35,21 +82,55 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02257500CF3D483F8E125469 /* libPods-Scribble.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Scribble.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43B7A0EC18CE580700B817C8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		43B7A0EF18CE58A600B817C8 /* Scribble-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Scribble-Info.plist"; sourceTree = "<group>"; };
+		43B7A0F618CE5A0000B817C8 /* libPureWebUI.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPureWebUI.a; path = "libPureWebUI.a"; sourceTree = "<group>"; };
+		43EEED5518CE524200159074 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
+		43EEED5618CE524200159074 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
+		43EEED5718CE524200159074 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main_iPhone.storyboard; path = ../Main_iPhone.storyboard; sourceTree = "<group>"; };
+		43EEED5818CE524200159074 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main_iPad.storyboard; path = ../Main_iPad.storyboard; sourceTree = "<group>"; };
+		43EEED6018CE52AE00159074 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		43EEED6118CE52AE00159074 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		43EEED6418CE52C900159074 /* ScribbleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScribbleViewController.h; sourceTree = "<group>"; };
+		43EEED6518CE52C900159074 /* ScribbleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScribbleViewController.m; sourceTree = "<group>"; };
+		43EEED6618CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ScribbleViewController+MFMailComposeViewControllerDelegate.h"; sourceTree = "<group>"; };
+		43EEED6718CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ScribbleViewController+MFMailComposeViewControllerDelegate.m"; sourceTree = "<group>"; };
+		43EEED6D18CE52DE00159074 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		43EEED6E18CE52DE00159074 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		43EEED7218CE52F600159074 /* ColorSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSelectionViewController.h; sourceTree = "<group>"; };
+		43EEED7318CE52F600159074 /* ColorSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSelectionViewController.m; sourceTree = "<group>"; };
+		43EEED7718CE531300159074 /* DiagnosticViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosticViewDelegate.h; sourceTree = "<group>"; };
+		43EEED7818CE531300159074 /* DiagnosticViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagnosticViewDelegate.m; sourceTree = "<group>"; };
+		43EEED7918CE531300159074 /* UIColor+HighlightedColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HighlightedColors.h"; sourceTree = "<group>"; };
+		43EEED7A18CE531300159074 /* UIColor+HighlightedColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HighlightedColors.m"; sourceTree = "<group>"; };
+		43EEED8018CE533600159074 /* DiagnosticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosticsViewController.h; sourceTree = "<group>"; };
+		43EEED8118CE533600159074 /* DiagnosticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagnosticsViewController.m; sourceTree = "<group>"; };
+		43EEED8518CE534B00159074 /* AppStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppStateViewController.h; sourceTree = "<group>"; };
+		43EEED8618CE534B00159074 /* AppStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppStateViewController.m; sourceTree = "<group>"; };
+		43EEED8A18CE536600159074 /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
+		43EEED8B18CE536600159074 /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
+		43EEED8C18CE536600159074 /* OptionsViewController+UIPickerViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OptionsViewController+UIPickerViewDataSource.h"; sourceTree = "<group>"; };
+		43EEED8D18CE536600159074 /* OptionsViewController+UIPickerViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OptionsViewController+UIPickerViewDataSource.m"; sourceTree = "<group>"; };
+		43EEED8E18CE536600159074 /* OptionsViewController+UIPickerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OptionsViewController+UIPickerViewDelegate.h"; sourceTree = "<group>"; };
+		43EEED8F18CE536600159074 /* OptionsViewController+UIPickerViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OptionsViewController+UIPickerViewDelegate.m"; sourceTree = "<group>"; };
+		43EEED9718CE538800159074 /* TraceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraceViewController.h; sourceTree = "<group>"; };
+		43EEED9818CE538800159074 /* TraceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraceViewController.m; sourceTree = "<group>"; };
+		43EEED9B18CE53A200159074 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		43EEED9F18CE53B900159074 /* Bubble_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bubble_Icon.png; sourceTree = "<group>"; };
+		43EEEDA018CE53B900159074 /* Bubble_Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bubble_Icon@2x.png"; sourceTree = "<group>"; };
+		43EEEDA118CE53B900159074 /* Files_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Files_Icon.png; sourceTree = "<group>"; };
+		43EEEDA218CE53B900159074 /* Gear_Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gear_Icon@2x.png"; sourceTree = "<group>"; };
+		43EEEDA318CE53B900159074 /* Gear_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gear_Icon.png; sourceTree = "<group>"; };
+		43EEEDA418CE53B900159074 /* PureWeb_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PureWeb_Logo.png; sourceTree = "<group>"; };
+		6F720FFE0A0D47BF8E67BD6A /* Pods-Scribble.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scribble.xcconfig"; path = "../Pods/Pods-Scribble.xcconfig"; sourceTree = "<group>"; };
 		83F8534618A3D4AF00AD0E5E /* Scribble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scribble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F8534918A3D4AF00AD0E5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		83F8534B18A3D4AF00AD0E5E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		83F8534D18A3D4AF00AD0E5E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		83F8535118A3D4AF00AD0E5E /* Scribble-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Scribble-Info.plist"; sourceTree = "<group>"; };
 		83F8535318A3D4AF00AD0E5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		83F8535518A3D4AF00AD0E5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		83F8535718A3D4AF00AD0E5E /* Scribble-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Scribble-Prefix.pch"; sourceTree = "<group>"; };
-		83F8535818A3D4AF00AD0E5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		83F8535918A3D4AF00AD0E5E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		83F8535C18A3D4AF00AD0E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		83F8535F18A3D4AF00AD0E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		83F8536118A3D4AF00AD0E5E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		83F8536218A3D4AF00AD0E5E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		83F8536418A3D4AF00AD0E5E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		83F8536A18A3D4AF00AD0E5E /* ScribbleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScribbleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F8536B18A3D4AF00AD0E5E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		83F8537318A3D4AF00AD0E5E /* ScribbleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ScribbleTests-Info.plist"; sourceTree = "<group>"; };
@@ -62,9 +143,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43B7A0F718CE5A0000B817C8 /* libPureWebUI.a in Frameworks */,
 				83F8534C18A3D4AF00AD0E5E /* CoreGraphics.framework in Frameworks */,
 				83F8534E18A3D4AF00AD0E5E /* UIKit.framework in Frameworks */,
 				83F8534A18A3D4AF00AD0E5E /* Foundation.framework in Frameworks */,
+				6D3F958DE9A94276BBBD54F0 /* libPods-Scribble.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +164,102 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43EEED5F18CE529B00159074 /* Scribble View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				43EEED6418CE52C900159074 /* ScribbleViewController.h */,
+				43EEED6518CE52C900159074 /* ScribbleViewController.m */,
+				43EEED6618CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.h */,
+				43EEED6718CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m */,
+			);
+			name = "Scribble View Controller";
+			sourceTree = "<group>";
+		};
+		43EEED6C18CE52D300159074 /* Login View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				43EEED6D18CE52DE00159074 /* LoginViewController.h */,
+				43EEED6E18CE52DE00159074 /* LoginViewController.m */,
+			);
+			name = "Login View Controller";
+			sourceTree = "<group>";
+		};
+		43EEED7118CE52E500159074 /* Color Selection View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				43EEED7218CE52F600159074 /* ColorSelectionViewController.h */,
+				43EEED7318CE52F600159074 /* ColorSelectionViewController.m */,
+			);
+			name = "Color Selection View Controller";
+			sourceTree = "<group>";
+		};
+		43EEED7618CE530200159074 /* Utilities & Categories */ = {
+			isa = PBXGroup;
+			children = (
+				43EEED7718CE531300159074 /* DiagnosticViewDelegate.h */,
+				43EEED7818CE531300159074 /* DiagnosticViewDelegate.m */,
+				43EEED7918CE531300159074 /* UIColor+HighlightedColors.h */,
+				43EEED7A18CE531300159074 /* UIColor+HighlightedColors.m */,
+			);
+			name = "Utilities & Categories";
+			sourceTree = "<group>";
+		};
+		43EEED7F18CE532900159074 /* Diagnostics */ = {
+			isa = PBXGroup;
+			children = (
+				43EEED9618CE537200159074 /* Trace View Controller */,
+				43EEED8918CE535800159074 /* Options View Controller */,
+				43EEED8418CE533D00159074 /* App State View Controller */,
+				43EEED8018CE533600159074 /* DiagnosticsViewController.h */,
+				43EEED8118CE533600159074 /* DiagnosticsViewController.m */,
+			);
+			name = Diagnostics;
+			sourceTree = "<group>";
+		};
+		43EEED8418CE533D00159074 /* App State View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				43EEED8518CE534B00159074 /* AppStateViewController.h */,
+				43EEED8618CE534B00159074 /* AppStateViewController.m */,
+			);
+			name = "App State View Controller";
+			sourceTree = "<group>";
+		};
+		43EEED8918CE535800159074 /* Options View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				43EEED8A18CE536600159074 /* OptionsViewController.h */,
+				43EEED8B18CE536600159074 /* OptionsViewController.m */,
+				43EEED8C18CE536600159074 /* OptionsViewController+UIPickerViewDataSource.h */,
+				43EEED8D18CE536600159074 /* OptionsViewController+UIPickerViewDataSource.m */,
+				43EEED8E18CE536600159074 /* OptionsViewController+UIPickerViewDelegate.h */,
+				43EEED8F18CE536600159074 /* OptionsViewController+UIPickerViewDelegate.m */,
+			);
+			name = "Options View Controller";
+			sourceTree = "<group>";
+		};
+		43EEED9618CE537200159074 /* Trace View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				43EEED9718CE538800159074 /* TraceViewController.h */,
+				43EEED9818CE538800159074 /* TraceViewController.m */,
+			);
+			name = "Trace View Controller";
+			sourceTree = "<group>";
+		};
+		43EEED9E18CE53AE00159074 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				43EEED9F18CE53B900159074 /* Bubble_Icon.png */,
+				43EEEDA018CE53B900159074 /* Bubble_Icon@2x.png */,
+				43EEEDA118CE53B900159074 /* Files_Icon.png */,
+				43EEEDA218CE53B900159074 /* Gear_Icon@2x.png */,
+				43EEEDA318CE53B900159074 /* Gear_Icon.png */,
+				43EEEDA418CE53B900159074 /* PureWeb_Logo.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		83F8533D18A3D4AF00AD0E5E = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +267,7 @@
 				83F8537118A3D4AF00AD0E5E /* ScribbleTests */,
 				83F8534818A3D4AF00AD0E5E /* Frameworks */,
 				83F8534718A3D4AF00AD0E5E /* Products */,
+				6F720FFE0A0D47BF8E67BD6A /* Pods-Scribble.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,10 +283,12 @@
 		83F8534818A3D4AF00AD0E5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43B7A0F618CE5A0000B817C8 /* libPureWebUI.a */,
 				83F8534918A3D4AF00AD0E5E /* Foundation.framework */,
 				83F8534B18A3D4AF00AD0E5E /* CoreGraphics.framework */,
 				83F8534D18A3D4AF00AD0E5E /* UIKit.framework */,
 				83F8536B18A3D4AF00AD0E5E /* XCTest.framework */,
+				02257500CF3D483F8E125469 /* libPods-Scribble.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,13 +296,18 @@
 		83F8534F18A3D4AF00AD0E5E /* Scribble */ = {
 			isa = PBXGroup;
 			children = (
-				83F8535818A3D4AF00AD0E5E /* AppDelegate.h */,
-				83F8535918A3D4AF00AD0E5E /* AppDelegate.m */,
-				83F8535B18A3D4AF00AD0E5E /* Main_iPhone.storyboard */,
-				83F8535E18A3D4AF00AD0E5E /* Main_iPad.storyboard */,
-				83F8536118A3D4AF00AD0E5E /* ViewController.h */,
-				83F8536218A3D4AF00AD0E5E /* ViewController.m */,
-				83F8536418A3D4AF00AD0E5E /* Images.xcassets */,
+				43B7A0EC18CE580700B817C8 /* Images.xcassets */,
+				43EEED7F18CE532900159074 /* Diagnostics */,
+				43EEED7618CE530200159074 /* Utilities & Categories */,
+				43EEED7118CE52E500159074 /* Color Selection View Controller */,
+				43EEED6C18CE52D300159074 /* Login View Controller */,
+				43EEED6018CE52AE00159074 /* MasterViewController.h */,
+				43EEED6118CE52AE00159074 /* MasterViewController.m */,
+				43EEED5F18CE529B00159074 /* Scribble View Controller */,
+				43EEED5518CE524200159074 /* AppDelegate.h */,
+				43EEED5618CE524200159074 /* AppDelegate.m */,
+				43EEED5718CE524200159074 /* Main_iPhone.storyboard */,
+				43EEED5818CE524200159074 /* Main_iPad.storyboard */,
 				83F8535018A3D4AF00AD0E5E /* Supporting Files */,
 			);
 			path = Scribble;
@@ -129,7 +316,9 @@
 		83F8535018A3D4AF00AD0E5E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				83F8535118A3D4AF00AD0E5E /* Scribble-Info.plist */,
+				43B7A0EF18CE58A600B817C8 /* Scribble-Info.plist */,
+				43EEED9E18CE53AE00159074 /* Images */,
+				43EEED9B18CE53A200159074 /* Settings.bundle */,
 				83F8535218A3D4AF00AD0E5E /* InfoPlist.strings */,
 				83F8535518A3D4AF00AD0E5E /* main.m */,
 				83F8535718A3D4AF00AD0E5E /* Scribble-Prefix.pch */,
@@ -162,9 +351,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83F8537B18A3D4AF00AD0E5E /* Build configuration list for PBXNativeTarget "Scribble" */;
 			buildPhases = (
+				ADBBA9E01294444BA1B15F3C /* Check Pods Manifest.lock */,
 				83F8534218A3D4AF00AD0E5E /* Sources */,
 				83F8534318A3D4AF00AD0E5E /* Frameworks */,
 				83F8534418A3D4AF00AD0E5E /* Resources */,
+				E2666437346E46CF8B11B751 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,10 +422,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83F8536018A3D4AF00AD0E5E /* Main_iPad.storyboard in Resources */,
-				83F8536518A3D4AF00AD0E5E /* Images.xcassets in Resources */,
-				83F8535D18A3D4AF00AD0E5E /* Main_iPhone.storyboard in Resources */,
+				43EEEDAB18CE53B900159074 /* Gear_Icon@2x.png in Resources */,
+				43EEED5D18CE524200159074 /* Main_iPad.storyboard in Resources */,
+				43EEEDAD18CE53B900159074 /* Gear_Icon.png in Resources */,
+				43EEEDAF18CE53B900159074 /* PureWeb_Logo.png in Resources */,
+				43B7A0ED18CE580700B817C8 /* Images.xcassets in Resources */,
+				43EEEDA518CE53B900159074 /* Bubble_Icon.png in Resources */,
+				43EEED9C18CE53A200159074 /* Settings.bundle in Resources */,
+				43EEEDA918CE53B900159074 /* Files_Icon.png in Resources */,
+				43B7A0F018CE58A600B817C8 /* Scribble-Info.plist in Resources */,
 				83F8535418A3D4AF00AD0E5E /* InfoPlist.strings in Resources */,
+				43EEED5B18CE524200159074 /* Main_iPhone.storyboard in Resources */,
+				43EEEDA718CE53B900159074 /* Bubble_Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,20 +441,76 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43EEED9D18CE53A200159074 /* Settings.bundle in Resources */,
+				43EEEDA818CE53B900159074 /* Bubble_Icon@2x.png in Resources */,
+				43EEED5E18CE524200159074 /* Main_iPad.storyboard in Resources */,
+				43EEED5C18CE524200159074 /* Main_iPhone.storyboard in Resources */,
+				43B7A0EE18CE580700B817C8 /* Images.xcassets in Resources */,
+				43EEEDAE18CE53B900159074 /* Gear_Icon.png in Resources */,
+				43EEEDB018CE53B900159074 /* PureWeb_Logo.png in Resources */,
+				43EEEDAC18CE53B900159074 /* Gear_Icon@2x.png in Resources */,
+				43B7A0F118CE58A600B817C8 /* Scribble-Info.plist in Resources */,
+				43EEEDA618CE53B900159074 /* Bubble_Icon.png in Resources */,
 				83F8537618A3D4AF00AD0E5E /* InfoPlist.strings in Resources */,
+				43EEEDAA18CE53B900159074 /* Files_Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ADBBA9E01294444BA1B15F3C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E2666437346E46CF8B11B751 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Pods-Scribble-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		83F8534218A3D4AF00AD0E5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83F8536318A3D4AF00AD0E5E /* ViewController.m in Sources */,
-				83F8535A18A3D4AF00AD0E5E /* AppDelegate.m in Sources */,
+				43EEED6A18CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m in Sources */,
+				43EEED8218CE533600159074 /* DiagnosticsViewController.m in Sources */,
+				43EEED6818CE52C900159074 /* ScribbleViewController.m in Sources */,
+				43EEED9418CE536600159074 /* OptionsViewController+UIPickerViewDelegate.m in Sources */,
+				43EEED6F18CE52DE00159074 /* LoginViewController.m in Sources */,
+				43EEED9218CE536600159074 /* OptionsViewController+UIPickerViewDataSource.m in Sources */,
+				43EEED5918CE524200159074 /* AppDelegate.m in Sources */,
+				43EEED9018CE536600159074 /* OptionsViewController.m in Sources */,
+				43EEED7D18CE531300159074 /* UIColor+HighlightedColors.m in Sources */,
+				43EEED8718CE534B00159074 /* AppStateViewController.m in Sources */,
+				43EEED6218CE52AE00159074 /* MasterViewController.m in Sources */,
+				43EEED7418CE52F600159074 /* ColorSelectionViewController.m in Sources */,
+				43EEED7B18CE531300159074 /* DiagnosticViewDelegate.m in Sources */,
 				83F8535618A3D4AF00AD0E5E /* main.m in Sources */,
+				43EEED9918CE538800159074 /* TraceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +518,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43EEED6B18CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m in Sources */,
+				43EEED8318CE533600159074 /* DiagnosticsViewController.m in Sources */,
+				43EEED6918CE52C900159074 /* ScribbleViewController.m in Sources */,
+				43EEED9518CE536600159074 /* OptionsViewController+UIPickerViewDelegate.m in Sources */,
+				43EEED7018CE52DE00159074 /* LoginViewController.m in Sources */,
+				43EEED9318CE536600159074 /* OptionsViewController+UIPickerViewDataSource.m in Sources */,
+				43EEED5A18CE524200159074 /* AppDelegate.m in Sources */,
+				43EEED9118CE536600159074 /* OptionsViewController.m in Sources */,
+				43EEED7E18CE531300159074 /* UIColor+HighlightedColors.m in Sources */,
+				43EEED8818CE534B00159074 /* AppStateViewController.m in Sources */,
+				43EEED6318CE52AE00159074 /* MasterViewController.m in Sources */,
+				43EEED7518CE52F600159074 /* ColorSelectionViewController.m in Sources */,
+				43EEED7C18CE531300159074 /* DiagnosticViewDelegate.m in Sources */,
 				83F8537818A3D4AF00AD0E5E /* ScribbleTests.m in Sources */,
+				43EEED9A18CE538800159074 /* TraceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,22 +553,6 @@
 				83F8535318A3D4AF00AD0E5E /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		83F8535B18A3D4AF00AD0E5E /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				83F8535C18A3D4AF00AD0E5E /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		83F8535E18A3D4AF00AD0E5E /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				83F8535F18A3D4AF00AD0E5E /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		83F8537418A3D4AF00AD0E5E /* InfoPlist.strings */ = {
@@ -389,6 +642,7 @@
 		};
 		83F8537C18A3D4AF00AD0E5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F720FFE0A0D47BF8E67BD6A /* Pods-Scribble.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -402,6 +656,7 @@
 		};
 		83F8537D18A3D4AF00AD0E5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F720FFE0A0D47BF8E67BD6A /* Pods-Scribble.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -474,6 +729,7 @@
 				83F8537D18A3D4AF00AD0E5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83F8537E18A3D4AF00AD0E5E /* Build configuration list for PBXNativeTarget "ScribbleTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +738,7 @@
 				83F8538018A3D4AF00AD0E5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

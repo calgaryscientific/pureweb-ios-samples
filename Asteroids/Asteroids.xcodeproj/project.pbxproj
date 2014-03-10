@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43B7A0F318CE59EF00B817C8 /* libPureWebUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B7A0F218CE59EE00B817C8 /* libPureWebUI.a */; };
 		83F8538E18A3D4D700AD0E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8538D18A3D4D700AD0E5E /* Foundation.framework */; };
 		83F8539018A3D4D700AD0E5E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8538F18A3D4D700AD0E5E /* CoreGraphics.framework */; };
 		83F8539218A3D4D700AD0E5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8539118A3D4D700AD0E5E /* UIKit.framework */; };
@@ -22,6 +23,7 @@
 		83F853B218A3D4D700AD0E5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8539118A3D4D700AD0E5E /* UIKit.framework */; };
 		83F853BA18A3D4D700AD0E5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83F853B818A3D4D700AD0E5E /* InfoPlist.strings */; };
 		83F853BC18A3D4D700AD0E5E /* AsteroidsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F853BB18A3D4D700AD0E5E /* AsteroidsTests.m */; };
+		C51978940623492F8485EDF0 /* libPods-Asteroids.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC99AB5436154A399E3F07C2 /* libPods-Asteroids.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43B7A0F218CE59EE00B817C8 /* libPureWebUI.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPureWebUI.a; path = "libPureWebUI.a"; sourceTree = "<group>"; };
+		58444891B7F8470299111738 /* Pods-Asteroids.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asteroids.xcconfig"; path = "../Pods/Pods-Asteroids.xcconfig"; sourceTree = "<group>"; };
 		83F8538A18A3D4D700AD0E5E /* Asteroids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asteroids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F8538D18A3D4D700AD0E5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		83F8538F18A3D4D700AD0E5E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,6 +59,7 @@
 		83F853B718A3D4D700AD0E5E /* AsteroidsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AsteroidsTests-Info.plist"; sourceTree = "<group>"; };
 		83F853B918A3D4D700AD0E5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		83F853BB18A3D4D700AD0E5E /* AsteroidsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsteroidsTests.m; sourceTree = "<group>"; };
+		EC99AB5436154A399E3F07C2 /* libPods-Asteroids.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Asteroids.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +67,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43B7A0F318CE59EF00B817C8 /* libPureWebUI.a in Frameworks */,
 				83F8539018A3D4D700AD0E5E /* CoreGraphics.framework in Frameworks */,
 				83F8539218A3D4D700AD0E5E /* UIKit.framework in Frameworks */,
 				83F8538E18A3D4D700AD0E5E /* Foundation.framework in Frameworks */,
+				C51978940623492F8485EDF0 /* libPods-Asteroids.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +95,7 @@
 				83F853B518A3D4D700AD0E5E /* AsteroidsTests */,
 				83F8538C18A3D4D700AD0E5E /* Frameworks */,
 				83F8538B18A3D4D700AD0E5E /* Products */,
+				58444891B7F8470299111738 /* Pods-Asteroids.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,10 +111,12 @@
 		83F8538C18A3D4D700AD0E5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43B7A0F218CE59EE00B817C8 /* libPureWebUI.a */,
 				83F8538D18A3D4D700AD0E5E /* Foundation.framework */,
 				83F8538F18A3D4D700AD0E5E /* CoreGraphics.framework */,
 				83F8539118A3D4D700AD0E5E /* UIKit.framework */,
 				83F853AF18A3D4D700AD0E5E /* XCTest.framework */,
+				EC99AB5436154A399E3F07C2 /* libPods-Asteroids.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,9 +172,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83F853BF18A3D4D700AD0E5E /* Build configuration list for PBXNativeTarget "Asteroids" */;
 			buildPhases = (
+				DE7718557663419DA978124C /* Check Pods Manifest.lock */,
 				83F8538618A3D4D700AD0E5E /* Sources */,
 				83F8538718A3D4D700AD0E5E /* Frameworks */,
 				83F8538818A3D4D700AD0E5E /* Resources */,
+				F0E2A205AB2E4810A30DB7E6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,6 +259,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DE7718557663419DA978124C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F0E2A205AB2E4810A30DB7E6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Pods-Asteroids-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		83F8538618A3D4D700AD0E5E /* Sources */ = {
@@ -389,6 +434,7 @@
 		};
 		83F853C018A3D4D700AD0E5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58444891B7F8470299111738 /* Pods-Asteroids.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -402,6 +448,7 @@
 		};
 		83F853C118A3D4D700AD0E5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58444891B7F8470299111738 /* Pods-Asteroids.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -474,6 +521,7 @@
 				83F853C118A3D4D700AD0E5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83F853C218A3D4D700AD0E5E /* Build configuration list for PBXNativeTarget "AsteroidsTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +530,7 @@
 				83F853C418A3D4D700AD0E5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

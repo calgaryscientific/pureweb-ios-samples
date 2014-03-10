@@ -4,6 +4,7 @@ task :clean do
     FileUtils.rm_r("PureWebSamples.xcworkspace") if File.exists?("PureWebSamples.xcworkspace")
     FileUtils.rm_r("Pods") if File.exists?("Pods")
     FileUtils.rm_r("Podfile.lock") if File.exists?("Podfile.lock")
+    FileUtils.rm_r("Build") if File.exists?("Build")
 end
 
 desc "Configures project"
