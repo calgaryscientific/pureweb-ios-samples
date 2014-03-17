@@ -24,8 +24,6 @@
 		43EEED6918CE52C900159074 /* ScribbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6518CE52C900159074 /* ScribbleViewController.m */; };
 		43EEED6A18CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6718CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m */; };
 		43EEED6B18CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6718CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m */; };
-		43EEED6F18CE52DE00159074 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6E18CE52DE00159074 /* LoginViewController.m */; };
-		43EEED7018CE52DE00159074 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6E18CE52DE00159074 /* LoginViewController.m */; };
 		43EEED7418CE52F600159074 /* ColorSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED7318CE52F600159074 /* ColorSelectionViewController.m */; };
 		43EEED7518CE52F600159074 /* ColorSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED7318CE52F600159074 /* ColorSelectionViewController.m */; };
 		43EEED7B18CE531300159074 /* DiagnosticViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED7818CE531300159074 /* DiagnosticViewDelegate.m */; };
@@ -85,7 +83,7 @@
 		02257500CF3D483F8E125469 /* libPods-Scribble.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Scribble.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43B7A0EC18CE580700B817C8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		43B7A0EF18CE58A600B817C8 /* Scribble-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Scribble-Info.plist"; sourceTree = "<group>"; };
-		43B7A0F618CE5A0000B817C8 /* libPureWebUI.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPureWebUI.a; path = "libPureWebUI.a"; sourceTree = "<group>"; };
+		43B7A0F618CE5A0000B817C8 /* libPureWebUI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPureWebUI.a; sourceTree = "<group>"; };
 		43EEED5518CE524200159074 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
 		43EEED5618CE524200159074 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
 		43EEED5718CE524200159074 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main_iPhone.storyboard; path = ../Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -96,8 +94,6 @@
 		43EEED6518CE52C900159074 /* ScribbleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScribbleViewController.m; sourceTree = "<group>"; };
 		43EEED6618CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ScribbleViewController+MFMailComposeViewControllerDelegate.h"; sourceTree = "<group>"; };
 		43EEED6718CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ScribbleViewController+MFMailComposeViewControllerDelegate.m"; sourceTree = "<group>"; };
-		43EEED6D18CE52DE00159074 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		43EEED6E18CE52DE00159074 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		43EEED7218CE52F600159074 /* ColorSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSelectionViewController.h; sourceTree = "<group>"; };
 		43EEED7318CE52F600159074 /* ColorSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSelectionViewController.m; sourceTree = "<group>"; };
 		43EEED7718CE531300159074 /* DiagnosticViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosticViewDelegate.h; sourceTree = "<group>"; };
@@ -173,15 +169,6 @@
 				43EEED6718CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m */,
 			);
 			name = "Scribble View Controller";
-			sourceTree = "<group>";
-		};
-		43EEED6C18CE52D300159074 /* Login View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				43EEED6D18CE52DE00159074 /* LoginViewController.h */,
-				43EEED6E18CE52DE00159074 /* LoginViewController.m */,
-			);
-			name = "Login View Controller";
 			sourceTree = "<group>";
 		};
 		43EEED7118CE52E500159074 /* Color Selection View Controller */ = {
@@ -300,7 +287,6 @@
 				43EEED7F18CE532900159074 /* Diagnostics */,
 				43EEED7618CE530200159074 /* Utilities & Categories */,
 				43EEED7118CE52E500159074 /* Color Selection View Controller */,
-				43EEED6C18CE52D300159074 /* Login View Controller */,
 				43EEED6018CE52AE00159074 /* MasterViewController.h */,
 				43EEED6118CE52AE00159074 /* MasterViewController.m */,
 				43EEED5F18CE529B00159074 /* Scribble View Controller */,
@@ -500,7 +486,6 @@
 				43EEED8218CE533600159074 /* DiagnosticsViewController.m in Sources */,
 				43EEED6818CE52C900159074 /* ScribbleViewController.m in Sources */,
 				43EEED9418CE536600159074 /* OptionsViewController+UIPickerViewDelegate.m in Sources */,
-				43EEED6F18CE52DE00159074 /* LoginViewController.m in Sources */,
 				43EEED9218CE536600159074 /* OptionsViewController+UIPickerViewDataSource.m in Sources */,
 				43EEED5918CE524200159074 /* AppDelegate.m in Sources */,
 				43EEED9018CE536600159074 /* OptionsViewController.m in Sources */,
@@ -522,7 +507,6 @@
 				43EEED8318CE533600159074 /* DiagnosticsViewController.m in Sources */,
 				43EEED6918CE52C900159074 /* ScribbleViewController.m in Sources */,
 				43EEED9518CE536600159074 /* OptionsViewController+UIPickerViewDelegate.m in Sources */,
-				43EEED7018CE52DE00159074 /* LoginViewController.m in Sources */,
 				43EEED9318CE536600159074 /* OptionsViewController+UIPickerViewDataSource.m in Sources */,
 				43EEED5A18CE524200159074 /* AppDelegate.m in Sources */,
 				43EEED9118CE536600159074 /* OptionsViewController.m in Sources */,

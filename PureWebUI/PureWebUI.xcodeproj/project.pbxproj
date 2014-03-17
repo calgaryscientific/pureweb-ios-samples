@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4371C6D018D767DA00874740 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371C6CF18D767DA00874740 /* LoginViewController.m */; };
 		83F8541618A3D70F00AD0E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8541518A3D70F00AD0E5E /* Foundation.framework */; };
-		83F8541B18A3D70F00AD0E5E /* PureWebUI.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 83F8541A18A3D70F00AD0E5E /* PureWebUI.h */; };
-		83F8541D18A3D70F00AD0E5E /* PureWebUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F8541C18A3D70F00AD0E5E /* PureWebUI.m */; };
 		83F8542418A3D70F00AD0E5E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8542318A3D70F00AD0E5E /* XCTest.framework */; };
 		83F8542518A3D70F00AD0E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8541518A3D70F00AD0E5E /* Foundation.framework */; };
 		83F8542718A3D70F00AD0E5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8542618A3D70F00AD0E5E /* UIKit.framework */; };
@@ -35,7 +34,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				83F8541B18A3D70F00AD0E5E /* PureWebUI.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,11 +41,11 @@
 
 /* Begin PBXFileReference section */
 		2D9B3A2395CF4905B4233026 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4371C6CE18D767DA00874740 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		4371C6CF18D767DA00874740 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		83F8541218A3D70F00AD0E5E /* libPureWebUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPureWebUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F8541518A3D70F00AD0E5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		83F8541918A3D70F00AD0E5E /* PureWebUI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PureWebUI-Prefix.pch"; sourceTree = "<group>"; };
-		83F8541A18A3D70F00AD0E5E /* PureWebUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PureWebUI.h; sourceTree = "<group>"; };
-		83F8541C18A3D70F00AD0E5E /* PureWebUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PureWebUI.m; sourceTree = "<group>"; };
 		83F8542218A3D70F00AD0E5E /* PureWebUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PureWebUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F8542318A3D70F00AD0E5E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		83F8542618A3D70F00AD0E5E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -112,8 +110,8 @@
 		83F8541718A3D70F00AD0E5E /* PureWebUI */ = {
 			isa = PBXGroup;
 			children = (
-				83F8541A18A3D70F00AD0E5E /* PureWebUI.h */,
-				83F8541C18A3D70F00AD0E5E /* PureWebUI.m */,
+				4371C6CE18D767DA00874740 /* LoginViewController.h */,
+				4371C6CF18D767DA00874740 /* LoginViewController.m */,
 				83F8541818A3D70F00AD0E5E /* Supporting Files */,
 			);
 			path = PureWebUI;
@@ -226,7 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83F8541D18A3D70F00AD0E5E /* PureWebUI.m in Sources */,
+				4371C6D018D767DA00874740 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

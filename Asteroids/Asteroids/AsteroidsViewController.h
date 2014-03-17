@@ -1,13 +1,13 @@
 //
-//  ViewController.h
+//  AsteroidsViewController.h
 //  Asteroids
 //
-//  Created by Chris Garrett on 2/6/2014.
+//  Created by Chris Burns on 3/17/14.
 //  Copyright (c) 2014 Calgary Scientific Inc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface AsteroidsViewController : UIViewController
 
 @end

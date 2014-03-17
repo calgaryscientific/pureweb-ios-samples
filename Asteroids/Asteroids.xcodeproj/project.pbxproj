@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		435682A318D79EBB004F9965 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 4356829F18D79EBB004F9965 /* left.png */; };
+		435682A418D79EBB004F9965 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 435682A018D79EBB004F9965 /* right.png */; };
+		435682A518D79EBB004F9965 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 435682A118D79EBB004F9965 /* down.png */; };
+		435682A618D79EBB004F9965 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 435682A218D79EBB004F9965 /* up.png */; };
+		435682AD18D7A494004F9965 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 435682AC18D7A494004F9965 /* FXBlurView.m */; };
+		435682B718D7AFB0004F9965 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 435682B618D7AFB0004F9965 /* fire.png */; };
+		435682BB18D7B05D004F9965 /* shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 435682BA18D7B05D004F9965 /* shield.png */; };
+		4358287F18D75D5000EE03AE /* AsteroidsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4358287E18D75D5000EE03AE /* AsteroidsViewController.m */; };
+		4358288218D7607800EE03AE /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4358288118D7607800EE03AE /* MasterViewController.m */; };
 		43B7A0F318CE59EF00B817C8 /* libPureWebUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B7A0F218CE59EE00B817C8 /* libPureWebUI.a */; };
 		83F8538E18A3D4D700AD0E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8538D18A3D4D700AD0E5E /* Foundation.framework */; };
 		83F8539018A3D4D700AD0E5E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8538F18A3D4D700AD0E5E /* CoreGraphics.framework */; };
@@ -16,7 +25,6 @@
 		83F8539E18A3D4D700AD0E5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F8539D18A3D4D700AD0E5E /* AppDelegate.m */; };
 		83F853A118A3D4D700AD0E5E /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83F8539F18A3D4D700AD0E5E /* Main_iPhone.storyboard */; };
 		83F853A418A3D4D700AD0E5E /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83F853A218A3D4D700AD0E5E /* Main_iPad.storyboard */; };
-		83F853A718A3D4D700AD0E5E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F853A618A3D4D700AD0E5E /* ViewController.m */; };
 		83F853A918A3D4D700AD0E5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83F853A818A3D4D700AD0E5E /* Images.xcassets */; };
 		83F853B018A3D4D700AD0E5E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F853AF18A3D4D700AD0E5E /* XCTest.framework */; };
 		83F853B118A3D4D700AD0E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8538D18A3D4D700AD0E5E /* Foundation.framework */; };
@@ -37,7 +45,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		43B7A0F218CE59EE00B817C8 /* libPureWebUI.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPureWebUI.a; path = "libPureWebUI.a"; sourceTree = "<group>"; };
+		4356829F18D79EBB004F9965 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
+		435682A018D79EBB004F9965 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
+		435682A118D79EBB004F9965 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
+		435682A218D79EBB004F9965 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
+		435682AB18D7A494004F9965 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		435682AC18D7A494004F9965 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		435682B618D7AFB0004F9965 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
+		435682BA18D7B05D004F9965 /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
+		4358287D18D75D5000EE03AE /* AsteroidsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsteroidsViewController.h; sourceTree = "<group>"; };
+		4358287E18D75D5000EE03AE /* AsteroidsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsteroidsViewController.m; sourceTree = "<group>"; };
+		4358288018D7607800EE03AE /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		4358288118D7607800EE03AE /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		43B7A0F218CE59EE00B817C8 /* libPureWebUI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPureWebUI.a; sourceTree = "<group>"; };
 		58444891B7F8470299111738 /* Pods-Asteroids.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asteroids.xcconfig"; path = "../Pods/Pods-Asteroids.xcconfig"; sourceTree = "<group>"; };
 		83F8538A18A3D4D700AD0E5E /* Asteroids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asteroids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F8538D18A3D4D700AD0E5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -51,8 +71,6 @@
 		83F8539D18A3D4D700AD0E5E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		83F853A018A3D4D700AD0E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		83F853A318A3D4D700AD0E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		83F853A518A3D4D700AD0E5E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		83F853A618A3D4D700AD0E5E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		83F853A818A3D4D700AD0E5E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		83F853AE18A3D4D700AD0E5E /* AsteroidsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsteroidsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F853AF18A3D4D700AD0E5E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -88,6 +106,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		435682A718D7A167004F9965 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				435682BA18D7B05D004F9965 /* shield.png */,
+				435682B618D7AFB0004F9965 /* fire.png */,
+				435682AB18D7A494004F9965 /* FXBlurView.h */,
+				435682AC18D7A494004F9965 /* FXBlurView.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		83F8538118A3D4D700AD0E5E = {
 			isa = PBXGroup;
 			children = (
@@ -124,14 +153,17 @@
 		83F8539318A3D4D700AD0E5E /* Asteroids */ = {
 			isa = PBXGroup;
 			children = (
+				435682A718D7A167004F9965 /* Utilities */,
 				83F8539C18A3D4D700AD0E5E /* AppDelegate.h */,
 				83F8539D18A3D4D700AD0E5E /* AppDelegate.m */,
 				83F8539F18A3D4D700AD0E5E /* Main_iPhone.storyboard */,
 				83F853A218A3D4D700AD0E5E /* Main_iPad.storyboard */,
-				83F853A518A3D4D700AD0E5E /* ViewController.h */,
-				83F853A618A3D4D700AD0E5E /* ViewController.m */,
 				83F853A818A3D4D700AD0E5E /* Images.xcassets */,
 				83F8539418A3D4D700AD0E5E /* Supporting Files */,
+				4358287D18D75D5000EE03AE /* AsteroidsViewController.h */,
+				4358287E18D75D5000EE03AE /* AsteroidsViewController.m */,
+				4358288018D7607800EE03AE /* MasterViewController.h */,
+				4358288118D7607800EE03AE /* MasterViewController.m */,
 			);
 			path = Asteroids;
 			sourceTree = "<group>";
@@ -139,6 +171,10 @@
 		83F8539418A3D4D700AD0E5E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4356829F18D79EBB004F9965 /* left.png */,
+				435682A018D79EBB004F9965 /* right.png */,
+				435682A118D79EBB004F9965 /* down.png */,
+				435682A218D79EBB004F9965 /* up.png */,
 				83F8539518A3D4D700AD0E5E /* Asteroids-Info.plist */,
 				83F8539618A3D4D700AD0E5E /* InfoPlist.strings */,
 				83F8539918A3D4D700AD0E5E /* main.m */,
@@ -244,9 +280,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				83F853A418A3D4D700AD0E5E /* Main_iPad.storyboard in Resources */,
+				435682A618D79EBB004F9965 /* up.png in Resources */,
+				435682BB18D7B05D004F9965 /* shield.png in Resources */,
 				83F853A918A3D4D700AD0E5E /* Images.xcassets in Resources */,
 				83F853A118A3D4D700AD0E5E /* Main_iPhone.storyboard in Resources */,
+				435682A318D79EBB004F9965 /* left.png in Resources */,
+				435682B718D7AFB0004F9965 /* fire.png in Resources */,
 				83F8539818A3D4D700AD0E5E /* InfoPlist.strings in Resources */,
+				435682A418D79EBB004F9965 /* right.png in Resources */,
+				435682A518D79EBB004F9965 /* down.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +340,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83F853A718A3D4D700AD0E5E /* ViewController.m in Sources */,
+				4358288218D7607800EE03AE /* MasterViewController.m in Sources */,
+				4358287F18D75D5000EE03AE /* AsteroidsViewController.m in Sources */,
+				435682AD18D7A494004F9965 /* FXBlurView.m in Sources */,
 				83F8539E18A3D4D700AD0E5E /* AppDelegate.m in Sources */,
 				83F8539A18A3D4D700AD0E5E /* main.m in Sources */,
 			);
@@ -440,6 +484,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Asteroids/Asteroids-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/PureWeb\"",
+					"$(SDKROOT)/usr/include/libxml2",
+					../PureWebUI/PureWebUI/,
+				);
 				INFOPLIST_FILE = "Asteroids/Asteroids-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -454,6 +504,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Asteroids/Asteroids-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/PureWeb\"",
+					"$(SDKROOT)/usr/include/libxml2",
+					../PureWebUI/PureWebUI/,
+				);
 				INFOPLIST_FILE = "Asteroids/Asteroids-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

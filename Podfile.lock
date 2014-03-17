@@ -1,0 +1,10 @@
+PODS:
+  - PureWeb (4.1.0.60)
+
+DEPENDENCIES:
+  - PureWeb
+
+SPEC CHECKSUMS:
+  PureWeb: 30456699d73b61e3b4d5467efd90594a6e4d8d0b
+
+COCOAPODS: 0.29.0
