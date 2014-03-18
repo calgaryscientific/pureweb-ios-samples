@@ -51,7 +51,7 @@
     else {
         
         appURL = [NSURL URLWithString:@"http://winterfell.calgaryscientific.local:8080/pureweb/app?name=AsteroidsApp"];
-        authenticationRequired = YES;
+        authenticationRequired = YES; //
         
         PWLogInfo(@"Launching App From Fallback URL");
     }
@@ -80,6 +80,9 @@
     }
     
 }
+
+//(TODO) move into a category ... AppDelegate+Utilities
+
 //some apps are launched via an incoming URL. The key for this URL is stored in the launch options and if the key is present
 //we should immediately connect to the session described by that URL.
 - (BOOL) wasLaunchedFromURL:(NSDictionary *) launchDictionary

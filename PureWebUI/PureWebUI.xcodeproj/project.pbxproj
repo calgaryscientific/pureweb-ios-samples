@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		431DD62518D8A49E0087F776 /* TraceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431DD62418D8A49E0087F776 /* TraceViewController.m */; };
+		431DD62918D8A4F70087F776 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431DD62818D8A4F70087F776 /* OptionsViewController.m */; };
+		431DD62D18D8A5110087F776 /* AppStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431DD62C18D8A5110087F776 /* AppStateViewController.m */; };
+		431DD63018D8A51B0087F776 /* DiagnosticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431DD62F18D8A51B0087F776 /* DiagnosticsViewController.m */; };
+		431DD63318D8A52A0087F776 /* DiagnosticViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 431DD63218D8A52A0087F776 /* DiagnosticViewDelegate.m */; };
+		4324FBB418D8BEBF00E37E15 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4324FBB318D8BEBF00E37E15 /* Images.xcassets */; };
 		4371C6D018D767DA00874740 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371C6CF18D767DA00874740 /* LoginViewController.m */; };
+		46F36CE0F65F4ABB939351D4 /* libPods-PureWebUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B6A1BD77224F9497C965D6 /* libPods-PureWebUI.a */; };
 		83F8541618A3D70F00AD0E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8541518A3D70F00AD0E5E /* Foundation.framework */; };
 		83F8542418A3D70F00AD0E5E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8542318A3D70F00AD0E5E /* XCTest.framework */; };
 		83F8542518A3D70F00AD0E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8541518A3D70F00AD0E5E /* Foundation.framework */; };
@@ -41,6 +48,17 @@
 
 /* Begin PBXFileReference section */
 		2D9B3A2395CF4905B4233026 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		431DD62318D8A49E0087F776 /* TraceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraceViewController.h; sourceTree = "<group>"; };
+		431DD62418D8A49E0087F776 /* TraceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraceViewController.m; sourceTree = "<group>"; };
+		431DD62718D8A4F70087F776 /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
+		431DD62818D8A4F70087F776 /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
+		431DD62B18D8A5110087F776 /* AppStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppStateViewController.h; sourceTree = "<group>"; };
+		431DD62C18D8A5110087F776 /* AppStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppStateViewController.m; sourceTree = "<group>"; };
+		431DD62E18D8A51B0087F776 /* DiagnosticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosticsViewController.h; sourceTree = "<group>"; };
+		431DD62F18D8A51B0087F776 /* DiagnosticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagnosticsViewController.m; sourceTree = "<group>"; };
+		431DD63118D8A52A0087F776 /* DiagnosticViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosticViewDelegate.h; sourceTree = "<group>"; };
+		431DD63218D8A52A0087F776 /* DiagnosticViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagnosticViewDelegate.m; sourceTree = "<group>"; };
+		4324FBB318D8BEBF00E37E15 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4371C6CE18D767DA00874740 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		4371C6CF18D767DA00874740 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		83F8541218A3D70F00AD0E5E /* libPureWebUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPureWebUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +70,8 @@
 		83F8542D18A3D70F00AD0E5E /* PureWebUITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PureWebUITests-Info.plist"; sourceTree = "<group>"; };
 		83F8542F18A3D70F00AD0E5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		83F8543118A3D70F00AD0E5E /* PureWebUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PureWebUITests.m; sourceTree = "<group>"; };
+		C5B6A1BD77224F9497C965D6 /* libPods-PureWebUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PureWebUI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8CDF3DA14734ED2B470A135 /* Pods-PureWebUI.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PureWebUI.xcconfig"; path = "../Pods/Pods-PureWebUI.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83F8541618A3D70F00AD0E5E /* Foundation.framework in Frameworks */,
+				46F36CE0F65F4ABB939351D4 /* libPods-PureWebUI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +98,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		431DD62118D8A4860087F776 /* Diagnostics */ = {
+			isa = PBXGroup;
+			children = (
+				431DD63118D8A52A0087F776 /* DiagnosticViewDelegate.h */,
+				431DD63218D8A52A0087F776 /* DiagnosticViewDelegate.m */,
+				431DD62E18D8A51B0087F776 /* DiagnosticsViewController.h */,
+				431DD62F18D8A51B0087F776 /* DiagnosticsViewController.m */,
+				431DD62A18D8A5020087F776 /* App State View Controller */,
+				431DD62618D8A4A20087F776 /* Options View Controller */,
+				431DD62218D8A4910087F776 /* Trace View Controller */,
+			);
+			name = Diagnostics;
+			sourceTree = "<group>";
+		};
+		431DD62218D8A4910087F776 /* Trace View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				431DD62318D8A49E0087F776 /* TraceViewController.h */,
+				431DD62418D8A49E0087F776 /* TraceViewController.m */,
+			);
+			name = "Trace View Controller";
+			sourceTree = "<group>";
+		};
+		431DD62618D8A4A20087F776 /* Options View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				431DD62718D8A4F70087F776 /* OptionsViewController.h */,
+				431DD62818D8A4F70087F776 /* OptionsViewController.m */,
+			);
+			name = "Options View Controller";
+			sourceTree = "<group>";
+		};
+		431DD62A18D8A5020087F776 /* App State View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				431DD62B18D8A5110087F776 /* AppStateViewController.h */,
+				431DD62C18D8A5110087F776 /* AppStateViewController.m */,
+			);
+			name = "App State View Controller";
+			sourceTree = "<group>";
+		};
+		4324FBB218D8BEBF00E37E15 /* Shared Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4324FBB318D8BEBF00E37E15 /* Images.xcassets */,
+			);
+			path = "Shared Resources";
+			sourceTree = "<group>";
+		};
 		83F8540918A3D70F00AD0E5E = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +154,7 @@
 				83F8542B18A3D70F00AD0E5E /* PureWebUITests */,
 				83F8541418A3D70F00AD0E5E /* Frameworks */,
 				83F8541318A3D70F00AD0E5E /* Products */,
+				E8CDF3DA14734ED2B470A135 /* Pods-PureWebUI.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +174,7 @@
 				83F8542318A3D70F00AD0E5E /* XCTest.framework */,
 				83F8542618A3D70F00AD0E5E /* UIKit.framework */,
 				2D9B3A2395CF4905B4233026 /* libPods.a */,
+				C5B6A1BD77224F9497C965D6 /* libPods-PureWebUI.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,6 +182,8 @@
 		83F8541718A3D70F00AD0E5E /* PureWebUI */ = {
 			isa = PBXGroup;
 			children = (
+				4324FBB218D8BEBF00E37E15 /* Shared Resources */,
+				431DD62118D8A4860087F776 /* Diagnostics */,
 				4371C6CE18D767DA00874740 /* LoginViewController.h */,
 				4371C6CF18D767DA00874740 /* LoginViewController.m */,
 				83F8541818A3D70F00AD0E5E /* Supporting Files */,
@@ -150,9 +224,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83F8543518A3D70F00AD0E5E /* Build configuration list for PBXNativeTarget "PureWebUI" */;
 			buildPhases = (
+				1E49C1AED9294CAB8F13FCEF /* Check Pods Manifest.lock */,
 				83F8540E18A3D70F00AD0E5E /* Sources */,
 				83F8540F18A3D70F00AD0E5E /* Frameworks */,
 				83F8541018A3D70F00AD0E5E /* CopyFiles */,
+				F8782802D9AD4BC5BFA99DD8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,17 +290,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				83F8543018A3D70F00AD0E5E /* InfoPlist.strings in Resources */,
+				4324FBB418D8BEBF00E37E15 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E49C1AED9294CAB8F13FCEF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F8782802D9AD4BC5BFA99DD8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Pods-PureWebUI-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		83F8540E18A3D70F00AD0E5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				431DD62D18D8A5110087F776 /* AppStateViewController.m in Sources */,
+				431DD63018D8A51B0087F776 /* DiagnosticsViewController.m in Sources */,
+				431DD63318D8A52A0087F776 /* DiagnosticViewDelegate.m in Sources */,
+				431DD62518D8A49E0087F776 /* TraceViewController.m in Sources */,
 				4371C6D018D767DA00874740 /* LoginViewController.m in Sources */,
+				431DD62918D8A4F70087F776 /* OptionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +445,7 @@
 		};
 		83F8543618A3D70F00AD0E5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8CDF3DA14734ED2B470A135 /* Pods-PureWebUI.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/PureWebUI.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -342,6 +458,7 @@
 		};
 		83F8543718A3D70F00AD0E5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8CDF3DA14734ED2B470A135 /* Pods-PureWebUI.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/PureWebUI.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
