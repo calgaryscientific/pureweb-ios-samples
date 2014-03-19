@@ -7,6 +7,8 @@
 #import <MessageUI/MessageUI.h>
 #import <QuartzCore/QuartzCore.h>
 
+#import "DiagnosticViewDelegate.h"
+
 enum KeyCode
 {
     KeyCodeLeft = 37,
@@ -35,6 +37,7 @@ enum KeyCode
     self.asteroidsView.framework = [PWFramework sharedInstance];
     self.asteroidsView.viewName = @"AsteroidsView";
     self.asteroidsView.multipleTouchEnabled = YES;
+    self.asteroidsView.delegate = [DiagnosticViewDelegate sharedInstance];
     
     //create blurred views
     [self setupBlurView:self.directionContainingView];
