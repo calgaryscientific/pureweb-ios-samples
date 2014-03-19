@@ -40,6 +40,9 @@ enum KeyCode
     [self setupBlurView:self.directionContainingView];
     [self setupBlurView:self.actionContainingView];
     
+    [[self.actionContainingView layer] setCornerRadius:10.0f];
+    [[self.directionContainingView layer] setCornerRadius:(self.directionContainingView.frame.size.width/2)];
+    
     [super viewDidLoad];
 }
 
@@ -47,10 +50,9 @@ enum KeyCode
 - (void) setupBlurView: (FXBlurView *) blurView {
     
     blurView.blurEnabled = YES;
-    blurView.dynamic = YES;
+    blurView.dynamic = NO;
     blurView.tintColor = [UIColor whiteColor];
     
-    [[blurView layer] setCornerRadius:(blurView.frame.size.width/2)];
     [[blurView layer] setMasksToBounds:YES];
     
 }
