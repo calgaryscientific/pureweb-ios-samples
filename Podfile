@@ -25,8 +25,3 @@ target 'DDx' do
 
 end
 
-target 'PureWebUI' do
-    xcodeproj 'PureWebUI/PureWebUI.xcodeproj'
-    pod "#{PUREWEB}"    
-end
-

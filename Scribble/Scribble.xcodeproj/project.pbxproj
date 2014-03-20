@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		4324FBBD18D8BF9200E37E15 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4324FBBC18D8BF9200E37E15 /* Images.xcassets */; };
-		43B7A0F018CE58A600B817C8 /* Scribble-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43B7A0EF18CE58A600B817C8 /* Scribble-Info.plist */; };
+		438F8F5F18DB58810088C577 /* AppStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8F5118DB58810088C577 /* AppStateViewController.m */; };
+		438F8F6018DB58810088C577 /* DiagnosticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8F5318DB58810088C577 /* DiagnosticsViewController.m */; };
+		438F8F6118DB58810088C577 /* DiagnosticViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8F5518DB58810088C577 /* DiagnosticViewDelegate.m */; };
+		438F8F6218DB58810088C577 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8F5718DB58810088C577 /* LoginViewController.m */; };
+		438F8F6318DB58810088C577 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8F5918DB58810088C577 /* OptionsViewController.m */; };
+		438F8F6518DB58810088C577 /* TraceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8F5E18DB58810088C577 /* TraceViewController.m */; };
 		43B7A0F118CE58A600B817C8 /* Scribble-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43B7A0EF18CE58A600B817C8 /* Scribble-Info.plist */; };
-		43B7A0F718CE5A0000B817C8 /* libPureWebUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B7A0F618CE5A0000B817C8 /* libPureWebUI.a */; };
 		43EEED5918CE524200159074 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED5618CE524200159074 /* AppDelegate.m */; };
 		43EEED5A18CE524200159074 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED5618CE524200159074 /* AppDelegate.m */; };
 		43EEED5B18CE524200159074 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED5718CE524200159074 /* Main_iPhone.storyboard */; };
@@ -67,8 +71,20 @@
 /* Begin PBXFileReference section */
 		02257500CF3D483F8E125469 /* libPods-Scribble.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Scribble.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4324FBBC18D8BF9200E37E15 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		438F8F5018DB58810088C577 /* AppStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppStateViewController.h; sourceTree = "<group>"; };
+		438F8F5118DB58810088C577 /* AppStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppStateViewController.m; sourceTree = "<group>"; };
+		438F8F5218DB58810088C577 /* DiagnosticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosticsViewController.h; sourceTree = "<group>"; };
+		438F8F5318DB58810088C577 /* DiagnosticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagnosticsViewController.m; sourceTree = "<group>"; };
+		438F8F5418DB58810088C577 /* DiagnosticViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosticViewDelegate.h; sourceTree = "<group>"; };
+		438F8F5518DB58810088C577 /* DiagnosticViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagnosticViewDelegate.m; sourceTree = "<group>"; };
+		438F8F5618DB58810088C577 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		438F8F5718DB58810088C577 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		438F8F5818DB58810088C577 /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
+		438F8F5918DB58810088C577 /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
+		438F8F5A18DB58810088C577 /* PureWebUI-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureWebUI-Prefix.pch"; sourceTree = "<group>"; };
+		438F8F5D18DB58810088C577 /* TraceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraceViewController.h; sourceTree = "<group>"; };
+		438F8F5E18DB58810088C577 /* TraceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraceViewController.m; sourceTree = "<group>"; };
 		43B7A0EF18CE58A600B817C8 /* Scribble-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Scribble-Info.plist"; sourceTree = "<group>"; };
-		43B7A0F618CE5A0000B817C8 /* libPureWebUI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPureWebUI.a; sourceTree = "<group>"; };
 		43EEED5518CE524200159074 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
 		43EEED5618CE524200159074 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
 		43EEED5718CE524200159074 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main_iPhone.storyboard; path = ../Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -110,7 +126,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43B7A0F718CE5A0000B817C8 /* libPureWebUI.a in Frameworks */,
 				83F8534C18A3D4AF00AD0E5E /* CoreGraphics.framework in Frameworks */,
 				83F8534E18A3D4AF00AD0E5E /* UIKit.framework in Frameworks */,
 				83F8534A18A3D4AF00AD0E5E /* Foundation.framework in Frameworks */,
@@ -137,6 +152,27 @@
 				4324FBBC18D8BF9200E37E15 /* Images.xcassets */,
 			);
 			path = "Shared Resources";
+			sourceTree = "<group>";
+		};
+		438F8F4F18DB58810088C577 /* PureWebUI */ = {
+			isa = PBXGroup;
+			children = (
+				438F8F5018DB58810088C577 /* AppStateViewController.h */,
+				438F8F5118DB58810088C577 /* AppStateViewController.m */,
+				438F8F5218DB58810088C577 /* DiagnosticsViewController.h */,
+				438F8F5318DB58810088C577 /* DiagnosticsViewController.m */,
+				438F8F5418DB58810088C577 /* DiagnosticViewDelegate.h */,
+				438F8F5518DB58810088C577 /* DiagnosticViewDelegate.m */,
+				438F8F5618DB58810088C577 /* LoginViewController.h */,
+				438F8F5718DB58810088C577 /* LoginViewController.m */,
+				438F8F5818DB58810088C577 /* OptionsViewController.h */,
+				438F8F5918DB58810088C577 /* OptionsViewController.m */,
+				438F8F5A18DB58810088C577 /* PureWebUI-Prefix.pch */,
+				438F8F5D18DB58810088C577 /* TraceViewController.h */,
+				438F8F5E18DB58810088C577 /* TraceViewController.m */,
+			);
+			name = PureWebUI;
+			path = ../PureWebUI/PureWebUI;
 			sourceTree = "<group>";
 		};
 		43EEED5F18CE529B00159074 /* Scribble View Controller */ = {
@@ -184,6 +220,7 @@
 		83F8533D18A3D4AF00AD0E5E = {
 			isa = PBXGroup;
 			children = (
+				438F8F4F18DB58810088C577 /* PureWebUI */,
 				83F8534F18A3D4AF00AD0E5E /* Scribble */,
 				83F8537118A3D4AF00AD0E5E /* ScribbleTests */,
 				83F8534818A3D4AF00AD0E5E /* Frameworks */,
@@ -204,7 +241,6 @@
 		83F8534818A3D4AF00AD0E5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				43B7A0F618CE5A0000B817C8 /* libPureWebUI.a */,
 				83F8534918A3D4AF00AD0E5E /* Foundation.framework */,
 				83F8534B18A3D4AF00AD0E5E /* CoreGraphics.framework */,
 				83F8534D18A3D4AF00AD0E5E /* UIKit.framework */,
@@ -348,7 +384,6 @@
 				43EEEDA518CE53B900159074 /* Bubble_Icon.png in Resources */,
 				43EEED9C18CE53A200159074 /* Settings.bundle in Resources */,
 				43EEEDA918CE53B900159074 /* Files_Icon.png in Resources */,
-				43B7A0F018CE58A600B817C8 /* Scribble-Info.plist in Resources */,
 				83F8535418A3D4AF00AD0E5E /* InfoPlist.strings in Resources */,
 				4324FBBD18D8BF9200E37E15 /* Images.xcassets in Resources */,
 				43EEED5B18CE524200159074 /* Main_iPhone.storyboard in Resources */,
@@ -416,10 +451,16 @@
 			files = (
 				43EEED6A18CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m in Sources */,
 				43EEED6818CE52C900159074 /* ScribbleViewController.m in Sources */,
+				438F8F6118DB58810088C577 /* DiagnosticViewDelegate.m in Sources */,
 				43EEED5918CE524200159074 /* AppDelegate.m in Sources */,
 				43EEED7D18CE531300159074 /* UIColor+HighlightedColors.m in Sources */,
+				438F8F6318DB58810088C577 /* OptionsViewController.m in Sources */,
+				438F8F5F18DB58810088C577 /* AppStateViewController.m in Sources */,
+				438F8F6018DB58810088C577 /* DiagnosticsViewController.m in Sources */,
+				438F8F6518DB58810088C577 /* TraceViewController.m in Sources */,
 				43EEED6218CE52AE00159074 /* MasterViewController.m in Sources */,
 				43EEED7418CE52F600159074 /* ColorSelectionViewController.m in Sources */,
+				438F8F6218DB58810088C577 /* LoginViewController.m in Sources */,
 				83F8535618A3D4AF00AD0E5E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

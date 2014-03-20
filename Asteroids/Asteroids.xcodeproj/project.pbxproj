@@ -16,7 +16,12 @@
 		435682B718D7AFB0004F9965 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 435682B618D7AFB0004F9965 /* fire.png */; };
 		4358287F18D75D5000EE03AE /* AsteroidsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4358287E18D75D5000EE03AE /* AsteroidsViewController.m */; };
 		4358288218D7607800EE03AE /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4358288118D7607800EE03AE /* MasterViewController.m */; };
-		43B7A0F318CE59EF00B817C8 /* libPureWebUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B7A0F218CE59EE00B817C8 /* libPureWebUI.a */; };
+		438F8F3118DB58550088C577 /* AppStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8F2318DB58550088C577 /* AppStateViewController.m */; };
+		438F8F3218DB58550088C577 /* DiagnosticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8F2518DB58550088C577 /* DiagnosticsViewController.m */; };
+		438F8F3318DB58550088C577 /* DiagnosticViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8F2718DB58550088C577 /* DiagnosticViewDelegate.m */; };
+		438F8F3418DB58550088C577 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8F2918DB58550088C577 /* LoginViewController.m */; };
+		438F8F3518DB58550088C577 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8F2B18DB58550088C577 /* OptionsViewController.m */; };
+		438F8F3718DB58550088C577 /* TraceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8F3018DB58550088C577 /* TraceViewController.m */; };
 		83F8538E18A3D4D700AD0E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8538D18A3D4D700AD0E5E /* Foundation.framework */; };
 		83F8539018A3D4D700AD0E5E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8538F18A3D4D700AD0E5E /* CoreGraphics.framework */; };
 		83F8539218A3D4D700AD0E5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8539118A3D4D700AD0E5E /* UIKit.framework */; };
@@ -46,7 +51,7 @@
 		43176D1018DA043C001AC3F4 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
 		43176D1218DA0474001AC3F4 /* fire_68.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire_68.png; sourceTree = "<group>"; };
 		43176D1418DA04A1001AC3F4 /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
-		4324FBB918D8BF6C00E37E15 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4324FBB918D8BF6C00E37E15 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Asteroids/Shared Resources/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		4324FBBF18D8D61600E37E15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		435682AB18D7A494004F9965 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
 		435682AC18D7A494004F9965 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
@@ -56,7 +61,19 @@
 		4358287E18D75D5000EE03AE /* AsteroidsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsteroidsViewController.m; sourceTree = "<group>"; };
 		4358288018D7607800EE03AE /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		4358288118D7607800EE03AE /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		43B7A0F218CE59EE00B817C8 /* libPureWebUI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPureWebUI.a; sourceTree = "<group>"; };
+		438F8F2218DB58550088C577 /* AppStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppStateViewController.h; sourceTree = "<group>"; };
+		438F8F2318DB58550088C577 /* AppStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppStateViewController.m; sourceTree = "<group>"; };
+		438F8F2418DB58550088C577 /* DiagnosticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosticsViewController.h; sourceTree = "<group>"; };
+		438F8F2518DB58550088C577 /* DiagnosticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagnosticsViewController.m; sourceTree = "<group>"; };
+		438F8F2618DB58550088C577 /* DiagnosticViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosticViewDelegate.h; sourceTree = "<group>"; };
+		438F8F2718DB58550088C577 /* DiagnosticViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagnosticViewDelegate.m; sourceTree = "<group>"; };
+		438F8F2818DB58550088C577 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		438F8F2918DB58550088C577 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		438F8F2A18DB58550088C577 /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
+		438F8F2B18DB58550088C577 /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
+		438F8F2C18DB58550088C577 /* PureWebUI-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureWebUI-Prefix.pch"; sourceTree = "<group>"; };
+		438F8F2F18DB58550088C577 /* TraceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraceViewController.h; sourceTree = "<group>"; };
+		438F8F3018DB58550088C577 /* TraceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraceViewController.m; sourceTree = "<group>"; };
 		58444891B7F8470299111738 /* Pods-Asteroids.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asteroids.xcconfig"; path = "../Pods/Pods-Asteroids.xcconfig"; sourceTree = "<group>"; };
 		83F8538A18A3D4D700AD0E5E /* Asteroids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asteroids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F8538D18A3D4D700AD0E5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -82,7 +99,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43B7A0F318CE59EF00B817C8 /* libPureWebUI.a in Frameworks */,
 				83F8539018A3D4D700AD0E5E /* CoreGraphics.framework in Frameworks */,
 				83F8539218A3D4D700AD0E5E /* UIKit.framework in Frameworks */,
 				83F8538E18A3D4D700AD0E5E /* Foundation.framework in Frameworks */,
@@ -122,9 +138,31 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
+		438F8F2118DB58550088C577 /* PureWebUI */ = {
+			isa = PBXGroup;
+			children = (
+				438F8F2218DB58550088C577 /* AppStateViewController.h */,
+				438F8F2318DB58550088C577 /* AppStateViewController.m */,
+				438F8F2418DB58550088C577 /* DiagnosticsViewController.h */,
+				438F8F2518DB58550088C577 /* DiagnosticsViewController.m */,
+				438F8F2618DB58550088C577 /* DiagnosticViewDelegate.h */,
+				438F8F2718DB58550088C577 /* DiagnosticViewDelegate.m */,
+				438F8F2818DB58550088C577 /* LoginViewController.h */,
+				438F8F2918DB58550088C577 /* LoginViewController.m */,
+				438F8F2A18DB58550088C577 /* OptionsViewController.h */,
+				438F8F2B18DB58550088C577 /* OptionsViewController.m */,
+				438F8F2C18DB58550088C577 /* PureWebUI-Prefix.pch */,
+				438F8F2F18DB58550088C577 /* TraceViewController.h */,
+				438F8F3018DB58550088C577 /* TraceViewController.m */,
+			);
+			name = PureWebUI;
+			path = ../PureWebUI/PureWebUI;
+			sourceTree = "<group>";
+		};
 		83F8538118A3D4D700AD0E5E = {
 			isa = PBXGroup;
 			children = (
+				438F8F2118DB58550088C577 /* PureWebUI */,
 				83F8539318A3D4D700AD0E5E /* Asteroids */,
 				83F853B518A3D4D700AD0E5E /* AsteroidsTests */,
 				83F8538C18A3D4D700AD0E5E /* Frameworks */,
@@ -145,7 +183,6 @@
 		83F8538C18A3D4D700AD0E5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				43B7A0F218CE59EE00B817C8 /* libPureWebUI.a */,
 				83F8538D18A3D4D700AD0E5E /* Foundation.framework */,
 				83F8538F18A3D4D700AD0E5E /* CoreGraphics.framework */,
 				83F8539118A3D4D700AD0E5E /* UIKit.framework */,
@@ -342,10 +379,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				438F8F3218DB58550088C577 /* DiagnosticsViewController.m in Sources */,
+				438F8F3118DB58550088C577 /* AppStateViewController.m in Sources */,
 				4358288218D7607800EE03AE /* MasterViewController.m in Sources */,
 				4358287F18D75D5000EE03AE /* AsteroidsViewController.m in Sources */,
 				435682AD18D7A494004F9965 /* FXBlurView.m in Sources */,
+				438F8F3418DB58550088C577 /* LoginViewController.m in Sources */,
 				83F8539E18A3D4D700AD0E5E /* AppDelegate.m in Sources */,
+				438F8F3718DB58550088C577 /* TraceViewController.m in Sources */,
+				438F8F3518DB58550088C577 /* OptionsViewController.m in Sources */,
+				438F8F3318DB58550088C577 /* DiagnosticViewDelegate.m in Sources */,
 				83F8539A18A3D4D700AD0E5E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

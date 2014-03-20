@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		43B7A0F518CE59F800B817C8 /* libPureWebUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B7A0F418CE59F800B817C8 /* libPureWebUI.a */; };
+		438F8F4818DB58710088C577 /* AppStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8F3A18DB58710088C577 /* AppStateViewController.m */; };
+		438F8F4918DB58710088C577 /* DiagnosticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8F3C18DB58710088C577 /* DiagnosticsViewController.m */; };
+		438F8F4A18DB58710088C577 /* DiagnosticViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8F3E18DB58710088C577 /* DiagnosticViewDelegate.m */; };
+		438F8F4B18DB58710088C577 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8F4018DB58710088C577 /* LoginViewController.m */; };
+		438F8F4C18DB58710088C577 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8F4218DB58710088C577 /* OptionsViewController.m */; };
+		438F8F4E18DB58710088C577 /* TraceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8F4718DB58710088C577 /* TraceViewController.m */; };
 		6176B737FBCB4BDE8527A167 /* libPods-DDx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8740A2D9046447A9167E838 /* libPods-DDx.a */; };
 		83F853D218A3D4E400AD0E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F853D118A3D4E400AD0E5E /* Foundation.framework */; };
 		83F853D418A3D4E400AD0E5E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F853D318A3D4E400AD0E5E /* CoreGraphics.framework */; };
@@ -37,7 +42,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		43B7A0F418CE59F800B817C8 /* libPureWebUI.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPureWebUI.a; path = "libPureWebUI.a"; sourceTree = "<group>"; };
+		438F8F3918DB58710088C577 /* AppStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppStateViewController.h; sourceTree = "<group>"; };
+		438F8F3A18DB58710088C577 /* AppStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppStateViewController.m; sourceTree = "<group>"; };
+		438F8F3B18DB58710088C577 /* DiagnosticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosticsViewController.h; sourceTree = "<group>"; };
+		438F8F3C18DB58710088C577 /* DiagnosticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagnosticsViewController.m; sourceTree = "<group>"; };
+		438F8F3D18DB58710088C577 /* DiagnosticViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosticViewDelegate.h; sourceTree = "<group>"; };
+		438F8F3E18DB58710088C577 /* DiagnosticViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagnosticViewDelegate.m; sourceTree = "<group>"; };
+		438F8F3F18DB58710088C577 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		438F8F4018DB58710088C577 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		438F8F4118DB58710088C577 /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
+		438F8F4218DB58710088C577 /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
+		438F8F4318DB58710088C577 /* PureWebUI-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureWebUI-Prefix.pch"; sourceTree = "<group>"; };
+		438F8F4618DB58710088C577 /* TraceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraceViewController.h; sourceTree = "<group>"; };
+		438F8F4718DB58710088C577 /* TraceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraceViewController.m; sourceTree = "<group>"; };
 		83F853CE18A3D4E400AD0E5E /* DDx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F853D118A3D4E400AD0E5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		83F853D318A3D4E400AD0E5E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -67,7 +84,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43B7A0F518CE59F800B817C8 /* libPureWebUI.a in Frameworks */,
 				83F853D418A3D4E400AD0E5E /* CoreGraphics.framework in Frameworks */,
 				83F853D618A3D4E400AD0E5E /* UIKit.framework in Frameworks */,
 				83F853D218A3D4E400AD0E5E /* Foundation.framework in Frameworks */,
@@ -88,9 +104,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		438F8F3818DB58710088C577 /* PureWebUI */ = {
+			isa = PBXGroup;
+			children = (
+				438F8F3918DB58710088C577 /* AppStateViewController.h */,
+				438F8F3A18DB58710088C577 /* AppStateViewController.m */,
+				438F8F3B18DB58710088C577 /* DiagnosticsViewController.h */,
+				438F8F3C18DB58710088C577 /* DiagnosticsViewController.m */,
+				438F8F3D18DB58710088C577 /* DiagnosticViewDelegate.h */,
+				438F8F3E18DB58710088C577 /* DiagnosticViewDelegate.m */,
+				438F8F3F18DB58710088C577 /* LoginViewController.h */,
+				438F8F4018DB58710088C577 /* LoginViewController.m */,
+				438F8F4118DB58710088C577 /* OptionsViewController.h */,
+				438F8F4218DB58710088C577 /* OptionsViewController.m */,
+				438F8F4318DB58710088C577 /* PureWebUI-Prefix.pch */,
+				438F8F4618DB58710088C577 /* TraceViewController.h */,
+				438F8F4718DB58710088C577 /* TraceViewController.m */,
+			);
+			name = PureWebUI;
+			path = ../PureWebUI/PureWebUI;
+			sourceTree = "<group>";
+		};
 		83F853C518A3D4E400AD0E5E = {
 			isa = PBXGroup;
 			children = (
+				438F8F3818DB58710088C577 /* PureWebUI */,
 				83F853D718A3D4E400AD0E5E /* DDx */,
 				83F853F918A3D4E400AD0E5E /* DDxTests */,
 				83F853D018A3D4E400AD0E5E /* Frameworks */,
@@ -111,7 +149,6 @@
 		83F853D018A3D4E400AD0E5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				43B7A0F418CE59F800B817C8 /* libPureWebUI.a */,
 				83F853D118A3D4E400AD0E5E /* Foundation.framework */,
 				83F853D318A3D4E400AD0E5E /* CoreGraphics.framework */,
 				83F853D518A3D4E400AD0E5E /* UIKit.framework */,
@@ -298,9 +335,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				438F8F4818DB58710088C577 /* AppStateViewController.m in Sources */,
+				438F8F4918DB58710088C577 /* DiagnosticsViewController.m in Sources */,
+				438F8F4A18DB58710088C577 /* DiagnosticViewDelegate.m in Sources */,
 				83F853EB18A3D4E400AD0E5E /* ViewController.m in Sources */,
+				438F8F4B18DB58710088C577 /* LoginViewController.m in Sources */,
+				438F8F4C18DB58710088C577 /* OptionsViewController.m in Sources */,
 				83F853E218A3D4E400AD0E5E /* AppDelegate.m in Sources */,
 				83F853DE18A3D4E400AD0E5E /* main.m in Sources */,
+				438F8F4E18DB58710088C577 /* TraceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
