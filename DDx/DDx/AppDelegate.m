@@ -1,46 +1,215 @@
 //
 //  AppDelegate.m
-//  DDx
+//  DDxSample
 //
-//  Created by Chris Garrett on 2/6/2014.
-//  Copyright (c) 2014 Calgary Scientific Inc. All rights reserved.
+//  Created by Chris Garrett on 4/11/12.
+//  Copyright (c) 2012 Calgary Scientific Inc. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "PWLoginViewController.h"
+#import "UIAlertView+PWUtils.h"
+#import "TabViewController.h"
+#import "DDxViewController.h"
+#import "PGViewController.h"
+#import "PWCollaborationViewController.h"
+#import "AspectRatioViewController.h"
+#import "BabelViewController.h"
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+#pragma mark -
+#pragma mark Properties
+
+@synthesize url = _url;
+@synthesize window;
+@synthesize viewController;
+
+#pragma mark -
+#pragma mark Application lifecycle
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
 {
-    // Override point for customization after application launch.
+//    BOOL wait = YES;
+//    while (wait)
+//    {
+//        [NSThread sleepForTimeInterval:1.0]; // Set breakpoint here for debugging
+//        // In the debugger, change "wait" to NO once the debugger is attached
+//    }
+
+    [PWUtility registerDefaultsFromSettingsBundle];
+
+    [PWFramework sharedInstance].delegate = self;
+    [PWFramework sharedInstance].client.delegate = self;
+    
+    self.url = [launchOptions objectForKey:@"UIApplicationLaunchOptionsURLKey"];
+    
+    // If we are launching normally self.url should be nil. If its not we were launched from a URL
+    if (!self.url)
+    {
+        NSString *server_url = [[NSUserDefaults standardUserDefaults] stringForKey:@"pureweb_url"];
+        
+        // load the url from settings if we weren't passed one
+        self.url = [NSURL URLWithString:server_url];
+        
+        if (!self.url)
+        {
+            PWLogError(@"Failed to get server URL!!");
+            return NO;
+        }
+    } 
+    else 
+    {
+        PWLogInfo(@"Launched from a URL: %@", self.url);
+    }
+
+    PWLoginViewController *loginViewController = [[PWLoginViewController alloc] initWithHref:[self.url absoluteString]];
+    PWNavigationController *navigationController = [[PWNavigationController alloc] initWithRootViewController:loginViewController];
+    
+    self.viewController = navigationController;
+    self.viewController.navigationBar.barStyle = UIBarStyleDefault;
+   
+
+    window.rootViewController = self.viewController;
+    [window makeKeyAndVisible];    
+    
     return YES;
 }
-							
-- (void)applicationWillResignActive:(UIApplication *)application
+
+- (void)applicationWillTerminate:(UIApplication *)application 
 {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    if ([PWFramework sharedInstance].client.isConnected)
+        [[PWFramework sharedInstance].client disconnectSynchronous];
+}
+
+- (void)applicationWillResignActive:(UIApplication *)application 
+{
+    /*
+     Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+     Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+     */
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application 
+{
+    /*
+     Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+     */
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
+#pragma mark -
+#pragma mark Memory management
+
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application 
 {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    /*
+     Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
+     */
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
+
+#pragma mark -
+#pragma mark PWFramework Delegates
+
+-(void)sessionIdChanged
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application
+-(void)stateInitialized
 {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    PWLogVerbose(@"Initial State:\n%@", [[PWFramework sharedInstance].state.stateManager getTree:@"/"]);
+}
+
+#pragma mark -
+#pragma mark PWWebClient Delegates
+
+- (void)connectedChanged
+{
+}
+
+- (void)stalledChanged
+{
+}
+
+- (void)requestInProgressChanged
+{
+}
+
+- (void)sessionStateChanged
+{
+    switch ([PWFramework sharedInstance].client.sessionState)
+    {
+        case PWSessionStateFailed:
+        {
+            int errorCode = -1;
+            NSDictionary *userInfo = [[PWFramework sharedInstance].client.acquireException userInfo];
+            if (userInfo && [userInfo objectForKey:@"ErrorCode"])
+            {
+                errorCode = [[userInfo objectForKey:@"ErrorCode"] intValue];   
+            }
+            
+            NSString *message = [[PWFramework sharedInstance].client.acquireException description];
+            
+            PWLogError(@"Error Code (%i)\n%@", errorCode, message);
+            
+            [UIAlertView showAlert:[NSString stringWithFormat:@"Error connecting to server (%i)", errorCode] message:message];
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];            
+        }
+        break;
+        case PWSessionStateActive:
+        {
+            TabViewController *tabViewController = [[TabViewController alloc] init];
+
+            DDxViewController *ddxViewController = [[DDxViewController alloc] init];
+            ddxViewController.framework = [PWFramework sharedInstance];
+            [ddxViewController.tabBarItem setTitle:@"DDx View"];
+            [ddxViewController.tabBarItem setImage:[UIImage imageNamed:@"103-map.png"]];
+
+            PGViewController *pgViewController = [[PGViewController alloc] init];
+            [pgViewController.tabBarItem setTitle:@"PG View"];
+            [pgViewController.tabBarItem setImage:[UIImage imageNamed:@"46-movie-2.png"]];
+            
+            PWCollaborationViewController *collaborationViewController = [[PWCollaborationViewController alloc] init];
+            collaborationViewController.collaborationManager = [PWFramework sharedInstance].collaborationManager;
+            [collaborationViewController.tabBarItem setTitle:@"Collaboration"];
+            [collaborationViewController.tabBarItem setImage:[UIImage imageNamed:@"111-user.png"]];
+            
+            AspectRatioViewController *aspectViewController = [[AspectRatioViewController alloc] init];
+            [aspectViewController.tabBarItem setTitle:@"Aspect Ratio"];
+            [aspectViewController.tabBarItem setImage:[UIImage imageNamed:@"186-ruler.png"]];
+            
+            BabelViewController *babelViewController = [[BabelViewController alloc] init];
+            [babelViewController.tabBarItem setTitle:@"Babel"];
+            [babelViewController.tabBarItem setImage:[UIImage imageNamed:@"08-chat.png"]];
+            
+            [tabViewController setViewControllers:[NSArray arrayWithObjects:ddxViewController,
+                                                                            pgViewController, 
+                                                                            collaborationViewController,
+                                                                            aspectViewController,
+                                                                            babelViewController,
+                                                                            nil]];
+
+            [self.viewController pushViewController:tabViewController animated:YES];
+            
+        } break;
+        case PWSessionStateUnknown:            
+        case PWSessionStateDisconnected:
+        case PWSessionStateConnecting:
+        case PWSessionStateStalled:
+        case PWSessionStateTerminated:
+            break;
+    }    
+}
+
+
+- (void)minimumRequestIntervalChanged
+{
 }
 
 @end
+
+

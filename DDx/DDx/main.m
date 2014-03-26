@@ -1,18 +1,17 @@
 //
 //  main.m
-//  DDx
+//  ___PROJECTNAME___
 //
-//  Created by Chris Garrett on 2/6/2014.
-//  Copyright (c) 2014 Calgary Scientific Inc. All rights reserved.
+//  Created by ___FULLUSERNAME___ on ___DATE___.
+//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-#import "AppDelegate.h"
-
-int main(int argc, char * argv[])
-{
+int main(int argc, char *argv[]) {
+    
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+        int retVal = UIApplicationMain(argc, argv, nil, nil);
+        return retVal;
     }
 }

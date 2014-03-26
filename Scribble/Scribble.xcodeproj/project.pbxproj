@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4380755018E0A12700A6E8CD /* NSURL+URLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4380754F18E0A12700A6E8CD /* NSURL+URLHelpers.m */; };
 		438F8FCE18DB8B3B0088C577 /* AppStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8FC018DB8B3B0088C577 /* AppStateViewController.m */; };
 		438F8FCF18DB8B3B0088C577 /* DiagnosticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8FC218DB8B3B0088C577 /* DiagnosticsViewController.m */; };
 		438F8FD018DB8B3B0088C577 /* DiagnosticViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8FC418DB8B3B0088C577 /* DiagnosticViewDelegate.m */; };
@@ -70,6 +71,8 @@
 
 /* Begin PBXFileReference section */
 		02257500CF3D483F8E125469 /* libPods-Scribble.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Scribble.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4380754E18E0A12700A6E8CD /* NSURL+URLHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+URLHelpers.h"; sourceTree = "<group>"; };
+		4380754F18E0A12700A6E8CD /* NSURL+URLHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+URLHelpers.m"; sourceTree = "<group>"; };
 		438F8FBF18DB8B3B0088C577 /* AppStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppStateViewController.h; sourceTree = "<group>"; };
 		438F8FC018DB8B3B0088C577 /* AppStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppStateViewController.m; sourceTree = "<group>"; };
 		438F8FC118DB8B3B0088C577 /* DiagnosticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosticsViewController.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 		438F8FBE18DB8B3B0088C577 /* PureWebUI */ = {
 			isa = PBXGroup;
 			children = (
+				4380754E18E0A12700A6E8CD /* NSURL+URLHelpers.h */,
+				4380754F18E0A12700A6E8CD /* NSURL+URLHelpers.m */,
 				438F8FBF18DB8B3B0088C577 /* AppStateViewController.h */,
 				438F8FC018DB8B3B0088C577 /* AppStateViewController.m */,
 				438F8FC118DB8B3B0088C577 /* DiagnosticsViewController.h */,
@@ -457,6 +462,7 @@
 				438F8FD218DB8B3B0088C577 /* OptionsViewController.m in Sources */,
 				438F8FCE18DB8B3B0088C577 /* AppStateViewController.m in Sources */,
 				438F8FCF18DB8B3B0088C577 /* DiagnosticsViewController.m in Sources */,
+				4380755018E0A12700A6E8CD /* NSURL+URLHelpers.m in Sources */,
 				438F8FD418DB8B3B0088C577 /* TraceViewController.m in Sources */,
 				43EEED6218CE52AE00159074 /* MasterViewController.m in Sources */,
 				43EEED7418CE52F600159074 /* ColorSelectionViewController.m in Sources */,

@@ -9,6 +9,8 @@
 #import <PureWeb/PWLog.h>
 #import <PureWeb/PureWeb.h>
 
+#import "NSURL+URLHelpers.h"
+
 #pragma mark -
 @implementation AppDelegate
 
@@ -16,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //debug wait loop, this is useful if you want to attach and debug the application without launching it
-    //[self debugWaitLoop];
+    [self debugWaitLoop];
     
     //setup pureweb logging
     [PWLog setLogLevel:PWLogLevelVerbose];
@@ -29,6 +31,8 @@
     if ([self wasLaunchedFromURL:launchOptions]) {
         
         appURL = [launchOptions objectForKey:@"UIApplicationLaunchOptionsURLKey"];
+        appURL = [appURL URLByReplacingScheme]; //it is necessary to remove the scheme which allows the link to be opened in ios
+        
         authenticationRequired = NO;
         
         PWLogInfo(@"Launching App From Incoming URL");
