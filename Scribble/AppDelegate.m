@@ -18,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //debug wait loop, this is useful if you want to attach and debug the application without launching it
-    [self debugWaitLoop];
+    //[self debugWaitLoop];
     
     //setup pureweb logging
     [PWLog setLogLevel:PWLogLevelVerbose];
@@ -52,7 +52,7 @@
     //app was launched via fallback url, this is typically useful for default choices or as a development fallback
     else {
         
-        appURL = [NSURL URLWithString:@"http://winterfell:8080/pureweb/app?name=ScribbleAppJava"];
+        appURL = [NSURL URLWithString:@"http://winterfell.calgaryscientific.local:8080/pureweb/app?name=ScribbleAppJava"];
         authenticationRequired = YES;
         
         PWLogInfo(@"Launching App From Fallback URL");
