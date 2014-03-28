@@ -37,15 +37,15 @@
     }
     
     //app was launched via settings url, this is provided by the user via the settings bundle and authentication is needed
-    //    else if ([self wasLaunchedFromSettingsUrl]) {
-    //
-    //        NSString *appURLString = [[NSUserDefaults standardUserDefaults] stringForKey:@"pureweb_url"];
-    //
-    //        appURL = [NSURL URLWithString:appURLString];
-    //        authenticationRequired = YES;
-    //
-    //        PWLogInfo(@"Launching App From Settings URL");
-    //    }
+    else if ([self wasLaunchedFromSettingsUrl]) {
+
+        NSString *appURLString = [[NSUserDefaults standardUserDefaults] stringForKey:@"pureweb_url"];
+
+        appURL = [NSURL URLWithString:appURLString];
+        authenticationRequired = YES;
+
+        PWLogInfo(@"Launching App From Settings URL");
+    }
     
     //app was launched via fallback url, this is typically useful for default choices or as a development fallback
     else {
