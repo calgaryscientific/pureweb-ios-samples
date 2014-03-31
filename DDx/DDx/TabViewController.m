@@ -14,10 +14,17 @@
 #import "PWCommandResponseEventArgs.h"
 #import "PWDiagnosticViewController.h"
 #import "PWLog.h"
+#import "DDxServerServicePing.h"
+#import "DDxRoundtripPing.h"
 
 @interface TabViewController ()
 
 @property (strong) PWNavigationButtonCollectionView *navigationCollection;
+@property (strong) UISegmentedControl *serviceServerPingButton;
+@property (strong) UISegmentedControl *roundtripPingButton;
+
+@property (strong) DDxServerServicePing *serviceServerPing;
+@property (strong) DDxRoundtripPing *roundtripPing;
 @end
 
 @implementation TabViewController
@@ -25,9 +32,6 @@
 @synthesize sharedURL = _sharedURL;
 @synthesize optionsButton = _optionsButton;
 @synthesize shareButton = _shareButton;
-@synthesize pingButton = _pingButton;
-@synthesize pingStartDate = _pingStartDate;
-@synthesize pingCount = _pingCount;
 @synthesize sendingPingsView = _sendingPingsView; 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -57,7 +61,8 @@
     self.navigationCollection.buttonWidth = 100;
     self.optionsButton = [self.navigationCollection addButtonWithImage:[UIImage imageNamed:@"gear"] target:self action:@selector(optionsButtonPushed:)];
     self.shareButton = [self.navigationCollection addButtonWithImage:[UIImage imageNamed:@"persons"] target:self action:@selector(shareButtonPushed:)];
-    self.pingButton = [self.navigationCollection addButtonWithTitle:@"Ping" target:self action:@selector(pingButtonPushed:)];
+    self.roundtripPingButton = [self.navigationCollection addButtonWithTitle:@"Roundtrip" target:self action:@selector(roundtripPingButtonPressed:)];
+    self.serviceServerPingButton = [self.navigationCollection addButtonWithTitle:@"Service Server" target:self action:@selector(servicePingButtonPressed:)];
     [self.navigationCollection addButtonWithTitle:@"Diagnostics" target:self action:@selector(diagnosticsButtonPushed:)];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.navigationCollection];
@@ -189,55 +194,65 @@
     }
 }
 
-- (void)pingButtonPushed:(id)sender
+#pragma mark - Ping Stuff
+- (void) startPing
 {
-    self.pingCount = 0;
-    self.pingStartDate = [NSDate date];
-    
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];  
-    self.sendingPingsView = [[UIAlertView alloc] initWithTitle:@"Sending Pings" message:@"Please Wait..." delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];  
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.sendingPingsView = [[UIAlertView alloc] initWithTitle:@"Sending Pings" message:@"Please Wait..." delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
     [self.sendingPingsView show];
     [self.sendingPingsView addSubview:spinner];
-    spinner.center = CGPointMake(self.sendingPingsView.bounds.size.width / 2, self.sendingPingsView.bounds.size.height - 50);  
-    [spinner startAnimating];  
-
-    [self sendPing]; 
-}
-
-- (void)onPingComplete:(PWCommandResponseEventArgs *)args
-{
-    if (![[args.response getText:@"PingResponse"] isEqual:@"DDxPong"])
-    {
-        [NSException raise:@"InvalidResponse" format:@"DDxPong was not returned as part of the response"];
-    }
+    spinner.center = CGPointMake(self.sendingPingsView.bounds.size.width / 2, self.sendingPingsView.bounds.size.height - 50);
+    [spinner startAnimating];
     
-    self.pingCount++;
-    if (self.pingCount >= 10)
-    { 
-        [self.sendingPingsView dismissWithClickedButtonIndex:0 animated:NO];
-        self.sendingPingsView = nil;
-        
-        NSInteger elapsedMilliseconds = [self.pingStartDate timeIntervalSinceNow] * -1000.0;
-        NSString *message = [NSString stringWithFormat:@"Total Pings: %d\nTotal Elapsed: %dms\nAverage RTT: %dms", self.pingCount, elapsedMilliseconds, elapsedMilliseconds/self.pingCount];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ping Results" 
-                                                        message:message 
-                                                       delegate:nil 
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
-    else 
-    {   
-        [self sendPing];
-    }
 }
 
-- (void)sendPing
+- (void)roundtripPingButtonPressed:(id)sender
 {
-    [[PWFramework sharedInstance].client queueCommand:@"DDxPing" 
-                                       withParameters:nil 
-                                    isDeferredCommand:NO 
-                                           onComplete:^(PWCommandResponseEventArgs *args) { [self onPingComplete:args]; } ];
+    [self startPing];
+    
+    self.roundtripPing = [DDxRoundtripPing new];
+    
+    [self.roundtripPing ping:^(int numPings, double average, NSArray *times) {
+        
+        [self showPingResults:@"Roundtrip Ping" totalPings:numPings withAverageTime:average];
+        self.roundtripPing = nil;
+    }];
+    
+}
+
+- (void)servicePingButtonPressed:(id) sender
+{
+    [self startPing];
+    
+    self.serviceServerPing = [DDxServerServicePing new];
+    
+    [self.serviceServerPing ping:^(int numPings, double average, NSArray *times) {
+        
+        [self showPingResults:@"Service Server Ping" totalPings:numPings withAverageTime:average];
+        self.serviceServerPing = nil;
+    }];
+
+}
+
+
+- (void) showPingResults:(NSString *) pingType totalPings: (NSInteger) numPings withAverageTime: (double) pingAverage
+{
+    
+    [self.sendingPingsView dismissWithClickedButtonIndex:0 animated:NO];
+    self.sendingPingsView = nil;
+    
+    NSString *message = [NSString stringWithFormat:@"%@\nTotal Pings: %d\nAverage: %.2fms",
+                         pingType,
+                         numPings,
+                         pingAverage];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ping Results"
+                                                    message:message
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    
 }
 
 - (void)hideOptionsButtonForViewController:(UIViewController *)viewController
