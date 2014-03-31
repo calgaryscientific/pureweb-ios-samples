@@ -75,6 +75,8 @@
 		4380763418E1DA1500A6E8CD /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 4380763318E1DA1500A6E8CD /* gear.png */; };
 		4380763618E1DB9F00A6E8CD /* persons.png in Resources */ = {isa = PBXBuildFile; fileRef = 4380763518E1DB9F00A6E8CD /* persons.png */; };
 		4380763C18E1E14500A6E8CD /* invalidate-persons-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 4380763B18E1E14500A6E8CD /* invalidate-persons-small.png */; };
+		43D7E1CC18E9F8FF00A3AF66 /* DDxServerServicePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D7E1CB18E9F8FF00A3AF66 /* DDxServerServicePing.m */; };
+		43D7E1D018EA059600A3AF66 /* DDxRoundtripPing.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D7E1CF18EA059600A3AF66 /* DDxRoundtripPing.m */; };
 		6176B737FBCB4BDE8527A167 /* libPods-DDx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8740A2D9046447A9167E838 /* libPods-DDx.a */; };
 		83F853D218A3D4E400AD0E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F853D118A3D4E400AD0E5E /* Foundation.framework */; };
 		83F853D418A3D4E400AD0E5E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F853D318A3D4E400AD0E5E /* CoreGraphics.framework */; };
@@ -196,6 +198,10 @@
 		4380763318E1DA1500A6E8CD /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		4380763518E1DB9F00A6E8CD /* persons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = persons.png; sourceTree = "<group>"; };
 		4380763B18E1E14500A6E8CD /* invalidate-persons-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "invalidate-persons-small.png"; sourceTree = "<group>"; };
+		43D7E1CA18E9F8FF00A3AF66 /* DDxServerServicePing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDxServerServicePing.h; sourceTree = "<group>"; };
+		43D7E1CB18E9F8FF00A3AF66 /* DDxServerServicePing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDxServerServicePing.m; sourceTree = "<group>"; };
+		43D7E1CE18EA059600A3AF66 /* DDxRoundtripPing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDxRoundtripPing.h; sourceTree = "<group>"; };
+		43D7E1CF18EA059600A3AF66 /* DDxRoundtripPing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDxRoundtripPing.m; sourceTree = "<group>"; };
 		83F853CE18A3D4E400AD0E5E /* DDx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F853D118A3D4E400AD0E5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		83F853D318A3D4E400AD0E5E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -327,6 +333,17 @@
 			name = "Old PureWeb UI";
 			sourceTree = "<group>";
 		};
+		43D7E1C918E9F8DA00A3AF66 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				43D7E1CA18E9F8FF00A3AF66 /* DDxServerServicePing.h */,
+				43D7E1CB18E9F8FF00A3AF66 /* DDxServerServicePing.m */,
+				43D7E1CE18EA059600A3AF66 /* DDxRoundtripPing.h */,
+				43D7E1CF18EA059600A3AF66 /* DDxRoundtripPing.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		83F853C518A3D4E400AD0E5E = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +378,7 @@
 		83F853D718A3D4E400AD0E5E /* DDx */ = {
 			isa = PBXGroup;
 			children = (
+				43D7E1C918E9F8DA00A3AF66 /* Utility */,
 				438075E818E0BAD900A6E8CD /* Old PureWeb UI */,
 				438075E718E0BA1B00A6E8CD /* Supporting Files */,
 				4380758918E0B96A00A6E8CD /* AppDelegate.h */,
@@ -566,6 +584,7 @@
 				4380762518E0BB4000A6E8CD /* PWLoginViewController.m in Sources */,
 				438075A518E0B96A00A6E8CD /* AspectRatioViewController.m in Sources */,
 				4380762618E0BB4000A6E8CD /* PWDiagnosticViewDelegate.m in Sources */,
+				43D7E1CC18E9F8FF00A3AF66 /* DDxServerServicePing.m in Sources */,
 				4380762C18E0BB4000A6E8CD /* PWAppStateView.m in Sources */,
 				4380761818E0BB4000A6E8CD /* PWTouchButtonView.m in Sources */,
 				4380761918E0BB4000A6E8CD /* PWTimingView.m in Sources */,
@@ -575,6 +594,7 @@
 				4380762018E0BB4000A6E8CD /* PWOptionViewController.m in Sources */,
 				4380761518E0BB4000A6E8CD /* UIAlertView+PWUtils.m in Sources */,
 				4380761E18E0BB4000A6E8CD /* PWProfilerView.m in Sources */,
+				43D7E1D018EA059600A3AF66 /* DDxRoundtripPing.m in Sources */,
 				4380762218E0BB4000A6E8CD /* PWNavigationController.m in Sources */,
 				438075B218E0B96A00A6E8CD /* TabViewController.m in Sources */,
 				4380761A18E0BB4000A6E8CD /* PWTiming.m in Sources */,
