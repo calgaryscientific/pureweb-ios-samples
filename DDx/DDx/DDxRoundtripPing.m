@@ -46,7 +46,7 @@
 - (void) finish
 {
     //invoke the completion block with the required values
-    __block NSNumber *pingSum = 0;
+    __block NSNumber *pingSum = @(0);
     [self.pingResults enumerateObjectsUsingBlock:^(NSNumber *result, NSUInteger idx, BOOL *stop) {
         
         pingSum = @([pingSum floatValue] + [result floatValue]);
