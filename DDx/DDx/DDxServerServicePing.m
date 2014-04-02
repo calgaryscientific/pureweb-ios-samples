@@ -5,6 +5,8 @@
 @interface DDxServerServicePing ()
 
 @property NSInteger totalPings;
+@property NSInteger completedPings;
+
 @property NSMutableArray *pingResults;
 
 @property (nonatomic, copy) DDxPingCompletion completion;
@@ -28,6 +30,7 @@
 - (void) start
 {
     self.totalPings = 10;
+    self.completedPings = 0;
     
     self.pingResults = [NSMutableArray array];
     
@@ -41,15 +44,16 @@
 {
     //remove the listener on app state
     [[PWFramework sharedInstance].state.stateManager removeValueChangedHandler:@"DDxServiceServerPingResponseCount" target:self action:@selector(didReceivePingResponse:)];
+
     
     //invoke the completion block with the required values
-    __block NSNumber *pingSum = 0;
+    __block float pingSum = 0;
     [self.pingResults enumerateObjectsUsingBlock:^(NSNumber *result, NSUInteger idx, BOOL *stop) {
         
-        pingSum = @([pingSum floatValue] + [result floatValue]);
+        pingSum += [result floatValue];
     }];
     
-    float pingAverage = [pingSum floatValue] / (float) self.totalPings;
+    float pingAverage = pingSum / (float) self.totalPings;
     
     self.completion(self.totalPings, pingAverage, self.pingResults);
 
@@ -73,9 +77,9 @@
     [self.pingResults addObject:@(result)];
     
     //determine if the ping process should continue
-    NSInteger completedPings = [args.newValue integerValue];
+    self.completedPings++;
     
-    if (completedPings < self.totalPings) {
+    if (self.completedPings < self.totalPings) {
         
         [self triggerPing];
     }

@@ -46,13 +46,13 @@
 - (void) finish
 {
     //invoke the completion block with the required values
-    __block NSNumber *pingSum = 0;
+    __block float pingSum = 0;
     [self.pingResults enumerateObjectsUsingBlock:^(NSNumber *result, NSUInteger idx, BOOL *stop) {
         
-        pingSum = @([pingSum floatValue] + [result floatValue]);
+        pingSum += [result floatValue];
     }];
     
-    float pingAverage = [pingSum floatValue] / (float) self.totalPings;
+    float pingAverage = pingSum/ (float) self.totalPings;
     
     self.completion(self.totalPings, pingAverage, self.pingResults);
 }
