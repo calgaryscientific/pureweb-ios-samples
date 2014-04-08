@@ -59,8 +59,6 @@
 }
 - (void)viewDidLoad
 {
-    self.trayExtended = NO; //(???)
-    
     //listen for changes in app state
     [[PWFramework sharedInstance].state.stateManager addValueChangedHandler:@"/ScribbleColor"
                                                                      target:self
@@ -78,6 +76,12 @@
 
 }
 
+- (void) viewWillLayoutSubviews {
+    
+    
+    self.trayExtended = NO; //whenever the view does a layout we need to restore the extended to no, since the container will return to the autolayout proportions
+    
+}
 - (void)setupColorButtons
 {
     [self.enclosingView.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
