@@ -23,6 +23,7 @@
 @property (strong) PWNavigationButtonCollectionView *navigationCollection;
 @property (strong) UISegmentedControl *serviceServerPingButton;
 @property (strong) UISegmentedControl *roundtripPingButton;
+@property (strong) UIButton *invalidateShareButton;
 
 @property (strong) DDxServerServicePing *serviceServerPing;
 @property (strong) DDxRoundtripPing *roundtripPing;
@@ -35,8 +36,7 @@
 @synthesize shareButton = _shareButton;
 @synthesize sendingPingsView = _sendingPingsView; 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.delegate = self;
@@ -44,8 +44,7 @@
     return self;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     self.delegate = nil;
 }
 
@@ -54,135 +53,127 @@
     [self.navigationCollection inspect];
     
 }
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     
     // Navigation buttons (top right)
     self.navigationCollection = [[PWNavigationButtonCollectionView alloc] init];
     self.navigationCollection.buttonWidth = 100;
-    self.optionsButton = [self.navigationCollection addButtonWithImage:[UIImage imageNamed:@"gear"] target:self action:@selector(optionsButtonPushed:)];
+    self.invalidateShareButton = [self.navigationCollection addButtonWithImage:[UIImage imageNamed:@"invalidate-persons-small"] target:self action:@selector(invalidateButtonPressed:)];
     self.shareButton = [self.navigationCollection addButtonWithImage:[UIImage imageNamed:@"persons"] target:self action:@selector(shareButtonPushed:)];
+    self.optionsButton = [self.navigationCollection addButtonWithImage:[UIImage imageNamed:@"gear"] target:self action:@selector(optionsButtonPushed:)];
     self.roundtripPingButton = [self.navigationCollection addButtonWithTitle:@"Roundtrip" target:self action:@selector(roundtripPingButtonPressed:)];
     self.serviceServerPingButton = [self.navigationCollection addButtonWithTitle:@"Service Server" target:self action:@selector(servicePingButtonPressed:)];
     [self.navigationCollection addButtonWithTitle:@"Diagnostics" target:self action:@selector(diagnosticsButtonPushed:)];
     
+
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.navigationCollection];
 
+    self.invalidateShareButton.hidden = YES;
 
     [super viewDidLoad];
 }
 
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [super viewDidUnload];
 }
 
-- (void) viewWasPushed {
-    
-    
-    
-}
 
-- (void)viewWasPopped
-{
+- (void)viewWasPopped {
     for (UIViewController *v in self.viewControllers)
         if ([v respondsToSelector:@selector(viewWasPopped)])
             [(id<PWNavigationControllerDelegate>)v viewWasPopped];
 }
 
-- (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated
-{
+- (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated {
     [super setViewControllers:viewControllers animated:animated];
     [self hideOptionsButtonForViewController:[self.viewControllers objectAtIndex:0]];
 }
 
-- (void)shareButtonPushed:(id)sender
-{
-    if (self.shareButton.isEnabled)
-    {
+- (void)shareButtonPushed:(id)sender {
+    //if the share is active (i.e. already got and not invalidated) then we simply show the mail window, otherwise we need to get the share url
+    
+    if (self.sharedURL) {
+        
+        [self presentMailControllerWithURL:self.sharedURL];
+        
+    }
+    
+    else {
         
         PWWebClient *client = [[PWFramework sharedInstance] client];
-        if (self.sharedURL == nil)
-        {
-            [client getSessionShareUrlAsyncWithPassword:@"Scientific" 
-                                        shareDescriptor:@"" 
-                                           shareTimeout:1800000 
-                                                 target:self 
-                                                 action:@selector(getSessionShareUrlAsyncDidFinish:)];
-        }
-        else 
-        {
-            [client invalidateSessionShareUrlAsync:self.sharedURL 
-                                            target:self 
-                                            action:@selector(invalidateShareUrlDidFinish:)];
-        }
+        
+        [client getSessionShareUrlAsyncWithPassword:@"Scientific"
+                                    shareDescriptor:@""
+                                       shareTimeout:1800000
+                                             target:self
+                                             action:@selector(getSessionShareUrlAsyncDidFinish:)];
     }
 }
 
-- (void)getSessionShareUrlAsyncDidFinish:(PWServiceRequestCompletedEventArgs *)args
-{
+- (void)getSessionShareUrlAsyncDidFinish:(PWServiceRequestCompletedEventArgs *)args {
     
-    if (args.request.status == PWServiceRequestStatusSuccess)
-    {
+    if (args.request.status == PWServiceRequestStatusSuccess) {
         PWAppShare *appShare = (PWAppShare *)args.request;        
         self.sharedURL = [appShare shareUrl];
         
-        //change button for share
-        UIImage *invalidateIcon = [UIImage imageNamed:@"invalidate-persons-small"];
+        [self presentMailControllerWithURL:self.sharedURL];
         
-        [self.shareButton setBackgroundImage:invalidateIcon forState:UIControlStateNormal];
-        [self.shareButton setBackgroundImage:invalidateIcon forState:UIControlStateSelected];
-
-        
-        MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
-        if (mailController != nil) 
-        {
-            mailController.navigationBar.tintColor = [UIColor darkGrayColor];
-            mailController.mailComposeDelegate = self;
-            [mailController setSubject:@"Please join my shared PureWeb session."];
-            [mailController setMessageBody:self.sharedURL isHTML:NO];
-
-            [self presentViewController:mailController animated:YES completion:^{
-                
-                
-                
-            }];
-            
-        }
+        self.invalidateShareButton.hidden = NO;
     }
-    else 
-    {
+    else {
         [UIAlertView showAlert:@"There was an error while creating the application share" 
                        message:[args.request.error description]];
     }
 }
 
-- (void)invalidateShareUrlDidFinish:(PWServiceRequestCompletedEventArgs *)args
-{
-    
-    if (args.request.status == PWServiceRequestStatusSuccess)
-    {
-        self.sharedURL = nil;
 
-        UIImage *normalIcon = [UIImage imageNamed:@"persons"];
+- (void) presentMailControllerWithURL:(NSString *) sharedURL {
+    
+    MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+    if (mailController != nil) {
+        mailController.navigationBar.tintColor = [UIColor darkGrayColor];
+        mailController.mailComposeDelegate = self;
+        [mailController setSubject:@"Please join my shared PureWeb session."];
+        [mailController setMessageBody:sharedURL isHTML:NO];
         
-        [self.shareButton setBackgroundImage:normalIcon forState:UIControlStateNormal];
-        [self.shareButton setBackgroundImage:normalIcon forState:UIControlStateSelected];
-        
+        [self presentViewController:mailController animated:YES completion:^{
+            
+        }];
+    }
+}
+
+- (void) invalidateButtonPressed:(id) sender {
+    
+    
+    PWWebClient *client = [[PWFramework sharedInstance] client];
+    
+    [client invalidateSessionShareUrlAsync:self.sharedURL
+                                    target:self
+                                    action:@selector(invalidateShareUrlDidFinish:)];
+    
+    
+    
+    
+}
+
+- (void)invalidateShareUrlDidFinish:(PWServiceRequestCompletedEventArgs *)args {
+    
+    if (args.request.status == PWServiceRequestStatusSuccess) {
+        self.sharedURL = nil;
+        self.invalidateShareButton.hidden = YES;
+
         
         [UIAlertView showAlert:@"Share Session Deleted" 
                        message:@"The share url has been successfully deleted"];
     }
-    else 
-    {
+    else {
         [UIAlertView showAlert:@"There was an error while invalidating the application share" 
                        message:[args.request.error description]];
     }
 }
 
-- (void)diagnosticsButtonPushed:(id)sender
-{
+- (void)diagnosticsButtonPushed:(id)sender {
     
     NSString *diagnosticsStoryboardName;
     if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -206,17 +197,14 @@
     }];
 }
 
-- (void)optionsButtonPushed:(id)sender
-{
-    if ([self.selectedViewController conformsToProtocol:@protocol(OptionsPanelDelegate)])
-    {
+- (void)optionsButtonPushed:(id)sender {
+    if ([self.selectedViewController conformsToProtocol:@protocol(OptionsPanelDelegate)]) {
         [(id<OptionsPanelDelegate>)self.selectedViewController didRequestOptionsPanel];
     }
 }
 
 #pragma mark - Ping Stuff
-- (void) startPing
-{
+- (void) startPing {
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     self.sendingPingsView = [[UIAlertView alloc] initWithTitle:@"Sending Pings" message:@"Please Wait..." delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
     [self.sendingPingsView show];
@@ -226,8 +214,7 @@
     
 }
 
-- (void)roundtripPingButtonPressed:(id)sender
-{
+- (void)roundtripPingButtonPressed:(id)sender {
     [self startPing];
     
     self.roundtripPing = [DDxRoundtripPing new];
@@ -240,8 +227,7 @@
     
 }
 
-- (void)servicePingButtonPressed:(id) sender
-{
+- (void)servicePingButtonPressed:(id) sender {
     [self startPing];
     
     self.serviceServerPing = [DDxServerServicePing new];
@@ -255,8 +241,7 @@
 }
 
 
-- (void) showPingResults:(NSString *) pingType totalPings: (NSInteger) numPings withAverageTime: (double) pingAverage
-{
+- (void) showPingResults:(NSString *) pingType totalPings: (NSInteger) numPings withAverageTime: (double) pingAverage {
     
     [self.sendingPingsView dismissWithClickedButtonIndex:0 animated:NO];
     self.sendingPingsView = nil;
@@ -275,18 +260,15 @@
     
 }
 
-- (void)hideOptionsButtonForViewController:(UIViewController *)viewController
-{
+- (void)hideOptionsButtonForViewController:(UIViewController *)viewController {
     self.optionsButton.hidden = ![viewController conformsToProtocol:@protocol(OptionsPanelDelegate)];
 }
 
 #pragma mark -
 #pragma mark MFMailComposeViewControllerDelegate
 
-- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error 
-{
-    if (!result == MFMailComposeResultSent)
-    {
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error  {
+    if (!result == MFMailComposeResultSent) {
         [UIAlertView showAlert:@"Failed to send email!" message:[error localizedDescription] ];
 
     }
@@ -294,16 +276,13 @@
     [self becomeFirstResponder];
     [self dismissViewControllerAnimated:YES completion:^{
         
-
-        
     }];
 }
 
 #pragma mark -
 #pragma mark UITabBarControllerDelegate
 
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-{
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     [self hideOptionsButtonForViewController:viewController];
 }
 
