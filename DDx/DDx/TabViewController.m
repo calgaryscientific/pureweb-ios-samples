@@ -23,6 +23,7 @@
 @property (strong) PWNavigationButtonCollectionView *navigationCollection;
 @property (strong) UISegmentedControl *serviceServerPingButton;
 @property (strong) UISegmentedControl *roundtripPingButton;
+@property (strong) UIButton *invalidateShareButton;
 
 @property (strong) DDxServerServicePing *serviceServerPing;
 @property (strong) DDxRoundtripPing *roundtripPing;
@@ -60,14 +61,17 @@
     // Navigation buttons (top right)
     self.navigationCollection = [[PWNavigationButtonCollectionView alloc] init];
     self.navigationCollection.buttonWidth = 100;
-    self.optionsButton = [self.navigationCollection addButtonWithImage:[UIImage imageNamed:@"gear"] target:self action:@selector(optionsButtonPushed:)];
+    self.invalidateShareButton = [self.navigationCollection addButtonWithImage:[UIImage imageNamed:@"invalidate-persons-small"] target:self action:@selector(invalidateButtonPressed:)];
     self.shareButton = [self.navigationCollection addButtonWithImage:[UIImage imageNamed:@"persons"] target:self action:@selector(shareButtonPushed:)];
+    self.optionsButton = [self.navigationCollection addButtonWithImage:[UIImage imageNamed:@"gear"] target:self action:@selector(optionsButtonPushed:)];
     self.roundtripPingButton = [self.navigationCollection addButtonWithTitle:@"Roundtrip" target:self action:@selector(roundtripPingButtonPressed:)];
     self.serviceServerPingButton = [self.navigationCollection addButtonWithTitle:@"Service Server" target:self action:@selector(servicePingButtonPressed:)];
     [self.navigationCollection addButtonWithTitle:@"Diagnostics" target:self action:@selector(diagnosticsButtonPushed:)];
     
+
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.navigationCollection];
 
+    self.invalidateShareButton.hidden = YES;
 
     [super viewDidLoad];
 }
@@ -99,24 +103,23 @@
 
 - (void)shareButtonPushed:(id)sender
 {
-    if (self.shareButton.isEnabled)
-    {
+    //if the share is active (i.e. already got and not invalidated) then we simply show the mail window, otherwise we need to get the share url
+    
+    if (self.sharedURL) {
+        
+        [self presentMailControllerWithURL:self.sharedURL];
+        
+    }
+    
+    else {
         
         PWWebClient *client = [[PWFramework sharedInstance] client];
-        if (self.sharedURL == nil)
-        {
-            [client getSessionShareUrlAsyncWithPassword:@"Scientific" 
-                                        shareDescriptor:@"" 
-                                           shareTimeout:1800000 
-                                                 target:self 
-                                                 action:@selector(getSessionShareUrlAsyncDidFinish:)];
-        }
-        else 
-        {
-            [client invalidateSessionShareUrlAsync:self.sharedURL 
-                                            target:self 
-                                            action:@selector(invalidateShareUrlDidFinish:)];
-        }
+        
+        [client getSessionShareUrlAsyncWithPassword:@"Scientific"
+                                    shareDescriptor:@""
+                                       shareTimeout:1800000
+                                             target:self
+                                             action:@selector(getSessionShareUrlAsyncDidFinish:)];
     }
 }
 
@@ -128,34 +131,46 @@
         PWAppShare *appShare = (PWAppShare *)args.request;        
         self.sharedURL = [appShare shareUrl];
         
-        //change button for share
-        UIImage *invalidateIcon = [UIImage imageNamed:@"invalidate-persons-small"];
+        [self presentMailControllerWithURL:self.sharedURL];
         
-        [self.shareButton setBackgroundImage:invalidateIcon forState:UIControlStateNormal];
-        [self.shareButton setBackgroundImage:invalidateIcon forState:UIControlStateSelected];
-
-        
-        MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
-        if (mailController != nil) 
-        {
-            mailController.navigationBar.tintColor = [UIColor darkGrayColor];
-            mailController.mailComposeDelegate = self;
-            [mailController setSubject:@"Please join my shared PureWeb session."];
-            [mailController setMessageBody:self.sharedURL isHTML:NO];
-
-            [self presentViewController:mailController animated:YES completion:^{
-                
-                
-                
-            }];
-            
-        }
+        self.invalidateShareButton.hidden = NO;
     }
-    else 
+    else
     {
         [UIAlertView showAlert:@"There was an error while creating the application share" 
                        message:[args.request.error description]];
     }
+}
+
+
+- (void) presentMailControllerWithURL:(NSString *) sharedURL {
+    
+    MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+    if (mailController != nil)
+    {
+        mailController.navigationBar.tintColor = [UIColor darkGrayColor];
+        mailController.mailComposeDelegate = self;
+        [mailController setSubject:@"Please join my shared PureWeb session."];
+        [mailController setMessageBody:sharedURL isHTML:NO];
+        
+        [self presentViewController:mailController animated:YES completion:^{
+            
+        }];
+    }
+}
+
+- (void) invalidateButtonPressed:(id) sender {
+    
+    
+    PWWebClient *client = [[PWFramework sharedInstance] client];
+    
+    [client invalidateSessionShareUrlAsync:self.sharedURL
+                                    target:self
+                                    action:@selector(invalidateShareUrlDidFinish:)];
+    
+    
+    
+    
 }
 
 - (void)invalidateShareUrlDidFinish:(PWServiceRequestCompletedEventArgs *)args
@@ -164,12 +179,8 @@
     if (args.request.status == PWServiceRequestStatusSuccess)
     {
         self.sharedURL = nil;
+        self.invalidateShareButton.hidden = YES;
 
-        UIImage *normalIcon = [UIImage imageNamed:@"persons"];
-        
-        [self.shareButton setBackgroundImage:normalIcon forState:UIControlStateNormal];
-        [self.shareButton setBackgroundImage:normalIcon forState:UIControlStateSelected];
-        
         
         [UIAlertView showAlert:@"Share Session Deleted" 
                        message:@"The share url has been successfully deleted"];
