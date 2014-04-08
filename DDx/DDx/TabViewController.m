@@ -36,8 +36,7 @@
 @synthesize shareButton = _shareButton;
 @synthesize sendingPingsView = _sendingPingsView; 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.delegate = self;
@@ -45,8 +44,7 @@
     return self;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     self.delegate = nil;
 }
 
@@ -55,8 +53,7 @@
     [self.navigationCollection inspect];
     
 }
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     
     // Navigation buttons (top right)
     self.navigationCollection = [[PWNavigationButtonCollectionView alloc] init];
@@ -77,32 +74,23 @@
 }
 
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [super viewDidUnload];
 }
 
-- (void) viewWasPushed {
-    
-    
-    
-}
 
-- (void)viewWasPopped
-{
+- (void)viewWasPopped {
     for (UIViewController *v in self.viewControllers)
         if ([v respondsToSelector:@selector(viewWasPopped)])
             [(id<PWNavigationControllerDelegate>)v viewWasPopped];
 }
 
-- (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated
-{
+- (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated {
     [super setViewControllers:viewControllers animated:animated];
     [self hideOptionsButtonForViewController:[self.viewControllers objectAtIndex:0]];
 }
 
-- (void)shareButtonPushed:(id)sender
-{
+- (void)shareButtonPushed:(id)sender {
     //if the share is active (i.e. already got and not invalidated) then we simply show the mail window, otherwise we need to get the share url
     
     if (self.sharedURL) {
@@ -123,11 +111,9 @@
     }
 }
 
-- (void)getSessionShareUrlAsyncDidFinish:(PWServiceRequestCompletedEventArgs *)args
-{
+- (void)getSessionShareUrlAsyncDidFinish:(PWServiceRequestCompletedEventArgs *)args {
     
-    if (args.request.status == PWServiceRequestStatusSuccess)
-    {
+    if (args.request.status == PWServiceRequestStatusSuccess) {
         PWAppShare *appShare = (PWAppShare *)args.request;        
         self.sharedURL = [appShare shareUrl];
         
@@ -135,8 +121,7 @@
         
         self.invalidateShareButton.hidden = NO;
     }
-    else
-    {
+    else {
         [UIAlertView showAlert:@"There was an error while creating the application share" 
                        message:[args.request.error description]];
     }
@@ -146,8 +131,7 @@
 - (void) presentMailControllerWithURL:(NSString *) sharedURL {
     
     MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
-    if (mailController != nil)
-    {
+    if (mailController != nil) {
         mailController.navigationBar.tintColor = [UIColor darkGrayColor];
         mailController.mailComposeDelegate = self;
         [mailController setSubject:@"Please join my shared PureWeb session."];
@@ -173,11 +157,9 @@
     
 }
 
-- (void)invalidateShareUrlDidFinish:(PWServiceRequestCompletedEventArgs *)args
-{
+- (void)invalidateShareUrlDidFinish:(PWServiceRequestCompletedEventArgs *)args {
     
-    if (args.request.status == PWServiceRequestStatusSuccess)
-    {
+    if (args.request.status == PWServiceRequestStatusSuccess) {
         self.sharedURL = nil;
         self.invalidateShareButton.hidden = YES;
 
@@ -185,15 +167,13 @@
         [UIAlertView showAlert:@"Share Session Deleted" 
                        message:@"The share url has been successfully deleted"];
     }
-    else 
-    {
+    else {
         [UIAlertView showAlert:@"There was an error while invalidating the application share" 
                        message:[args.request.error description]];
     }
 }
 
-- (void)diagnosticsButtonPushed:(id)sender
-{
+- (void)diagnosticsButtonPushed:(id)sender {
     
     NSString *diagnosticsStoryboardName;
     if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -217,17 +197,14 @@
     }];
 }
 
-- (void)optionsButtonPushed:(id)sender
-{
-    if ([self.selectedViewController conformsToProtocol:@protocol(OptionsPanelDelegate)])
-    {
+- (void)optionsButtonPushed:(id)sender {
+    if ([self.selectedViewController conformsToProtocol:@protocol(OptionsPanelDelegate)]) {
         [(id<OptionsPanelDelegate>)self.selectedViewController didRequestOptionsPanel];
     }
 }
 
 #pragma mark - Ping Stuff
-- (void) startPing
-{
+- (void) startPing {
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     self.sendingPingsView = [[UIAlertView alloc] initWithTitle:@"Sending Pings" message:@"Please Wait..." delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
     [self.sendingPingsView show];
@@ -237,8 +214,7 @@
     
 }
 
-- (void)roundtripPingButtonPressed:(id)sender
-{
+- (void)roundtripPingButtonPressed:(id)sender {
     [self startPing];
     
     self.roundtripPing = [DDxRoundtripPing new];
@@ -251,8 +227,7 @@
     
 }
 
-- (void)servicePingButtonPressed:(id) sender
-{
+- (void)servicePingButtonPressed:(id) sender {
     [self startPing];
     
     self.serviceServerPing = [DDxServerServicePing new];
@@ -266,8 +241,7 @@
 }
 
 
-- (void) showPingResults:(NSString *) pingType totalPings: (NSInteger) numPings withAverageTime: (double) pingAverage
-{
+- (void) showPingResults:(NSString *) pingType totalPings: (NSInteger) numPings withAverageTime: (double) pingAverage {
     
     [self.sendingPingsView dismissWithClickedButtonIndex:0 animated:NO];
     self.sendingPingsView = nil;
@@ -286,18 +260,15 @@
     
 }
 
-- (void)hideOptionsButtonForViewController:(UIViewController *)viewController
-{
+- (void)hideOptionsButtonForViewController:(UIViewController *)viewController {
     self.optionsButton.hidden = ![viewController conformsToProtocol:@protocol(OptionsPanelDelegate)];
 }
 
 #pragma mark -
 #pragma mark MFMailComposeViewControllerDelegate
 
-- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error 
-{
-    if (!result == MFMailComposeResultSent)
-    {
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error  {
+    if (!result == MFMailComposeResultSent) {
         [UIAlertView showAlert:@"Failed to send email!" message:[error localizedDescription] ];
 
     }
@@ -305,16 +276,13 @@
     [self becomeFirstResponder];
     [self dismissViewControllerAnimated:YES completion:^{
         
-
-        
     }];
 }
 
 #pragma mark -
 #pragma mark UITabBarControllerDelegate
 
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-{
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     [self hideOptionsButtonForViewController:viewController];
 }
 
