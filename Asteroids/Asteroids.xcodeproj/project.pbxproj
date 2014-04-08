@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4303355A18E9CEA9008BB121 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4303355918E9CEA9008BB121 /* Settings.bundle */; };
-		43176D1118DA043C001AC3F4 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 43176D1018DA043C001AC3F4 /* fire.png */; };
 		43176D1318DA0474001AC3F4 /* fire_68.png in Resources */ = {isa = PBXBuildFile; fileRef = 43176D1218DA0474001AC3F4 /* fire_68.png */; };
 		43176D1518DA04A1001AC3F4 /* shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 43176D1418DA04A1001AC3F4 /* shield.png */; };
 		4324FBC018D8D61600E37E15 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4324FBBE18D8D61600E37E15 /* Main_iPhone.storyboard */; };
@@ -50,7 +49,6 @@
 
 /* Begin PBXFileReference section */
 		4303355918E9CEA9008BB121 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		43176D1018DA043C001AC3F4 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
 		43176D1218DA0474001AC3F4 /* fire_68.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire_68.png; sourceTree = "<group>"; };
 		43176D1418DA04A1001AC3F4 /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
 		4324FBBF18D8D61600E37E15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -218,7 +216,6 @@
 				4303355918E9CEA9008BB121 /* Settings.bundle */,
 				43176D1418DA04A1001AC3F4 /* shield.png */,
 				43176D1218DA0474001AC3F4 /* fire_68.png */,
-				43176D1018DA043C001AC3F4 /* fire.png */,
 				83F8539518A3D4D700AD0E5E /* Asteroids-Info.plist */,
 				83F8539618A3D4D700AD0E5E /* InfoPlist.strings */,
 				83F8539918A3D4D700AD0E5E /* main.m */,
@@ -329,7 +326,6 @@
 				4324FBC018D8D61600E37E15 /* Main_iPhone.storyboard in Resources */,
 				435682B718D7AFB0004F9965 /* fire.png in Resources */,
 				83F8539818A3D4D700AD0E5E /* InfoPlist.strings in Resources */,
-				43176D1118DA043C001AC3F4 /* fire.png in Resources */,
 				4303355A18E9CEA9008BB121 /* Settings.bundle in Resources */,
 				43176D1318DA0474001AC3F4 /* fire_68.png in Resources */,
 			);
