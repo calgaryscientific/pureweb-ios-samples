@@ -11,7 +11,7 @@
 #import "DDxView.h"
 #import "PWTouchButtonView.h"
 #import "PWLog.h"
-#import "PWDiagnosticViewDelegate.h"
+#import "DiagnosticViewDelegate.h"
 
 @interface PGViewController ()
 @property (nonatomic, readonly, strong) PWMutableEncoderConfiguration *encoderConfiguration;
@@ -39,15 +39,17 @@
     _pgView.viewName = @"PGView";
     _pgView.showImageDetails = YES;
     [_pgView updateLabel:nil];
-    _pgView.delegate = [PWDiagnosticViewDelegate sharedInstance];
+    _pgView.delegate = [DiagnosticViewDelegate sharedInstance];
     
-    [[PWDiagnosticViewDelegate sharedInstance].encoderConfiguration.changed addSubscriber:self action:@selector(encoderConfigurationDidChange:)];
+    [[DiagnosticViewDelegate sharedInstance].encoderConfiguration.changed addSubscriber:self action:@selector(encoderConfigurationDidChange:)];
     
     [self.view addSubview:_pgView];
 
     _touchButton = [[PWTouchButtonView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
     _touchButton.hidden = NO;
     [_pgView addSubview:_touchButton];
+    
+    [self encoderConfigurationDidChange:nil]; 
     
 }
 
@@ -235,9 +237,9 @@
         }];
 }
 
-- (PWEncoderConfiguration *)encoderConfiguration
+- (PWMutableEncoderConfiguration *)encoderConfiguration
 {
-    PWMutableEncoderConfiguration *encoderConfiguration = [PWDiagnosticViewDelegate sharedInstance].encoderConfiguration;
+    PWMutableEncoderConfiguration *encoderConfiguration = [DiagnosticViewDelegate sharedInstance].encoderConfiguration;
     return encoderConfiguration;
 }
 

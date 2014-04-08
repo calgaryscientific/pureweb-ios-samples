@@ -16,6 +16,7 @@
 #import "PWLog.h"
 #import "DDxServerServicePing.h"
 #import "DDxRoundtripPing.h"
+#import "DiagnosticsViewController.h"
 
 @interface TabViewController ()
 
@@ -182,8 +183,27 @@
 
 - (void)diagnosticsButtonPushed:(id)sender
 {
-    PWDiagnosticViewController *addController = [[PWDiagnosticViewController alloc] init];
-    [self.navigationController pushViewController:addController animated:YES];
+    
+    NSString *diagnosticsStoryboardName;
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        
+        diagnosticsStoryboardName = @"Diagnostics_iPad";
+        
+    }
+    else {
+        
+        diagnosticsStoryboardName = @"Diagnostics_iPhone";
+        
+    }
+    
+    //load the storyboard which contains the update diagnostics view (we have to do this because the old diagnostics panel is broke under iOS 7)
+    UIStoryboard *diagnosticsBoard = [UIStoryboard storyboardWithName:diagnosticsStoryboardName bundle:nil];
+    DiagnosticsViewController *dvc = [diagnosticsBoard instantiateViewControllerWithIdentifier:@"DiagnosticsViewController"];
+    
+    [self presentViewController:dvc animated:YES completion:^{
+        
+        NSLog(@"Diagnostics Loaded");
+    }];
 }
 
 - (void)optionsButtonPushed:(id)sender

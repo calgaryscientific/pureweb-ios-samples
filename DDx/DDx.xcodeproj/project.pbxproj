@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43281AF818F44D9300D51044 /* Diagnostics_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43281AF618F44D9300D51044 /* Diagnostics_iPad.storyboard */; };
+		43281AF918F44D9300D51044 /* Diagnostics_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43281AF718F44D9300D51044 /* Diagnostics_iPhone.storyboard */; };
+		43281B0C18F44F1C00D51044 /* AppStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43281AFC18F44F1C00D51044 /* AppStateViewController.m */; };
+		43281B0D18F44F1C00D51044 /* DiagnosticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43281AFE18F44F1C00D51044 /* DiagnosticsViewController.m */; };
+		43281B0E18F44F1C00D51044 /* DiagnosticViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43281B0018F44F1C00D51044 /* DiagnosticViewDelegate.m */; };
+		43281B0F18F44F1C00D51044 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43281B0218F44F1C00D51044 /* LoginViewController.m */; };
+		43281B1018F44F1C00D51044 /* NSURL+URLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 43281B0418F44F1C00D51044 /* NSURL+URLHelpers.m */; };
+		43281B1118F44F1C00D51044 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43281B0618F44F1C00D51044 /* OptionsViewController.m */; };
+		43281B1218F44F1C00D51044 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43281B0918F44F1C00D51044 /* Images.xcassets */; };
+		43281B1318F44F1C00D51044 /* TraceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43281B0B18F44F1C00D51044 /* TraceViewController.m */; };
 		438075A418E0B96A00A6E8CD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4380758A18E0B96A00A6E8CD /* AppDelegate.m */; };
 		438075A518E0B96A00A6E8CD /* AspectRatioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4380758C18E0B96A00A6E8CD /* AspectRatioViewController.m */; };
 		438075A618E0B96A00A6E8CD /* BabelControlCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4380758D18E0B96A00A6E8CD /* BabelControlCell.xib */; };
@@ -97,6 +107,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43281AF618F44D9300D51044 /* Diagnostics_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Diagnostics_iPad.storyboard; sourceTree = "<group>"; };
+		43281AF718F44D9300D51044 /* Diagnostics_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Diagnostics_iPhone.storyboard; sourceTree = "<group>"; };
+		43281AFB18F44F1C00D51044 /* AppStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppStateViewController.h; sourceTree = "<group>"; };
+		43281AFC18F44F1C00D51044 /* AppStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppStateViewController.m; sourceTree = "<group>"; };
+		43281AFD18F44F1C00D51044 /* DiagnosticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosticsViewController.h; sourceTree = "<group>"; };
+		43281AFE18F44F1C00D51044 /* DiagnosticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagnosticsViewController.m; sourceTree = "<group>"; };
+		43281AFF18F44F1C00D51044 /* DiagnosticViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosticViewDelegate.h; sourceTree = "<group>"; };
+		43281B0018F44F1C00D51044 /* DiagnosticViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagnosticViewDelegate.m; sourceTree = "<group>"; };
+		43281B0118F44F1C00D51044 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		43281B0218F44F1C00D51044 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		43281B0318F44F1C00D51044 /* NSURL+URLHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+URLHelpers.h"; sourceTree = "<group>"; };
+		43281B0418F44F1C00D51044 /* NSURL+URLHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+URLHelpers.m"; sourceTree = "<group>"; };
+		43281B0518F44F1C00D51044 /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
+		43281B0618F44F1C00D51044 /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
+		43281B0718F44F1C00D51044 /* PureWebUI-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureWebUI-Prefix.pch"; sourceTree = "<group>"; };
+		43281B0918F44F1C00D51044 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		43281B0A18F44F1C00D51044 /* TraceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraceViewController.h; sourceTree = "<group>"; };
+		43281B0B18F44F1C00D51044 /* TraceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraceViewController.m; sourceTree = "<group>"; };
 		4380758918E0B96A00A6E8CD /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4380758A18E0B96A00A6E8CD /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4380758B18E0B96A00A6E8CD /* AspectRatioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AspectRatioViewController.h; sourceTree = "<group>"; };
@@ -237,6 +265,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43281AF318F44D3000D51044 /* Diagnostics */ = {
+			isa = PBXGroup;
+			children = (
+				43281AF618F44D9300D51044 /* Diagnostics_iPad.storyboard */,
+				43281AF718F44D9300D51044 /* Diagnostics_iPhone.storyboard */,
+			);
+			name = Diagnostics;
+			sourceTree = "<group>";
+		};
+		43281AFA18F44F1C00D51044 /* PureWebUI */ = {
+			isa = PBXGroup;
+			children = (
+				43281AFB18F44F1C00D51044 /* AppStateViewController.h */,
+				43281AFC18F44F1C00D51044 /* AppStateViewController.m */,
+				43281AFD18F44F1C00D51044 /* DiagnosticsViewController.h */,
+				43281AFE18F44F1C00D51044 /* DiagnosticsViewController.m */,
+				43281AFF18F44F1C00D51044 /* DiagnosticViewDelegate.h */,
+				43281B0018F44F1C00D51044 /* DiagnosticViewDelegate.m */,
+				43281B0118F44F1C00D51044 /* LoginViewController.h */,
+				43281B0218F44F1C00D51044 /* LoginViewController.m */,
+				43281B0318F44F1C00D51044 /* NSURL+URLHelpers.h */,
+				43281B0418F44F1C00D51044 /* NSURL+URLHelpers.m */,
+				43281B0518F44F1C00D51044 /* OptionsViewController.h */,
+				43281B0618F44F1C00D51044 /* OptionsViewController.m */,
+				43281B0718F44F1C00D51044 /* PureWebUI-Prefix.pch */,
+				43281B0818F44F1C00D51044 /* Shared Resources */,
+				43281B0A18F44F1C00D51044 /* TraceViewController.h */,
+				43281B0B18F44F1C00D51044 /* TraceViewController.m */,
+			);
+			name = PureWebUI;
+			path = ../../PureWebUI/PureWebUI;
+			sourceTree = "<group>";
+		};
+		43281B0818F44F1C00D51044 /* Shared Resources */ = {
+			isa = PBXGroup;
+			children = (
+				43281B0918F44F1C00D51044 /* Images.xcassets */,
+			);
+			path = "Shared Resources";
+			sourceTree = "<group>";
+		};
 		438075B518E0BA0700A6E8CD /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +447,8 @@
 		83F853D718A3D4E400AD0E5E /* DDx */ = {
 			isa = PBXGroup;
 			children = (
+				43281AFA18F44F1C00D51044 /* PureWebUI */,
+				43281AF318F44D3000D51044 /* Diagnostics */,
 				43D7E1C918E9F8DA00A3AF66 /* Utility */,
 				438075E818E0BAD900A6E8CD /* Old PureWeb UI */,
 				438075E718E0BA1B00A6E8CD /* Supporting Files */,
@@ -491,6 +562,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				438075E318E0BA0800A6E8CD /* pureweb-t10.png in Resources */,
+				43281B1218F44F1C00D51044 /* Images.xcassets in Resources */,
 				4380763418E1DA1500A6E8CD /* gear.png in Resources */,
 				438075DA18E0BA0800A6E8CD /* 71-compass.png in Resources */,
 				438075D018E0BA0800A6E8CD /* 09-chat-2.png in Resources */,
@@ -507,10 +579,12 @@
 				438075A718E0B96A00A6E8CD /* BabelViewCell.xib in Resources */,
 				438075D718E0BA0800A6E8CD /* 186-ruler.png in Resources */,
 				438075E518E0BA0800A6E8CD /* TemplateIcon.icns in Resources */,
+				43281AF918F44D9300D51044 /* Diagnostics_iPhone.storyboard in Resources */,
 				438075B318E0B96A00A6E8CD /* TabViewController.xib in Resources */,
 				438075DD18E0BA0800A6E8CD /* Good.png in Resources */,
 				438075DE18E0BA0800A6E8CD /* invalidateShareUrl.png in Resources */,
 				4380762818E0BB4000A6E8CD /* PWCollaboratorCell.xib in Resources */,
+				43281AF818F44D9300D51044 /* Diagnostics_iPad.storyboard in Resources */,
 				438075D418E0BA0800A6E8CD /* 156-controlpad.png in Resources */,
 				438075CF18E0BA0800A6E8CD /* 08-chat.png in Resources */,
 				438075AB18E0B96A00A6E8CD /* DDxSettingsViewController.xib in Resources */,
@@ -577,6 +651,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43281B0F18F44F1C00D51044 /* LoginViewController.m in Sources */,
 				4380761D18E0BB4000A6E8CD /* PWSegmentsController.m in Sources */,
 				4380762B18E0BB4000A6E8CD /* PWAppStateViewController.m in Sources */,
 				438075A818E0B96A00A6E8CD /* BabelViewController.m in Sources */,
@@ -590,23 +665,29 @@
 				4380761918E0BB4000A6E8CD /* PWTimingView.m in Sources */,
 				438075AE18E0B96A00A6E8CD /* LocaleData.m in Sources */,
 				438075AA18E0B96A00A6E8CD /* DDxSettingsViewController.m in Sources */,
+				43281B1318F44F1C00D51044 /* TraceViewController.m in Sources */,
 				4380762718E0BB4000A6E8CD /* PWDiagnosticViewController.m in Sources */,
+				43281B0C18F44F1C00D51044 /* AppStateViewController.m in Sources */,
 				4380762018E0BB4000A6E8CD /* PWOptionViewController.m in Sources */,
 				4380761518E0BB4000A6E8CD /* UIAlertView+PWUtils.m in Sources */,
 				4380761E18E0BB4000A6E8CD /* PWProfilerView.m in Sources */,
 				43D7E1D018EA059600A3AF66 /* DDxRoundtripPing.m in Sources */,
 				4380762218E0BB4000A6E8CD /* PWNavigationController.m in Sources */,
 				438075B218E0B96A00A6E8CD /* TabViewController.m in Sources */,
+				43281B0D18F44F1C00D51044 /* DiagnosticsViewController.m in Sources */,
 				4380761A18E0BB4000A6E8CD /* PWTiming.m in Sources */,
 				438075B118E0B96A00A6E8CD /* PGViewController.m in Sources */,
 				4380762918E0BB4000A6E8CD /* PWCollaboratorCell.m in Sources */,
 				438075AF18E0B96A00A6E8CD /* PGSettingsViewController.m in Sources */,
+				43281B0E18F44F1C00D51044 /* DiagnosticViewDelegate.m in Sources */,
 				438075AC18E0B96A00A6E8CD /* DDxView.m in Sources */,
 				4380761718E0BB4000A6E8CD /* PWTraceView.m in Sources */,
 				438075A418E0B96A00A6E8CD /* AppDelegate.m in Sources */,
 				4380762318E0BB4000A6E8CD /* PWNavigationButtonCollectionView.m in Sources */,
+				43281B1018F44F1C00D51044 /* NSURL+URLHelpers.m in Sources */,
 				438075E118E0BA0800A6E8CD /* main.m in Sources */,
 				4380761C18E0BB4000A6E8CD /* PWTextEntryViewController.m in Sources */,
+				43281B1118F44F1C00D51044 /* OptionsViewController.m in Sources */,
 				438075AD18E0B96A00A6E8CD /* DDxViewController.m in Sources */,
 				4380762A18E0BB4000A6E8CD /* PWCollaborationViewController.m in Sources */,
 				4380761618E0BB4000A6E8CD /* PWTraceViewController.m in Sources */,
