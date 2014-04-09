@@ -85,6 +85,10 @@
             [(id<PWNavigationControllerDelegate>)v viewWasPopped];
 }
 
+- (void) viewWasPushed {
+    
+}
+
 - (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated {
     [super setViewControllers:viewControllers animated:animated];
     [self hideOptionsButtonForViewController:[self.viewControllers objectAtIndex:0]];
