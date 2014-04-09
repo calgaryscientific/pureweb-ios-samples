@@ -7,7 +7,7 @@
 //
 
 #import "AspectRatioViewController.h"
-#import "PureWeb.h"
+#import <PureWeb/PureWeb.h>
 
 @interface AspectRatioViewController ()
 

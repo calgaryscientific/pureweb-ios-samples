@@ -7,7 +7,7 @@
 //
 
 #import "DDxViewController.h"
-#import "PureWeb.h"
+#import <PureWeb/PureWeb.h>
 #import <QuartzCore/QuartzCore.h>
 #import "DDxView.h"
 #import "PWAcetateToolset.h"

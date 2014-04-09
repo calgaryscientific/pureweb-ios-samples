@@ -7,7 +7,7 @@
 #import "PWCollaborationViewController.h"
 #import "PWCollaboratorCell.h"
 #import "PWParticipantInfo.h"
-#import "PureWeb.h"
+#import <PureWeb/PureWeb.h>
 #import "PWLog.h"
 
 static NSString * const kPWCollaboratorCell = @"PWCollaboratorCell";
