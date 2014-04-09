@@ -5,7 +5,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PureWeb.h"
+#import <PureWeb/PureWeb.h>
 
 @interface PWProfilerView : UIView
 {

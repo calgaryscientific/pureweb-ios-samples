@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PWLoginViewController.h"
 #import "PWNavigationController.h"
-#import "PureWeb.h"
+#import <PureWeb/PureWeb.h>
 
 @class PWLoginViewController;
 

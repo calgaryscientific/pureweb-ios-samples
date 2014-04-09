@@ -7,7 +7,7 @@
 //
 
 #import "PGViewController.h"
-#import "PureWeb.h"
+#import <PureWeb/PureWeb.h>
 #import "DDxView.h"
 #import "PWTouchButtonView.h"
 #import "PWLog.h"

@@ -5,7 +5,7 @@
 //
 
 #import "PWDiagnosticViewController.h"
-#import "PureWeb.h"
+#import <PureWeb/PureWeb.h>
 
 @implementation PWDiagnosticViewController
 

@@ -8,7 +8,7 @@
 
 #import "TabViewController.h"
 #import "PWNavigationButtonCollectionView.h"
-#import "PureWeb.h"
+#import <PureWeb/PureWeb.h>
 #import "UIAlertView+PWUtils.h"
 #import "OptionsPanelDelegate.h"
 #import "PWCommandResponseEventArgs.h"
