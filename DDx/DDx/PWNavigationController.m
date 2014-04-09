@@ -15,6 +15,7 @@
     {
         if ([rootViewController respondsToSelector:@selector(viewWasPushed)])
             [(UIViewController<PWNavigationControllerDelegate> *)rootViewController viewWasPushed];
+        self.interactivePopGestureRecognizer.enabled = NO;
     }
     return self;
 }
