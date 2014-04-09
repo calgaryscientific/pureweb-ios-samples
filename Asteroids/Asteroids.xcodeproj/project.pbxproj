@@ -12,7 +12,6 @@
 		43176D1518DA04A1001AC3F4 /* shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 43176D1418DA04A1001AC3F4 /* shield.png */; };
 		4324FBC018D8D61600E37E15 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4324FBBE18D8D61600E37E15 /* Main_iPhone.storyboard */; };
 		435682AD18D7A494004F9965 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 435682AC18D7A494004F9965 /* FXBlurView.m */; };
-		435682B718D7AFB0004F9965 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 435682B618D7AFB0004F9965 /* fire.png */; };
 		4358287F18D75D5000EE03AE /* AsteroidsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4358287E18D75D5000EE03AE /* AsteroidsViewController.m */; };
 		4358288218D7607800EE03AE /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4358288118D7607800EE03AE /* MasterViewController.m */; };
 		438F8FE518DB8B6D0088C577 /* AppStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8FD718DB8B6D0088C577 /* AppStateViewController.m */; };
@@ -324,7 +323,6 @@
 				438F8FEA18DB8B6D0088C577 /* Images.xcassets in Resources */,
 				43176D1518DA04A1001AC3F4 /* shield.png in Resources */,
 				4324FBC018D8D61600E37E15 /* Main_iPhone.storyboard in Resources */,
-				435682B718D7AFB0004F9965 /* fire.png in Resources */,
 				83F8539818A3D4D700AD0E5E /* InfoPlist.strings in Resources */,
 				4303355A18E9CEA9008BB121 /* Settings.bundle in Resources */,
 				43176D1318DA0474001AC3F4 /* fire_68.png in Resources */,
