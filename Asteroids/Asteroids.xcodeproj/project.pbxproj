@@ -11,6 +11,7 @@
 		43176D1318DA0474001AC3F4 /* fire_68.png in Resources */ = {isa = PBXBuildFile; fileRef = 43176D1218DA0474001AC3F4 /* fire_68.png */; };
 		43176D1518DA04A1001AC3F4 /* shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 43176D1418DA04A1001AC3F4 /* shield.png */; };
 		4324FBC018D8D61600E37E15 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4324FBBE18D8D61600E37E15 /* Main_iPhone.storyboard */; };
+		433A95B918F74658003A9351 /* directional_pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 433A95B818F74658003A9351 /* directional_pad.png */; };
 		435682AD18D7A494004F9965 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 435682AC18D7A494004F9965 /* FXBlurView.m */; };
 		4358287F18D75D5000EE03AE /* AsteroidsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4358287E18D75D5000EE03AE /* AsteroidsViewController.m */; };
 		4358288218D7607800EE03AE /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4358288118D7607800EE03AE /* MasterViewController.m */; };
@@ -21,6 +22,7 @@
 		438F8FE918DB8B6D0088C577 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8FDF18DB8B6D0088C577 /* OptionsViewController.m */; };
 		438F8FEA18DB8B6D0088C577 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 438F8FE218DB8B6D0088C577 /* Images.xcassets */; };
 		438F8FEB18DB8B6D0088C577 /* TraceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8FE418DB8B6D0088C577 /* TraceViewController.m */; };
+		43DC7FA018F73CA4006C270F /* DirectionControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DC7F9F18F73CA4006C270F /* DirectionControlView.m */; };
 		83F8538E18A3D4D700AD0E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8538D18A3D4D700AD0E5E /* Foundation.framework */; };
 		83F8539018A3D4D700AD0E5E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8538F18A3D4D700AD0E5E /* CoreGraphics.framework */; };
 		83F8539218A3D4D700AD0E5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8539118A3D4D700AD0E5E /* UIKit.framework */; };
@@ -51,9 +53,9 @@
 		43176D1218DA0474001AC3F4 /* fire_68.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire_68.png; sourceTree = "<group>"; };
 		43176D1418DA04A1001AC3F4 /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
 		4324FBBF18D8D61600E37E15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		433A95B818F74658003A9351 /* directional_pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directional_pad.png; sourceTree = "<group>"; };
 		435682AB18D7A494004F9965 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
 		435682AC18D7A494004F9965 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
-		435682B618D7AFB0004F9965 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
 		435682BA18D7B05D004F9965 /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
 		4358287D18D75D5000EE03AE /* AsteroidsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsteroidsViewController.h; sourceTree = "<group>"; };
 		4358287E18D75D5000EE03AE /* AsteroidsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsteroidsViewController.m; sourceTree = "<group>"; };
@@ -73,6 +75,8 @@
 		438F8FE218DB8B6D0088C577 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		438F8FE318DB8B6D0088C577 /* TraceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraceViewController.h; sourceTree = "<group>"; };
 		438F8FE418DB8B6D0088C577 /* TraceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraceViewController.m; sourceTree = "<group>"; };
+		43DC7F9E18F73CA4006C270F /* DirectionControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionControlView.h; sourceTree = "<group>"; };
+		43DC7F9F18F73CA4006C270F /* DirectionControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionControlView.m; sourceTree = "<group>"; };
 		58444891B7F8470299111738 /* Pods-Asteroids.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asteroids.xcconfig"; path = "../Pods/Pods-Asteroids.xcconfig"; sourceTree = "<group>"; };
 		83F8538A18A3D4D700AD0E5E /* Asteroids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asteroids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F8538D18A3D4D700AD0E5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -121,8 +125,8 @@
 		435682A718D7A167004F9965 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				433A95B818F74658003A9351 /* directional_pad.png */,
 				435682BA18D7B05D004F9965 /* shield.png */,
-				435682B618D7AFB0004F9965 /* fire.png */,
 				435682AB18D7A494004F9965 /* FXBlurView.h */,
 				435682AC18D7A494004F9965 /* FXBlurView.m */,
 			);
@@ -205,6 +209,8 @@
 				4358287E18D75D5000EE03AE /* AsteroidsViewController.m */,
 				4358288018D7607800EE03AE /* MasterViewController.h */,
 				4358288118D7607800EE03AE /* MasterViewController.m */,
+				43DC7F9E18F73CA4006C270F /* DirectionControlView.h */,
+				43DC7F9F18F73CA4006C270F /* DirectionControlView.m */,
 			);
 			path = Asteroids;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				433A95B918F74658003A9351 /* directional_pad.png in Resources */,
 				83F853A418A3D4D700AD0E5E /* Main_iPad.storyboard in Resources */,
 				438F8FEA18DB8B6D0088C577 /* Images.xcassets in Resources */,
 				43176D1518DA04A1001AC3F4 /* shield.png in Resources */,
@@ -387,6 +394,7 @@
 				438F8FEB18DB8B6D0088C577 /* TraceViewController.m in Sources */,
 				438F8FE918DB8B6D0088C577 /* OptionsViewController.m in Sources */,
 				438F8FE718DB8B6D0088C577 /* DiagnosticViewDelegate.m in Sources */,
+				43DC7FA018F73CA4006C270F /* DirectionControlView.m in Sources */,
 				83F8539A18A3D4D700AD0E5E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -128,49 +128,6 @@ enum KeyCode
 
 }
 
-#pragma mark Directional Buttons
-
-- (IBAction)accelerateBegan:(UIButton *)sender {
-    
-    [self queueKeyPress:@"KeyDown" keycode:KeyCodeUp modifiers:0];
-    
-}
-- (IBAction)accelerateEnded:(UIButton *)sender {
-    
-    [self queueKeyPress:@"KeyUp" keycode:KeyCodeUp modifiers:0];
-}
-
-
-- (IBAction)decelerateBegan:(UIButton *)sender {
-    
-    [self queueKeyPress:@"KeyDown" keycode:KeyCodeDown modifiers:0];
-}
-- (IBAction)decelerateEnded:(UIButton *)sender {
-    
-    [self queueKeyPress:@"KeyUp" keycode:KeyCodeDown modifiers:0];
-}
-
-
-- (IBAction)rotateRightBegan:(UIButton *)sender {
-    
-    [self queueKeyPress:@"KeyDown" keycode:KeyCodeRight modifiers:0];
-}
-- (IBAction)rotateRightEnded:(UIButton *)sender {
-    
-    [self queueKeyPress:@"KeyUp" keycode:KeyCodeRight modifiers:0];
-}
-- (IBAction)rotateLeftBegan:(UIButton *)sender {
-    
-    [self queueKeyPress:@"KeyDown" keycode:KeyCodeLeft modifiers:0];
-}
-- (IBAction)rotateLeftEnded:(id)sender {
-    
-    [self queueKeyPress:@"KeyUp" keycode:KeyCodeLeft modifiers:0];
-}
-
-
-#pragma mark Utility Methods
-
 - (void)queueKeyPress:(NSString *)eventType keycode:(long)keycode modifiers:(long)modifiers
 {
     NSDictionary *cmdParams = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -182,7 +139,6 @@ enum KeyCode
     
     [[PWFramework sharedInstance].client queueCommand:@"InputEvent" withParameters:cmdParams];
 }
-
 
 #pragma mark Landscape Only
 - (NSUInteger)supportedInterfaceOrientations{
