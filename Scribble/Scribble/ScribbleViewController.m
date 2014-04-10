@@ -34,6 +34,11 @@
     oneFingerPanGestureRecognizer.maximumNumberOfTouches = 1;
     [self.scribbleView addGestureRecognizer:oneFingerPanGestureRecognizer];
     
+    //detect a double tap to support 'clear'
+    UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapGesture:)];
+    doubleTapGestureRecognizer.numberOfTapsRequired = 2; //double tap
+    [self.scribbleView addGestureRecognizer:doubleTapGestureRecognizer];
+    
     //connect the pureweb view, this is done just by setting the name propery on the view
     self.scribbleView.framework = [PWFramework sharedInstance];
     self.scribbleView.viewName = @"ScribbleView";
@@ -41,7 +46,7 @@
 }
 
 
-#pragma mark Button & Gesture Methods
+#pragma mark Button Pressed Methods
 - (IBAction)colorButtonPressed:(UIBarButtonItem *)sender
 {
     [self.colorPanel traySelected];
@@ -89,6 +94,7 @@
     }
 }
 
+#pragma mark Gesture  Methods
 - (void)scribbleDrawGesture:(UIPanGestureRecognizer *)gesture
 {
     CGPoint point = [gesture locationInView:gesture.view];
@@ -111,6 +117,11 @@
             break;
     }
 }
-
+- (void)doubleTapGesture:(UIPanGestureRecognizer *)gesture
+{
+    
+    [self.scribbleView.framework.client queueCommand:@"Clear"];
+    
+}
 
 @end
