@@ -5,6 +5,8 @@
 
 #import "LoginViewController.h"
 
+#import <PureWeb/PureWeb.h>
+
 @interface LoginViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
@@ -19,9 +21,27 @@
 
 - (void)viewDidLoad
 {
+    [self loadCredentials];
+    
+    //setup delegates
+    self.usernameField.delegate = self;
+    self.passwordField.delegate = self;
+    
+    [super viewDidLoad];
+}
+
+
+- (void)loadCredentials {
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    //load the username and password from the settings
     self.usernameField.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"pureweb_username"];
     self.passwordField.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"pureweb_password"];
     
+    [self loadCollaborationCredentials];
+    
+    //check if the settings should enable the button
     if(self.usernameField.text.length > 0 && self.passwordField.text.length > 0) {
         self.connectButton.enabled = YES;
     }
@@ -29,14 +49,27 @@
         
         self.connectButton.enabled = NO;
     }
-    
-    //setup delegates
-    self.usernameField.delegate = self;
-    self.passwordField.delegate = self;
-
-    
-    [super viewDidLoad];
 }
+
+- (void)loadCollaborationCredentials {
+    //load the display name and email as well
+    NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:@"pureweb_collab_name"];
+    NSString *email = [[NSUserDefaults standardUserDefaults] stringForKey:@"pureweb_collab_email"];
+    
+    //only register these names with the collaboration manage if they are valid
+    if (![name isEqualToString:@""]) {
+        
+        [[PWFramework sharedInstance].collaborationManager updateUserInfo:@"Name" value:name];
+    }
+    
+    if (![email isEqualToString:@""]) {
+        
+        [[PWFramework sharedInstance].collaborationManager updateUserInfo:@"Email" value:email];
+        
+    }
+}
+
+
 
 - (void) loginFailed
 {
