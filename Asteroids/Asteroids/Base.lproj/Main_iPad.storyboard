@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Master View Controller-->
@@ -91,57 +91,15 @@
                                 <rect key="frame" x="75" y="543" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4M8-HJ-3dp">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NPL-B9-YB9" customClass="DirectionControlView">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="directional_pad.png" translatesAutoresizingMaskIntoConstraints="NO" id="hLf-aP-DeC">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="accelerateBegan:" destination="va6-pv-VBn" eventType="touchDown" id="wI3-Ym-StU"/>
-                                            <action selector="accelerateEnded:" destination="va6-pv-VBn" eventType="touchUpOutside" id="TAH-U9-XEr"/>
-                                            <action selector="accelerateEnded:" destination="va6-pv-VBn" eventType="touchUpInside" id="YNi-IO-vhi"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxF-EC-yew">
-                                        <rect key="frame" x="0.0" y="50" width="75" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="rotateLeftBegan:" destination="va6-pv-VBn" eventType="touchDown" id="hXj-Hd-Co1"/>
-                                            <action selector="rotateLeftEnded:" destination="va6-pv-VBn" eventType="touchUpOutside" id="4ye-dy-zn8"/>
-                                            <action selector="rotateLeftEnded:" destination="va6-pv-VBn" eventType="touchUpInside" id="HKE-Oa-OGt"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyV-Kg-xQv">
-                                        <rect key="frame" x="75" y="50" width="75" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="rotateRightBegan:" destination="va6-pv-VBn" eventType="touchDown" id="1st-rH-XqX"/>
-                                            <action selector="rotateRightEnded:" destination="va6-pv-VBn" eventType="touchUpOutside" id="XYK-Ix-FEV"/>
-                                            <action selector="rotateRightEnded:" destination="va6-pv-VBn" eventType="touchUpInside" id="bk9-xY-Nkp"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdj-N0-qoq">
-                                        <rect key="frame" x="0.0" y="100" width="150" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="decelerateBegan:" destination="va6-pv-VBn" eventType="touchDown" id="YaT-38-BrO"/>
-                                            <action selector="decelerateEnded:" destination="va6-pv-VBn" eventType="touchUpOutside" id="KRn-4W-Cb9"/>
-                                            <action selector="decelerateEnded:" destination="va6-pv-VBn" eventType="touchUpInside" id="tVy-P8-I6E"/>
-                                        </connections>
-                                    </button>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -285,7 +243,6 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="540" height="620"/>
                     <connections>
                         <outlet property="connectButton" destination="1cT-S6-ehn" id="6ig-bd-WS4"/>
                         <outlet property="loginErrorLabel" destination="StX-Lp-myL" id="V1b-xL-m5s"/>
@@ -377,7 +334,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <size key="freeformSize" width="1024" height="768"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TsO-0l-tbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -393,7 +349,6 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="768" height="1024"/>
                     <tabBar key="tabBar" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6EM-Qh-JC3">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -456,7 +411,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="sbt-Os-BIX">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="sbt-Os-BIX">
                                 <rect key="frame" x="567" y="69" width="156" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -487,7 +442,7 @@
                                     <constraint firstAttribute="width" constant="154" id="dhM-4n-agF"/>
                                 </constraints>
                             </pickerView>
-                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="t2t-uk-oAO">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="t2t-uk-oAO">
                                 <rect key="frame" x="567" y="476" width="156" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -586,6 +541,7 @@
         <image name="Logo" width="256" height="71"/>
         <image name="Options" width="30" height="30"/>
         <image name="Trace" width="30" height="30"/>
+        <image name="directional_pad.png" width="150" height="150"/>
         <image name="fire_68.png" width="68" height="68"/>
         <image name="shield.png" width="256" height="256"/>
     </resources>
