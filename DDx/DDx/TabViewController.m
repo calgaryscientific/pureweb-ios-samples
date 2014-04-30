@@ -99,7 +99,7 @@
     
     if (self.sharedURL) {
         
-        [self presentMailControllerWithURL:self.sharedURL];
+        [self presentMailControllerWithURL:[NSURL URLWithString:self.sharedURL]];
         
     }
     
@@ -110,36 +110,34 @@
         [client getSessionShareUrlAsyncWithPassword:@"Scientific"
                                     shareDescriptor:@""
                                        shareTimeout:1800000
-                                             target:self
-                                             action:@selector(getSessionShareUrlAsyncDidFinish:)];
+                                        completion:^(NSURL *shareURL, NSError *error) {
+                                            
+                                            if (error) {
+                                                
+                                                [UIAlertView showAlert:@"There was an error while creating the application share"
+                                                               message:[error description]];
+                                                return;
+                                            }
+                                            
+                                            [self presentMailControllerWithURL:shareURL];
+                                            
+                                        }];
+        
     }
 }
 
-- (void)getSessionShareUrlAsyncDidFinish:(PWServiceRequestCompletedEventArgs *)args {
+
+- (void) presentMailControllerWithURL:(NSURL *) shareURL {
     
-    if (args.request.status == PWServiceRequestStatusSuccess) {
-        PWAppShare *appShare = (PWAppShare *)args.request;        
-        self.sharedURL = [appShare shareUrl];
-        
-        [self presentMailControllerWithURL:self.sharedURL];
-        
-        self.invalidateShareButton.hidden = NO;
-    }
-    else {
-        [UIAlertView showAlert:@"There was an error while creating the application share" 
-                       message:[args.request.error description]];
-    }
-}
-
-
-- (void) presentMailControllerWithURL:(NSString *) sharedURL {
+    self.sharedURL = [shareURL absoluteString];
+    self.invalidateShareButton.hidden = NO;
     
     MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
     if (mailController != nil) {
         mailController.navigationBar.tintColor = [UIColor darkGrayColor];
         mailController.mailComposeDelegate = self;
         [mailController setSubject:@"Please join my shared PureWeb session."];
-        [mailController setMessageBody:sharedURL isHTML:NO];
+        [mailController setMessageBody:self.sharedURL isHTML:NO];
         
         [self presentViewController:mailController animated:YES completion:^{
             
@@ -152,30 +150,22 @@
     
     PWWebClient *client = [[PWFramework sharedInstance] client];
     
-    [client invalidateSessionShareUrlAsync:self.sharedURL
-                                    target:self
-                                    action:@selector(invalidateShareUrlDidFinish:)];
-    
-    
-    
-    
-}
-
-- (void)invalidateShareUrlDidFinish:(PWServiceRequestCompletedEventArgs *)args {
-    
-    if (args.request.status == PWServiceRequestStatusSuccess) {
+    [client invalidateSessionShareUrlAsync:self.sharedURL completion:^(NSError *error) {
+        
+        if (error) {
+            
+            [UIAlertView showAlert:@"There was an error while invalidating the application share"
+                           message:[error description]];
+            return;
+        }
+        
         self.sharedURL = nil;
         self.invalidateShareButton.hidden = YES;
-
         
-        [UIAlertView showAlert:@"Share Session Deleted" 
-                       message:@"The share url has been successfully deleted"];
-    }
-    else {
-        [UIAlertView showAlert:@"There was an error while invalidating the application share" 
-                       message:[args.request.error description]];
-    }
+        [UIAlertView showAlert:@"Share Session Deleted" message:@"The share url has been successfully deleted"];
+    }];
 }
+
 
 - (void)diagnosticsButtonPushed:(id)sender {
     

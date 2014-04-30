@@ -65,42 +65,40 @@ enum KeyCode
     [[PWFramework sharedInstance].client getSessionShareUrlAsyncWithPassword:@"Scientific"
                                                              shareDescriptor:@""
                                                                 shareTimeout:1800000
-                                                                      target:self
-                                                                      action:@selector(serviceRequestDidFinish:)];
+     completion:^(NSURL *shareURL, NSError *error) {
+         
+         if (error) {
+             PWLogError(@"share url failed with error %@", error);
+             UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"There was an error while creating the application share."
+                                                                 message:[error description]
+                                                                delegate:nil
+                                                       cancelButtonTitle:@"OK"
+                                                       otherButtonTitles:nil];
+             [alertView show];
+             
+             return;
+         }
+         
+         [self presentMailComposeWithURL:shareURL];
+     }];
     
 }
 
-- (void)serviceRequestDidFinish:(PWServiceRequestCompletedEventArgs *)args
-{
-    if (args.request.status == PWServiceRequestStatusSuccess)
+- (void) presentMailComposeWithURL: (NSURL *) shareURL {
+    
+    MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+    if (mailController != nil)
     {
-        PWAppShare *appShare = (PWAppShare *)args.request;
+        mailController.navigationBar.tintColor = [UIColor darkGrayColor];
+        mailController.mailComposeDelegate = self;
+        [mailController setSubject:@"Please join my shared PureWeb session."];
+        [mailController setMessageBody:[shareURL absoluteString] isHTML:NO];
+        mailController.modalPresentationStyle = UIModalPresentationFormSheet;
         
-        MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
-        if (mailController != nil)
-        {
-            mailController.navigationBar.tintColor = [UIColor darkGrayColor];
-            mailController.mailComposeDelegate = self;
-            [mailController setSubject:@"Please join my shared PureWeb session."];
-            [mailController setMessageBody:appShare.shareUrl isHTML:NO];
-            mailController.modalPresentationStyle = UIModalPresentationFormSheet;
-
-            [self presentViewController:mailController animated:YES completion:^{
-                
-            }];
-            
-        }
-    }
-    else
-    {
-        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"There was an error while creating the application share."
-                                                            message:[args.request.error description]
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-        [alertView show];
+        [self presentViewController:mailController animated:YES completion:nil];
     }
 }
+
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     
