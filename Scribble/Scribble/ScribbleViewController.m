@@ -65,33 +65,32 @@
     [[PWFramework sharedInstance].client getSessionShareUrlAsyncWithPassword:@"Scientific"
                                                              shareDescriptor:@""
                                                                 shareTimeout:1800000
-                                                                      target:self
-                                                                      action:@selector(sessionShareRequestFinished:)];
-}
-- (void)sessionShareRequestFinished:(PWServiceRequestCompletedEventArgs *)args
-{
-    if (args.request.status == PWServiceRequestStatusSuccess) {
-        
-        PWAppShare *appShare = (PWAppShare *)args.request;
-        
-        MFMailComposeViewController *mailController = [MFMailComposeViewController new];
-
-        mailController.mailComposeDelegate = self;
-        [mailController setSubject:@"Join My Shared PureWeb Session."];
-        [mailController setMessageBody:[appShare shareUrl] isHTML:NO];
-        
-        mailController.modalPresentationStyle = UIModalPresentationFormSheet;
-        [self presentViewController:mailController animated:YES completion:^{
-            
-            
-        }];
-    }
+     completion:^(NSURL *shareURL, NSError *error) {
+         
+         if (error) {
+             PWLogError(@"share url created failed with error %@", error);
+             return;
+         }
+         
+         [self presentMailComposerWithShareURL:shareURL];
+     }];
     
-    else {
-        
-        PWLogError(@"Service Request Failed");
-        
-    }
+}
+
+
+- (void) presentMailComposerWithShareURL:(NSURL *) shareURL {
+    
+    MFMailComposeViewController *mailController = [MFMailComposeViewController new];
+    
+    mailController.mailComposeDelegate = self;
+    [mailController setSubject:@"Join My Shared PureWeb Session."];
+    [mailController setMessageBody:[shareURL absoluteString] isHTML:NO];
+    
+    mailController.modalPresentationStyle = UIModalPresentationFormSheet;
+    
+    [self presentViewController:mailController animated:YES completion:nil];
+
+    
 }
 
 #pragma mark Gesture  Methods
