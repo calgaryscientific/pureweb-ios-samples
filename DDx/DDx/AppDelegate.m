@@ -15,6 +15,7 @@
 #import "PWCollaborationViewController.h"
 #import "AspectRatioViewController.h"
 #import "BabelViewController.h"
+#import "NSURL+URLHelpers.h"
 
 @implementation AppDelegate
 
@@ -60,6 +61,8 @@
     } 
     else 
     {
+        // Swap out scheme
+        self.url = [self.url URLByReplacingScheme];
         PWLogInfo(@"Launched from a URL: %@", self.url);
     }
 
