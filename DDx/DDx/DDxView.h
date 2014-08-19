@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Calgary Scientific Inc. All rights reserved.
 //
 
-#import "PWView.h"
+#import <PureWeb/PureWeb.h>
 
 @interface DDxView : PWView
 {
