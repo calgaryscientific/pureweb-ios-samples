@@ -15,6 +15,9 @@
 
 - (void)loadView;
 
+@property (nonatomic, strong) NSNumber* imageCounter;
+@property (nonatomic, strong) NSNumberFormatter* numberFormatter;
+
 @end
 
 @implementation DDxView
@@ -40,6 +43,8 @@
 {
     _quality = @"";
     
+    _imageCounter = [NSNumber numberWithInt:0];
+    _numberFormatter = [NSNumberFormatter new];
     _textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, 150, 150)];
     _textLabel.font = [UIFont systemFontOfSize:14.0];
     _textLabel.lineBreakMode = NSLineBreakByWordWrapping;
@@ -56,6 +61,20 @@
 - (void)viewWasUpdated:(PWViewUpdatedEventArgs *)args
 {
     _quality = [args.encodingParameters objectForKey:@"EncodingQuality"];
+    NSString* imgCounter = [args.encodingParameters objectForKey:@"imagecounter"];
+    
+    if (imgCounter)
+    {
+        NSNumber* count = [self.numberFormatter numberFromString:imgCounter];
+        if (count.longLongValue < self.imageCounter.longLongValue)
+        {
+            NSString* reason = [NSString stringWithFormat:@"I need an adult! Images are coming in out of order! last img: %@ current img: %@", self.imageCounter, count];
+            @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                           reason:reason
+                                         userInfo:nil];
+        }
+        self.imageCounter = count;
+    }
 }
 
 - (NSString *)getTextWithDefault:(PWXmlElement *)element path:(NSString *)path defaultValue:(id)defaultValue
