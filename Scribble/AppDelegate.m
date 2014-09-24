@@ -52,7 +52,7 @@
     //app was launched via fallback url, this is typically useful for default choices or as a development fallback
     else {
         
-        appURL = [NSURL URLWithString:@"http://winterfell.calgaryscientific.local:8080/pureweb/app?name=ScribbleAppJava"];
+        appURL = [NSURL URLWithString:@"http://mypurewebserver:8080/pureweb/app?name=ScribbleAppJava"];
         authenticationRequired = YES;
         
         PWLogInfo(@"Launching App From Fallback URL");
