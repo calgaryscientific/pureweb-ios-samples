@@ -1,32 +1,20 @@
 PODS:
-  - CocoaAsyncSocket (7.3.4)
   - CocoaLumberjack (1.8.0):
     - CocoaLumberjack/Extensions
   - CocoaLumberjack/Core (1.8.0)
   - CocoaLumberjack/Extensions (1.8.0):
     - CocoaLumberjack/Core
-  - PureWeb (4.1.0):
-    - CocoaAsyncSocket (= 7.3.4)
-    - CocoaLumberjack (= 1.8.0)
-    - PureWeb/no-arc
-    - RegexKitLite (= 4.0)
-  - PureWeb/no-arc (4.1.0):
-    - CocoaAsyncSocket (= 7.3.4)
+  - PureWeb (4.1.3.0):
     - CocoaLumberjack (= 1.8.0)
     - RegexKitLite (= 4.0)
   - RegexKitLite (4.0)
 
 DEPENDENCIES:
-  - PureWeb (from `../pureweb-ios-sdk/PureWeb.podspec`)
-
-EXTERNAL SOURCES:
-  PureWeb:
-    :path: ../pureweb-ios-sdk/PureWeb.podspec
+  - PureWeb
 
 SPEC CHECKSUMS:
-  CocoaAsyncSocket: 534d09416f992fd51efb23f534742ce70b3a7999
-  CocoaLumberjack: 6ed94046d2ca7fde03a73b3d01b8cfc56574b314
-  PureWeb: 1ba3b464a75810cf516beee6a58015ad5cb3830f
-  RegexKitLite: f7af7b4d2b675cd2ec9a4abab6aad6ae1f6499c0
+  CocoaLumberjack: 2799baf46a4587116e97e85483538e0e92818430
+  PureWeb: ccebe80c89e45e126e5b5ea268e4ae53dd55beb6
+  RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.34.1

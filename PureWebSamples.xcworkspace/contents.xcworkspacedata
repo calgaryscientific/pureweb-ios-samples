@@ -1,1 +1,16 @@
-<?xml version='1.0' encoding='UTF-8'?><Workspace version='1.0'><FileRef location='group:Asteroids/Asteroids.xcodeproj'/><FileRef location='group:DDx/DDx.xcodeproj'/><FileRef location='group:Scribble/Scribble.xcodeproj'/><FileRef location='group:Pods/Pods.xcodeproj'/></Workspace>
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Asteroids/Asteroids.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DDx/DDx.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Scribble/Scribble.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>
