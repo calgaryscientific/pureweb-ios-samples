@@ -91,20 +91,7 @@
 		83F853D218A3D4E400AD0E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F853D118A3D4E400AD0E5E /* Foundation.framework */; };
 		83F853D418A3D4E400AD0E5E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F853D318A3D4E400AD0E5E /* CoreGraphics.framework */; };
 		83F853D618A3D4E400AD0E5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F853D518A3D4E400AD0E5E /* UIKit.framework */; };
-		83F853F418A3D4E400AD0E5E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F853F318A3D4E400AD0E5E /* XCTest.framework */; };
-		83F853F518A3D4E400AD0E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F853D118A3D4E400AD0E5E /* Foundation.framework */; };
-		83F853F618A3D4E400AD0E5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F853D518A3D4E400AD0E5E /* UIKit.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		83F853F718A3D4E400AD0E5E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83F853C618A3D4E400AD0E5E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 83F853CD18A3D4E400AD0E5E;
-			remoteInfo = DDx;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		43281AF618F44D9300D51044 /* Diagnostics_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Diagnostics_iPad.storyboard; sourceTree = "<group>"; };
@@ -234,7 +221,6 @@
 		83F853D118A3D4E400AD0E5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		83F853D318A3D4E400AD0E5E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		83F853D518A3D4E400AD0E5E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		83F853F218A3D4E400AD0E5E /* DDxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DDxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F853F318A3D4E400AD0E5E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C83ABF45963647FFA1942C2C /* Pods-DDx.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDx.xcconfig"; path = "../Pods/Pods-DDx.xcconfig"; sourceTree = "<group>"; };
 		F8740A2D9046447A9167E838 /* libPods-DDx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DDx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -249,16 +235,6 @@
 				83F853D618A3D4E400AD0E5E /* UIKit.framework in Frameworks */,
 				83F853D218A3D4E400AD0E5E /* Foundation.framework in Frameworks */,
 				6176B737FBCB4BDE8527A167 /* libPods-DDx.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		83F853EF18A3D4E400AD0E5E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				83F853F418A3D4E400AD0E5E /* XCTest.framework in Frameworks */,
-				83F853F618A3D4E400AD0E5E /* UIKit.framework in Frameworks */,
-				83F853F518A3D4E400AD0E5E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,7 +403,6 @@
 			isa = PBXGroup;
 			children = (
 				83F853CE18A3D4E400AD0E5E /* DDx.app */,
-				83F853F218A3D4E400AD0E5E /* DDxTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -505,24 +480,6 @@
 			productReference = 83F853CE18A3D4E400AD0E5E /* DDx.app */;
 			productType = "com.apple.product-type.application";
 		};
-		83F853F118A3D4E400AD0E5E /* DDxTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 83F8540618A3D4E400AD0E5E /* Build configuration list for PBXNativeTarget "DDxTests" */;
-			buildPhases = (
-				83F853EE18A3D4E400AD0E5E /* Sources */,
-				83F853EF18A3D4E400AD0E5E /* Frameworks */,
-				83F853F018A3D4E400AD0E5E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				83F853F818A3D4E400AD0E5E /* PBXTargetDependency */,
-			);
-			name = DDxTests;
-			productName = DDxTests;
-			productReference = 83F853F218A3D4E400AD0E5E /* DDxTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -531,11 +488,6 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Calgary Scientific Inc";
-				TargetAttributes = {
-					83F853F118A3D4E400AD0E5E = {
-						TestTargetID = 83F853CD18A3D4E400AD0E5E;
-					};
-				};
 			};
 			buildConfigurationList = 83F853C918A3D4E400AD0E5E /* Build configuration list for PBXProject "DDx" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -551,7 +503,6 @@
 			projectRoot = "";
 			targets = (
 				83F853CD18A3D4E400AD0E5E /* DDx */,
-				83F853F118A3D4E400AD0E5E /* DDxTests */,
 			);
 		};
 /* End PBXProject section */
@@ -601,13 +552,6 @@
 				438075CE18E0BA0800A6E8CD /* Default-568h@2x.png in Resources */,
 				438075B018E0B96A00A6E8CD /* PGSettingsViewController.xib in Resources */,
 				4380763218E1D78300A6E8CD /* person.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		83F853F018A3D4E400AD0E5E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,22 +638,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		83F853EE18A3D4E400AD0E5E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		83F853F818A3D4E400AD0E5E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 83F853CD18A3D4E400AD0E5E /* DDx */;
-			targetProxy = 83F853F718A3D4E400AD0E5E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		83F8540118A3D4E400AD0E5E /* Debug */ = {
@@ -814,48 +743,6 @@
 			};
 			name = Release;
 		};
-		83F8540718A3D4E400AD0E5E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DDx.app/DDx";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DDx/DDx-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "DDxTests/DDxTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		83F8540818A3D4E400AD0E5E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DDx.app/DDx";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DDx/DDx-Prefix.pch";
-				INFOPLIST_FILE = "DDxTests/DDxTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -873,15 +760,6 @@
 			buildConfigurations = (
 				83F8540418A3D4E400AD0E5E /* Debug */,
 				83F8540518A3D4E400AD0E5E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		83F8540618A3D4E400AD0E5E /* Build configuration list for PBXNativeTarget "DDxTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				83F8540718A3D4E400AD0E5E /* Debug */,
-				83F8540818A3D4E400AD0E5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

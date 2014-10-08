@@ -15,59 +15,28 @@
 		438F8FD218DB8B3B0088C577 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8FC818DB8B3B0088C577 /* OptionsViewController.m */; };
 		438F8FD318DB8B3B0088C577 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 438F8FCB18DB8B3B0088C577 /* Images.xcassets */; };
 		438F8FD418DB8B3B0088C577 /* TraceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8FCD18DB8B3B0088C577 /* TraceViewController.m */; };
-		43B7A0F118CE58A600B817C8 /* Scribble-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43B7A0EF18CE58A600B817C8 /* Scribble-Info.plist */; };
 		43EEED5918CE524200159074 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED5618CE524200159074 /* AppDelegate.m */; };
-		43EEED5A18CE524200159074 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED5618CE524200159074 /* AppDelegate.m */; };
 		43EEED5B18CE524200159074 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED5718CE524200159074 /* Main_iPhone.storyboard */; };
-		43EEED5C18CE524200159074 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED5718CE524200159074 /* Main_iPhone.storyboard */; };
 		43EEED5D18CE524200159074 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED5818CE524200159074 /* Main_iPad.storyboard */; };
-		43EEED5E18CE524200159074 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED5818CE524200159074 /* Main_iPad.storyboard */; };
 		43EEED6218CE52AE00159074 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6118CE52AE00159074 /* MasterViewController.m */; };
-		43EEED6318CE52AE00159074 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6118CE52AE00159074 /* MasterViewController.m */; };
 		43EEED6818CE52C900159074 /* ScribbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6518CE52C900159074 /* ScribbleViewController.m */; };
-		43EEED6918CE52C900159074 /* ScribbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6518CE52C900159074 /* ScribbleViewController.m */; };
 		43EEED6A18CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6718CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m */; };
-		43EEED6B18CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6718CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m */; };
 		43EEED7418CE52F600159074 /* ColorSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED7318CE52F600159074 /* ColorSelectionViewController.m */; };
-		43EEED7518CE52F600159074 /* ColorSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED7318CE52F600159074 /* ColorSelectionViewController.m */; };
 		43EEED7D18CE531300159074 /* UIColor+HighlightedColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED7A18CE531300159074 /* UIColor+HighlightedColors.m */; };
-		43EEED7E18CE531300159074 /* UIColor+HighlightedColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED7A18CE531300159074 /* UIColor+HighlightedColors.m */; };
 		43EEED9C18CE53A200159074 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED9B18CE53A200159074 /* Settings.bundle */; };
-		43EEED9D18CE53A200159074 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED9B18CE53A200159074 /* Settings.bundle */; };
 		43EEEDA518CE53B900159074 /* Bubble_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED9F18CE53B900159074 /* Bubble_Icon.png */; };
-		43EEEDA618CE53B900159074 /* Bubble_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED9F18CE53B900159074 /* Bubble_Icon.png */; };
 		43EEEDA718CE53B900159074 /* Bubble_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA018CE53B900159074 /* Bubble_Icon@2x.png */; };
-		43EEEDA818CE53B900159074 /* Bubble_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA018CE53B900159074 /* Bubble_Icon@2x.png */; };
 		43EEEDA918CE53B900159074 /* Files_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA118CE53B900159074 /* Files_Icon.png */; };
-		43EEEDAA18CE53B900159074 /* Files_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA118CE53B900159074 /* Files_Icon.png */; };
 		43EEEDAB18CE53B900159074 /* Gear_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA218CE53B900159074 /* Gear_Icon@2x.png */; };
-		43EEEDAC18CE53B900159074 /* Gear_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA218CE53B900159074 /* Gear_Icon@2x.png */; };
 		43EEEDAD18CE53B900159074 /* Gear_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA318CE53B900159074 /* Gear_Icon.png */; };
-		43EEEDAE18CE53B900159074 /* Gear_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA318CE53B900159074 /* Gear_Icon.png */; };
 		43EEEDAF18CE53B900159074 /* PureWeb_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA418CE53B900159074 /* PureWeb_Logo.png */; };
-		43EEEDB018CE53B900159074 /* PureWeb_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA418CE53B900159074 /* PureWeb_Logo.png */; };
 		6D3F958DE9A94276BBBD54F0 /* libPods-Scribble.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02257500CF3D483F8E125469 /* libPods-Scribble.a */; };
 		83F8534A18A3D4AF00AD0E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8534918A3D4AF00AD0E5E /* Foundation.framework */; };
 		83F8534C18A3D4AF00AD0E5E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8534B18A3D4AF00AD0E5E /* CoreGraphics.framework */; };
 		83F8534E18A3D4AF00AD0E5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8534D18A3D4AF00AD0E5E /* UIKit.framework */; };
 		83F8535418A3D4AF00AD0E5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83F8535218A3D4AF00AD0E5E /* InfoPlist.strings */; };
 		83F8535618A3D4AF00AD0E5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F8535518A3D4AF00AD0E5E /* main.m */; };
-		83F8536C18A3D4AF00AD0E5E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8536B18A3D4AF00AD0E5E /* XCTest.framework */; };
-		83F8536D18A3D4AF00AD0E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8534918A3D4AF00AD0E5E /* Foundation.framework */; };
-		83F8536E18A3D4AF00AD0E5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8534D18A3D4AF00AD0E5E /* UIKit.framework */; };
-		83F8537618A3D4AF00AD0E5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83F8537418A3D4AF00AD0E5E /* InfoPlist.strings */; };
-		83F8537818A3D4AF00AD0E5E /* ScribbleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F8537718A3D4AF00AD0E5E /* ScribbleTests.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		83F8536F18A3D4AF00AD0E5E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83F8533E18A3D4AF00AD0E5E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 83F8534518A3D4AF00AD0E5E;
-			remoteInfo = Scribble;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		02257500CF3D483F8E125469 /* libPods-Scribble.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Scribble.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,7 +86,6 @@
 		83F8535318A3D4AF00AD0E5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		83F8535518A3D4AF00AD0E5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		83F8535718A3D4AF00AD0E5E /* Scribble-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Scribble-Prefix.pch"; sourceTree = "<group>"; };
-		83F8536A18A3D4AF00AD0E5E /* ScribbleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScribbleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F8536B18A3D4AF00AD0E5E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		83F8537318A3D4AF00AD0E5E /* ScribbleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ScribbleTests-Info.plist"; sourceTree = "<group>"; };
 		83F8537518A3D4AF00AD0E5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -133,16 +101,6 @@
 				83F8534E18A3D4AF00AD0E5E /* UIKit.framework in Frameworks */,
 				83F8534A18A3D4AF00AD0E5E /* Foundation.framework in Frameworks */,
 				6D3F958DE9A94276BBBD54F0 /* libPods-Scribble.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		83F8536718A3D4AF00AD0E5E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				83F8536C18A3D4AF00AD0E5E /* XCTest.framework in Frameworks */,
-				83F8536E18A3D4AF00AD0E5E /* UIKit.framework in Frameworks */,
-				83F8536D18A3D4AF00AD0E5E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				83F8534618A3D4AF00AD0E5E /* Scribble.app */,
-				83F8536A18A3D4AF00AD0E5E /* ScribbleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -326,24 +283,6 @@
 			productReference = 83F8534618A3D4AF00AD0E5E /* Scribble.app */;
 			productType = "com.apple.product-type.application";
 		};
-		83F8536918A3D4AF00AD0E5E /* ScribbleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 83F8537E18A3D4AF00AD0E5E /* Build configuration list for PBXNativeTarget "ScribbleTests" */;
-			buildPhases = (
-				83F8536618A3D4AF00AD0E5E /* Sources */,
-				83F8536718A3D4AF00AD0E5E /* Frameworks */,
-				83F8536818A3D4AF00AD0E5E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				83F8537018A3D4AF00AD0E5E /* PBXTargetDependency */,
-			);
-			name = ScribbleTests;
-			productName = ScribbleTests;
-			productReference = 83F8536A18A3D4AF00AD0E5E /* ScribbleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -352,11 +291,6 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Calgary Scientific Inc";
-				TargetAttributes = {
-					83F8536918A3D4AF00AD0E5E = {
-						TestTargetID = 83F8534518A3D4AF00AD0E5E;
-					};
-				};
 			};
 			buildConfigurationList = 83F8534118A3D4AF00AD0E5E /* Build configuration list for PBXProject "Scribble" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -372,7 +306,6 @@
 			projectRoot = "";
 			targets = (
 				83F8534518A3D4AF00AD0E5E /* Scribble */,
-				83F8536918A3D4AF00AD0E5E /* ScribbleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -393,24 +326,6 @@
 				83F8535418A3D4AF00AD0E5E /* InfoPlist.strings in Resources */,
 				43EEED5B18CE524200159074 /* Main_iPhone.storyboard in Resources */,
 				43EEEDA718CE53B900159074 /* Bubble_Icon@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		83F8536818A3D4AF00AD0E5E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				43EEED9D18CE53A200159074 /* Settings.bundle in Resources */,
-				43EEEDA818CE53B900159074 /* Bubble_Icon@2x.png in Resources */,
-				43EEED5E18CE524200159074 /* Main_iPad.storyboard in Resources */,
-				43EEED5C18CE524200159074 /* Main_iPhone.storyboard in Resources */,
-				43EEEDAE18CE53B900159074 /* Gear_Icon.png in Resources */,
-				43EEEDB018CE53B900159074 /* PureWeb_Logo.png in Resources */,
-				43EEEDAC18CE53B900159074 /* Gear_Icon@2x.png in Resources */,
-				43B7A0F118CE58A600B817C8 /* Scribble-Info.plist in Resources */,
-				43EEEDA618CE53B900159074 /* Bubble_Icon.png in Resources */,
-				83F8537618A3D4AF00AD0E5E /* InfoPlist.strings in Resources */,
-				43EEEDAA18CE53B900159074 /* Files_Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,29 +386,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		83F8536618A3D4AF00AD0E5E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				43EEED6B18CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m in Sources */,
-				43EEED6918CE52C900159074 /* ScribbleViewController.m in Sources */,
-				43EEED5A18CE524200159074 /* AppDelegate.m in Sources */,
-				43EEED7E18CE531300159074 /* UIColor+HighlightedColors.m in Sources */,
-				43EEED6318CE52AE00159074 /* MasterViewController.m in Sources */,
-				43EEED7518CE52F600159074 /* ColorSelectionViewController.m in Sources */,
-				83F8537818A3D4AF00AD0E5E /* ScribbleTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		83F8537018A3D4AF00AD0E5E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 83F8534518A3D4AF00AD0E5E /* Scribble */;
-			targetProxy = 83F8536F18A3D4AF00AD0E5E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		83F8535218A3D4AF00AD0E5E /* InfoPlist.strings */ = {
@@ -629,48 +522,6 @@
 			};
 			name = Release;
 		};
-		83F8537F18A3D4AF00AD0E5E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Scribble.app/Scribble";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Scribble/Scribble-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "ScribbleTests/ScribbleTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		83F8538018A3D4AF00AD0E5E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Scribble.app/Scribble";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Scribble/Scribble-Prefix.pch";
-				INFOPLIST_FILE = "ScribbleTests/ScribbleTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -688,15 +539,6 @@
 			buildConfigurations = (
 				83F8537C18A3D4AF00AD0E5E /* Debug */,
 				83F8537D18A3D4AF00AD0E5E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		83F8537E18A3D4AF00AD0E5E /* Build configuration list for PBXNativeTarget "ScribbleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				83F8537F18A3D4AF00AD0E5E /* Debug */,
-				83F8538018A3D4AF00AD0E5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -30,23 +30,8 @@
 		83F8539A18A3D4D700AD0E5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F8539918A3D4D700AD0E5E /* main.m */; };
 		83F8539E18A3D4D700AD0E5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F8539D18A3D4D700AD0E5E /* AppDelegate.m */; };
 		83F853A418A3D4D700AD0E5E /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83F853A218A3D4D700AD0E5E /* Main_iPad.storyboard */; };
-		83F853B018A3D4D700AD0E5E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F853AF18A3D4D700AD0E5E /* XCTest.framework */; };
-		83F853B118A3D4D700AD0E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8538D18A3D4D700AD0E5E /* Foundation.framework */; };
-		83F853B218A3D4D700AD0E5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8539118A3D4D700AD0E5E /* UIKit.framework */; };
-		83F853BA18A3D4D700AD0E5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83F853B818A3D4D700AD0E5E /* InfoPlist.strings */; };
-		83F853BC18A3D4D700AD0E5E /* AsteroidsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F853BB18A3D4D700AD0E5E /* AsteroidsTests.m */; };
 		C51978940623492F8485EDF0 /* libPods-Asteroids.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC99AB5436154A399E3F07C2 /* libPods-Asteroids.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		83F853B318A3D4D700AD0E5E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83F8538218A3D4D700AD0E5E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 83F8538918A3D4D700AD0E5E;
-			remoteInfo = Asteroids;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4303355918E9CEA9008BB121 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -89,7 +74,6 @@
 		83F8539C18A3D4D700AD0E5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		83F8539D18A3D4D700AD0E5E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		83F853A318A3D4D700AD0E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		83F853AE18A3D4D700AD0E5E /* AsteroidsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsteroidsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F853AF18A3D4D700AD0E5E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		83F853B718A3D4D700AD0E5E /* AsteroidsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AsteroidsTests-Info.plist"; sourceTree = "<group>"; };
 		83F853B918A3D4D700AD0E5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -106,16 +90,6 @@
 				83F8539218A3D4D700AD0E5E /* UIKit.framework in Frameworks */,
 				83F8538E18A3D4D700AD0E5E /* Foundation.framework in Frameworks */,
 				C51978940623492F8485EDF0 /* libPods-Asteroids.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		83F853AB18A3D4D700AD0E5E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				83F853B018A3D4D700AD0E5E /* XCTest.framework in Frameworks */,
-				83F853B218A3D4D700AD0E5E /* UIKit.framework in Frameworks */,
-				83F853B118A3D4D700AD0E5E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				83F8538A18A3D4D700AD0E5E /* Asteroids.app */,
-				83F853AE18A3D4D700AD0E5E /* AsteroidsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -269,24 +242,6 @@
 			productReference = 83F8538A18A3D4D700AD0E5E /* Asteroids.app */;
 			productType = "com.apple.product-type.application";
 		};
-		83F853AD18A3D4D700AD0E5E /* AsteroidsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 83F853C218A3D4D700AD0E5E /* Build configuration list for PBXNativeTarget "AsteroidsTests" */;
-			buildPhases = (
-				83F853AA18A3D4D700AD0E5E /* Sources */,
-				83F853AB18A3D4D700AD0E5E /* Frameworks */,
-				83F853AC18A3D4D700AD0E5E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				83F853B418A3D4D700AD0E5E /* PBXTargetDependency */,
-			);
-			name = AsteroidsTests;
-			productName = AsteroidsTests;
-			productReference = 83F853AE18A3D4D700AD0E5E /* AsteroidsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -295,11 +250,6 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Calgary Scientific Inc";
-				TargetAttributes = {
-					83F853AD18A3D4D700AD0E5E = {
-						TestTargetID = 83F8538918A3D4D700AD0E5E;
-					};
-				};
 			};
 			buildConfigurationList = 83F8538518A3D4D700AD0E5E /* Build configuration list for PBXProject "Asteroids" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -315,7 +265,6 @@
 			projectRoot = "";
 			targets = (
 				83F8538918A3D4D700AD0E5E /* Asteroids */,
-				83F853AD18A3D4D700AD0E5E /* AsteroidsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -333,14 +282,6 @@
 				83F8539818A3D4D700AD0E5E /* InfoPlist.strings in Resources */,
 				4303355A18E9CEA9008BB121 /* Settings.bundle in Resources */,
 				43176D1318DA0474001AC3F4 /* fire_68.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		83F853AC18A3D4D700AD0E5E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				83F853BA18A3D4D700AD0E5E /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,23 +340,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		83F853AA18A3D4D700AD0E5E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				83F853BC18A3D4D700AD0E5E /* AsteroidsTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		83F853B418A3D4D700AD0E5E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 83F8538918A3D4D700AD0E5E /* Asteroids */;
-			targetProxy = 83F853B318A3D4D700AD0E5E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4324FBBE18D8D61600E37E15 /* Main_iPhone.storyboard */ = {
@@ -567,48 +492,6 @@
 			};
 			name = Release;
 		};
-		83F853C318A3D4D700AD0E5E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Asteroids.app/Asteroids";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Asteroids/Asteroids-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "AsteroidsTests/AsteroidsTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		83F853C418A3D4D700AD0E5E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Asteroids.app/Asteroids";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Asteroids/Asteroids-Prefix.pch";
-				INFOPLIST_FILE = "AsteroidsTests/AsteroidsTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -626,15 +509,6 @@
 			buildConfigurations = (
 				83F853C018A3D4D700AD0E5E /* Debug */,
 				83F853C118A3D4D700AD0E5E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		83F853C218A3D4D700AD0E5E /* Build configuration list for PBXNativeTarget "AsteroidsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				83F853C318A3D4D700AD0E5E /* Debug */,
-				83F853C418A3D4D700AD0E5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
