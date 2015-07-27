@@ -43,6 +43,8 @@
     self.scribbleView.framework = [PWFramework sharedInstance];
     self.scribbleView.viewName = @"ScribbleView";
     self.scribbleView.delegate = [DiagnosticViewDelegate sharedInstance];
+    
+    [super viewDidLoad];
 }
 
 

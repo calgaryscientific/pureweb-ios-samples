@@ -5,7 +5,6 @@
 
 #import "MasterViewController.h"
 
-#import "AsteroidsViewController.h"
 #import "LoginViewController.h"
 
 #import <PureWeb/PWLog.h>
@@ -18,7 +17,6 @@
 @property () BOOL authenticationCompleted;
 
 @property (strong) LoginViewController *loginViewController;
-@property (strong) AsteroidsViewController *asteroidsViewController;
 
 @end
 
@@ -55,7 +53,10 @@
     else if(!self.authenticationRequired) {
         
         PWFramework *framework = [PWFramework sharedInstance];
-        [framework.client connect:[self.appURL absoluteString]];
+        
+        if (!framework.client.isConnected){
+            [framework.client connect:[self.appURL absoluteString]];
+        }
         
         //segue directly to the scribble view
         [self performSegueWithIdentifier:@"PresentAsteroidsView" sender:self];
@@ -80,11 +81,6 @@
         };
         
         self.loginViewController = incomingViewController;
-    }
-    
-    else if ([segue.destinationViewController isKindOfClass:[AsteroidsViewController class]]) {
-        
-        self.asteroidsViewController = (AsteroidsViewController*) segue.destinationViewController;
     }
 }
 #pragma mark PWWebClientDelegate Methods

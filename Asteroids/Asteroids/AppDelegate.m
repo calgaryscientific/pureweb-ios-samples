@@ -10,6 +10,8 @@
 
 #import "MasterViewController.h"
 
+#import "NSURL+URLHelpers.h"
+
 #import <PureWeb/PureWeb.h>
 #import <PureWeb/PWLog.h> //(???) why isn't this included in the PureWeb.h file?
 
@@ -31,6 +33,7 @@
     if ([self wasLaunchedFromURL:launchOptions]) {
         
         appURL = [launchOptions objectForKey:@"UIApplicationLaunchOptionsURLKey"];
+        appURL = [appURL URLByReplacingScheme];
         authenticationRequired = NO;
         
         PWLogInfo(@"Launching App From Incoming URL");

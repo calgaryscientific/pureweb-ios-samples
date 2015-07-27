@@ -23,6 +23,7 @@
 		438F8FEA18DB8B6D0088C577 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 438F8FE218DB8B6D0088C577 /* Images.xcassets */; };
 		438F8FEB18DB8B6D0088C577 /* TraceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8FE418DB8B6D0088C577 /* TraceViewController.m */; };
 		43DC7FA018F73CA4006C270F /* DirectionControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DC7F9F18F73CA4006C270F /* DirectionControlView.m */; };
+		48E635251B66DFD800792CAE /* NSURL+URLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E635241B66DFD800792CAE /* NSURL+URLHelpers.m */; };
 		83F8538E18A3D4D700AD0E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8538D18A3D4D700AD0E5E /* Foundation.framework */; };
 		83F8539018A3D4D700AD0E5E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8538F18A3D4D700AD0E5E /* CoreGraphics.framework */; };
 		83F8539218A3D4D700AD0E5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8539118A3D4D700AD0E5E /* UIKit.framework */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05E933A3FAC6B2D615DA0766 /* Pods-Asteroids.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asteroids.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Asteroids/Pods-Asteroids.debug.xcconfig"; sourceTree = "<group>"; };
 		4303355918E9CEA9008BB121 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		43176D1218DA0474001AC3F4 /* fire_68.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire_68.png; sourceTree = "<group>"; };
 		43176D1418DA04A1001AC3F4 /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
@@ -62,7 +64,8 @@
 		438F8FE418DB8B6D0088C577 /* TraceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraceViewController.m; sourceTree = "<group>"; };
 		43DC7F9E18F73CA4006C270F /* DirectionControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionControlView.h; sourceTree = "<group>"; };
 		43DC7F9F18F73CA4006C270F /* DirectionControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionControlView.m; sourceTree = "<group>"; };
-		58444891B7F8470299111738 /* Pods-Asteroids.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asteroids.xcconfig"; path = "../Pods/Pods-Asteroids.xcconfig"; sourceTree = "<group>"; };
+		48E635231B66DFD800792CAE /* NSURL+URLHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+URLHelpers.h"; sourceTree = "<group>"; };
+		48E635241B66DFD800792CAE /* NSURL+URLHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+URLHelpers.m"; sourceTree = "<group>"; };
 		83F8538A18A3D4D700AD0E5E /* Asteroids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asteroids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F8538D18A3D4D700AD0E5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		83F8538F18A3D4D700AD0E5E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,6 +82,7 @@
 		83F853B918A3D4D700AD0E5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		83F853BB18A3D4D700AD0E5E /* AsteroidsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsteroidsTests.m; sourceTree = "<group>"; };
 		EC99AB5436154A399E3F07C2 /* libPods-Asteroids.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Asteroids.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F79B2B123D1152F5D0B1483C /* Pods-Asteroids.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asteroids.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Asteroids/Pods-Asteroids.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2427821413EA7DBE1CD8BC65 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				05E933A3FAC6B2D615DA0766 /* Pods-Asteroids.debug.xcconfig */,
+				F79B2B123D1152F5D0B1483C /* Pods-Asteroids.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		435682A718D7A167004F9965 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +123,8 @@
 		438F8FD518DB8B6D0088C577 /* PureWebUI */ = {
 			isa = PBXGroup;
 			children = (
+				48E635231B66DFD800792CAE /* NSURL+URLHelpers.h */,
+				48E635241B66DFD800792CAE /* NSURL+URLHelpers.m */,
 				438F8FD618DB8B6D0088C577 /* AppStateViewController.h */,
 				438F8FD718DB8B6D0088C577 /* AppStateViewController.m */,
 				438F8FD818DB8B6D0088C577 /* DiagnosticsViewController.h */,
@@ -144,7 +159,7 @@
 				83F853B518A3D4D700AD0E5E /* AsteroidsTests */,
 				83F8538C18A3D4D700AD0E5E /* Frameworks */,
 				83F8538B18A3D4D700AD0E5E /* Products */,
-				58444891B7F8470299111738 /* Pods-Asteroids.xcconfig */,
+				2427821413EA7DBE1CD8BC65 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -315,7 +330,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Pods-Asteroids-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Asteroids/Pods-Asteroids-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -336,6 +351,7 @@
 				438F8FE918DB8B6D0088C577 /* OptionsViewController.m in Sources */,
 				438F8FE718DB8B6D0088C577 /* DiagnosticViewDelegate.m in Sources */,
 				43DC7FA018F73CA4006C270F /* DirectionControlView.m in Sources */,
+				48E635251B66DFD800792CAE /* NSURL+URLHelpers.m in Sources */,
 				83F8539A18A3D4D700AD0E5E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,7 +470,7 @@
 		};
 		83F853C018A3D4D700AD0E5E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58444891B7F8470299111738 /* Pods-Asteroids.xcconfig */;
+			baseConfigurationReference = 05E933A3FAC6B2D615DA0766 /* Pods-Asteroids.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -464,7 +480,7 @@
 					"\"${PODS_ROOT}/Headers\"",
 					"\"${PODS_ROOT}/Headers/PureWeb\"",
 					"$(SDKROOT)/usr/include/libxml2",
-					../PureWebUI/PureWebUI/,
+					../PureWebUI/PureWebUI,
 				);
 				INFOPLIST_FILE = "Asteroids/Asteroids-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -474,7 +490,7 @@
 		};
 		83F853C118A3D4D700AD0E5E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58444891B7F8470299111738 /* Pods-Asteroids.xcconfig */;
+			baseConfigurationReference = F79B2B123D1152F5D0B1483C /* Pods-Asteroids.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -484,7 +500,7 @@
 					"\"${PODS_ROOT}/Headers\"",
 					"\"${PODS_ROOT}/Headers/PureWeb\"",
 					"$(SDKROOT)/usr/include/libxml2",
-					../PureWebUI/PureWebUI/,
+					../PureWebUI/PureWebUI,
 				);
 				INFOPLIST_FILE = "Asteroids/Asteroids-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
