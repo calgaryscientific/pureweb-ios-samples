@@ -18,7 +18,6 @@
 @property () BOOL authenticationCompleted;
 
 @property (strong) LoginViewController *loginViewController;
-@property (strong) ScribbleViewController *scribbleViewController;
 
 @end
 
@@ -55,7 +54,9 @@
     else if(!self.authenticationRequired) {
         
         PWFramework *framework = [PWFramework sharedInstance];
-        [framework.client connect:[self.appURL absoluteString]];
+        if (!framework.client.isConnected){
+            [framework.client connect:[self.appURL absoluteString]];
+        }
         
         //segue directly to the scribble view
         [self performSegueWithIdentifier:@"PresentScribbleView" sender:self];
@@ -80,11 +81,6 @@
         };
         
         self.loginViewController = incomingViewController;
-    }
-    
-    else if ([segue.destinationViewController isKindOfClass:[ScribbleViewController class]]) {
-        
-        self.scribbleViewController = (ScribbleViewController *) segue.destinationViewController;
     }
 }
 #pragma mark PWWebClientDelegate Methods

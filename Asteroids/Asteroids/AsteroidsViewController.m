@@ -22,7 +22,7 @@ enum KeyCode
 
 @interface AsteroidsViewController ()<MFMailComposeViewControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet PWView *asteroidsView;
+@property (strong, nonatomic) IBOutlet PWView *asteroidsView;
 @property (weak, nonatomic) IBOutlet FXBlurView *directionContainingView;
 @property (weak, nonatomic) IBOutlet FXBlurView *actionContainingView;
 
