@@ -20,7 +20,7 @@
                     </view>
                     <connections>
                         <segue destination="g28-cV-5f5" kind="presentation" identifier="PresentLoginView" modalPresentationStyle="formSheet" modalTransitionStyle="coverVertical" id="690-vq-h41"/>
-                        <segue destination="va6-pv-VBn" kind="presentation" identifier="PresentAsteroidsView" id="y0x-df-zQ9"/>
+                        <segue destination="va6-pv-VBn" kind="show" identifier="PresentAsteroidsView" id="y0x-df-zQ9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -251,11 +251,11 @@
                         <viewControllerLayoutGuide type="bottom" id="uSe-Ls-ahh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OYI-58-9GY">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owf-le-HrQ">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="974"/>
+                                <rect key="frame" x="-448" y="0.0" width="768" height="430"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="768" id="tYY-m8-gcj"/>
                                 </constraints>
@@ -393,11 +393,11 @@
                         <viewControllerLayoutGuide type="bottom" id="5IZ-fk-GbI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sr0-ig-3kd">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="sbt-Os-BIX">
-                                <rect key="frame" x="567" y="69" width="156" height="34"/>
+                                <rect key="frame" x="119" y="69" width="156" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="152" id="duo-A5-Bi5"/>
                                 </constraints>
@@ -417,14 +417,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFE-oV-VoW">
-                                <rect key="frame" x="567" y="104" width="154" height="216"/>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DFE-oV-VoW">
+                                <rect key="frame" x="119" y="104" width="154" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="154" id="dhM-4n-agF"/>
                                 </constraints>
                             </pickerView>
                             <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="t2t-uk-oAO">
-                                <rect key="frame" x="567" y="476" width="156" height="34"/>
+                                <rect key="frame" x="119" y="476" width="156" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="152" id="mN6-4Z-4QN"/>
                                 </constraints>
@@ -450,8 +450,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ku8-41-eLI">
-                                <rect key="frame" x="569" y="510" width="152" height="216"/>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ku8-41-eLI">
+                                <rect key="frame" x="121" y="510" width="152" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="152" id="P4V-29-bl8"/>
                                 </constraints>
