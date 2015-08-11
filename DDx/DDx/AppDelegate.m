@@ -59,12 +59,7 @@
             return NO;
         }
     } 
-    else 
-    {
-        // Swap out scheme
-        self.url = [self.url URLByReplacingScheme];
-        PWLogInfo(@"Launched from a URL: %@", self.url);
-    }
+    
 
     PWLoginViewController *loginViewController = [[PWLoginViewController alloc] initWithHref:[self.url absoluteString]];
     PWNavigationController *navigationController = [[PWNavigationController alloc] initWithRootViewController:loginViewController];
