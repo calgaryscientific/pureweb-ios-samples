@@ -214,7 +214,7 @@ CGRect scrollframe;
 // There are two ways to connect to a collaboration session.
 // Normally a share url is generated like so
 // http://10.1.10.29/pureweb/share/72fb17ed-c43e-491a-9cad-86710ed50bc7
-// When you click this link. The server in pw 4.1 will redirect this url to a webpage where you can
+// When you click this link. The Pureweb server will redirect this url to a webpage where you can
 // select between mobile and html5 as well as enter the share password.
 // This will then redirect your mobile client and connect to your collaboration session via
 // the connect api.
