@@ -216,7 +216,7 @@ CGRect scrollframe;
 // http://10.1.10.29/pureweb/share/72fb17ed-c43e-491a-9cad-86710ed50bc7
 // When you click this link. The Pureweb server will redirect this url to a webpage where you can
 // select between mobile and html5 as well as enter the share password.
-// This will then redirect your mobile client and connect to your collaboration session via
+// This will then redirect to your mobile client and connect to your collaboration session via
 // the connect api.
 //
 // To test using the joinSession api you can take the normal share url and replace the scheme
