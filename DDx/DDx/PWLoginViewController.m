@@ -211,6 +211,20 @@ CGRect scrollframe;
 #pragma mark -
 #pragma mark Text / Keyboard
 
+// There are two ways to connect to a collaboration session.
+// Normally a share url is generated like so
+// http://10.1.10.29/pureweb/share/72fb17ed-c43e-491a-9cad-86710ed50bc7
+// When you click this link. The server in pw 4.1 will redirect this url to a webpage where you can
+// select between mobile and html5 as well as enter the share password.
+// This will then redirect your mobile client and connect to your collaboration session via
+// the connect api.
+//
+// To test using the joinSession api you can take the normal share url and replace the scheme
+// with the name of the service like so
+// ddx://10.1.10.29/pureweb/share/72fb17ed-c43e-491a-9cad-86710ed50bc7
+// Paste this url into safari on your iOS device and it will switch to your app
+// and connect to your collaboration session via the joinSession api
+
 - (IBAction)connectButtonPushed:(id)sender
 {
     NSString *username = [NSString trim:usernameTextField.text];
