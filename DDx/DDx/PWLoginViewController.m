@@ -245,7 +245,8 @@ CGRect scrollframe;
     }
     else if ([self isAppSessionUrl:launchUrl])
     {
-        [_framework.client connect:self.serverHref];            
+        NSURL *newUrl = [self httpSchemeURL:[NSURL URLWithString:self.serverHref]];
+        [_framework.client connect:[newUrl absoluteString]];
     }
     else 
     {
