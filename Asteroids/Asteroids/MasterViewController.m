@@ -92,12 +92,14 @@
         PWLogInfo(@"Connected Successfully");
         self.authenticationCompleted = YES;
         
-        //connection to pureweb succeeded, dismiss the login view and then transition to the scribble view
-        [self dismissViewControllerAnimated:YES completion:^{
+        if( self.loginViewController != nil ) {
+            //connection to pureweb succeeded, dismiss the login view and then transition to the scribble view
+            [self dismissViewControllerAnimated:YES completion:^{
             
-            self.loginViewController = nil;
-            [self performSegueWithIdentifier:@"PresentAsteroidsView" sender:self];
-        }];
+                self.loginViewController = nil;
+                [self performSegueWithIdentifier:@"PresentAsteroidsView" sender:self];
+            }];
+        }
     }
 }
 
