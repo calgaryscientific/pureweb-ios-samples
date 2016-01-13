@@ -30,7 +30,7 @@
     // Set the text to the color that is currently stored in the app state.
     colorTextField.text = [[PWFramework sharedInstance].state getValueWithAppStatePath:@"/ScribbleColor"];
     
-    UIBarButtonItem *cancelButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancel)];    
+    UIBarButtonItem *cancelButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
     self.navigationItem.leftBarButtonItem = cancelButtonItem;    
     
     

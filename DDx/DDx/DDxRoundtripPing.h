@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^DDxPingCompletion)(int numPings, double average, NSArray *times);
+typedef void (^DDxPingCompletion)(NSInteger numPings, double average, NSArray *times);
 
 @interface DDxRoundtripPing : NSObject
 

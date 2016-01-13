@@ -100,7 +100,7 @@ static NSString * const kDDxEchoPath = @"/DDx/Echo/";
     return YES;
 }
 
-- (NSUInteger)supportedInterfaceOrientations
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
     return UIInterfaceOrientationMaskAll;
 }
@@ -169,7 +169,7 @@ static NSString * const kDDxEchoPath = @"/DDx/Echo/";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    int section = indexPath.section;
+    NSInteger section = indexPath.section;
     switch (section) {
         case 0:
             return [self tableView:tableView babelControlCellForRowAtIndexPath:indexPath];

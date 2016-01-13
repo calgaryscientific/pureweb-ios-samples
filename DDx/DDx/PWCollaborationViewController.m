@@ -113,7 +113,7 @@ static NSString * const kPWCollaboratorEmail = @"Email";
     return YES;
 }
 
-- (NSUInteger)supportedInterfaceOrientations
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
     return UIInterfaceOrientationMaskAll;
 }

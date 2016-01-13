@@ -1,4 +1,9 @@
+source "https://github.com/CocoaPods/Specs.git"
+source "https://github.com/calgaryscientific/pureweb-ios-cocoapods"
+
 workspace 'PureWebSamples'
+
+use_frameworks!
 
 platform :ios, '8.0'
 

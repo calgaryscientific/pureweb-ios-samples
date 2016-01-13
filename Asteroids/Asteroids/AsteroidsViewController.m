@@ -139,7 +139,7 @@ enum KeyCode
 }
 
 #pragma mark Landscape Only
-- (NSUInteger)supportedInterfaceOrientations{
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
     return UIInterfaceOrientationMaskLandscape;
 }
 

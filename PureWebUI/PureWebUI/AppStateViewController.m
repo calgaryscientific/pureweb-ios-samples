@@ -23,9 +23,9 @@
     
     
     [self.appStateWebView loadData:[xml dataUsingEncoding:NSUTF8StringEncoding]
-          MIMEType:@"text/plain"
-  textEncodingName:@"utf-8"
-           baseURL:nil];
+                          MIMEType:@"text/plain"
+                  textEncodingName:@"utf-8"
+                           baseURL:[NSURL URLWithString:@"http://"]];
     
     
     [super viewDidLoad];

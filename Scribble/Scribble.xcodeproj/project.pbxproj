@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D447874FAC3C27DC24A7667 /* Pods_Scribble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30157430949A8DD6615265F /* Pods_Scribble.framework */; };
 		4380755018E0A12700A6E8CD /* NSURL+URLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4380754F18E0A12700A6E8CD /* NSURL+URLHelpers.m */; };
 		438F8FCE18DB8B3B0088C577 /* AppStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8FC018DB8B3B0088C577 /* AppStateViewController.m */; };
 		438F8FCF18DB8B3B0088C577 /* DiagnosticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8FC218DB8B3B0088C577 /* DiagnosticsViewController.m */; };
@@ -30,7 +31,6 @@
 		43EEEDAB18CE53B900159074 /* Gear_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA218CE53B900159074 /* Gear_Icon@2x.png */; };
 		43EEEDAD18CE53B900159074 /* Gear_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA318CE53B900159074 /* Gear_Icon.png */; };
 		43EEEDAF18CE53B900159074 /* PureWeb_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA418CE53B900159074 /* PureWeb_Logo.png */; };
-		6D3F958DE9A94276BBBD54F0 /* libPods-Scribble.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02257500CF3D483F8E125469 /* libPods-Scribble.a */; };
 		83F8534A18A3D4AF00AD0E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8534918A3D4AF00AD0E5E /* Foundation.framework */; };
 		83F8534C18A3D4AF00AD0E5E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8534B18A3D4AF00AD0E5E /* CoreGraphics.framework */; };
 		83F8534E18A3D4AF00AD0E5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F8534D18A3D4AF00AD0E5E /* UIKit.framework */; };
@@ -39,7 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		02257500CF3D483F8E125469 /* libPods-Scribble.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Scribble.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2368E2A510F5B94B68894383 /* Pods-Scribble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scribble.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Scribble/Pods-Scribble.release.xcconfig"; sourceTree = "<group>"; };
 		4380754E18E0A12700A6E8CD /* NSURL+URLHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+URLHelpers.h"; sourceTree = "<group>"; };
 		4380754F18E0A12700A6E8CD /* NSURL+URLHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+URLHelpers.m"; sourceTree = "<group>"; };
 		438F8FBF18DB8B3B0088C577 /* AppStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppStateViewController.h; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		43EEEDA218CE53B900159074 /* Gear_Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gear_Icon@2x.png"; sourceTree = "<group>"; };
 		43EEEDA318CE53B900159074 /* Gear_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gear_Icon.png; sourceTree = "<group>"; };
 		43EEEDA418CE53B900159074 /* PureWeb_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PureWeb_Logo.png; sourceTree = "<group>"; };
-		6F720FFE0A0D47BF8E67BD6A /* Pods-Scribble.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scribble.xcconfig"; path = "../Pods/Pods-Scribble.xcconfig"; sourceTree = "<group>"; };
+		6CEE31CAA57A95F5974E9644 /* Pods-Scribble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scribble.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Scribble/Pods-Scribble.debug.xcconfig"; sourceTree = "<group>"; };
 		83F8534618A3D4AF00AD0E5E /* Scribble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scribble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F8534918A3D4AF00AD0E5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		83F8534B18A3D4AF00AD0E5E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -90,6 +90,7 @@
 		83F8537318A3D4AF00AD0E5E /* ScribbleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ScribbleTests-Info.plist"; sourceTree = "<group>"; };
 		83F8537518A3D4AF00AD0E5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		83F8537718A3D4AF00AD0E5E /* ScribbleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScribbleTests.m; sourceTree = "<group>"; };
+		F30157430949A8DD6615265F /* Pods_Scribble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scribble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,13 +101,22 @@
 				83F8534C18A3D4AF00AD0E5E /* CoreGraphics.framework in Frameworks */,
 				83F8534E18A3D4AF00AD0E5E /* UIKit.framework in Frameworks */,
 				83F8534A18A3D4AF00AD0E5E /* Foundation.framework in Frameworks */,
-				6D3F958DE9A94276BBBD54F0 /* libPods-Scribble.a in Frameworks */,
+				0D447874FAC3C27DC24A7667 /* Pods_Scribble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15E22DDEBA542A3B7C11FC31 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6CEE31CAA57A95F5974E9644 /* Pods-Scribble.debug.xcconfig */,
+				2368E2A510F5B94B68894383 /* Pods-Scribble.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		438F8FBE18DB8B3B0088C577 /* PureWebUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,7 +198,7 @@
 				83F8537118A3D4AF00AD0E5E /* ScribbleTests */,
 				83F8534818A3D4AF00AD0E5E /* Frameworks */,
 				83F8534718A3D4AF00AD0E5E /* Products */,
-				6F720FFE0A0D47BF8E67BD6A /* Pods-Scribble.xcconfig */,
+				15E22DDEBA542A3B7C11FC31 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -207,7 +217,7 @@
 				83F8534B18A3D4AF00AD0E5E /* CoreGraphics.framework */,
 				83F8534D18A3D4AF00AD0E5E /* UIKit.framework */,
 				83F8536B18A3D4AF00AD0E5E /* XCTest.framework */,
-				02257500CF3D483F8E125469 /* libPods-Scribble.a */,
+				F30157430949A8DD6615265F /* Pods_Scribble.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -273,6 +283,7 @@
 				83F8534318A3D4AF00AD0E5E /* Frameworks */,
 				83F8534418A3D4AF00AD0E5E /* Resources */,
 				E2666437346E46CF8B11B751 /* Copy Pods Resources */,
+				FF69E35BD3B32D088B5954D7 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -289,7 +300,7 @@
 		83F8533E18A3D4AF00AD0E5E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Calgary Scientific Inc";
 			};
 			buildConfigurationList = 83F8534118A3D4AF00AD0E5E /* Build configuration list for PBXProject "Scribble" */;
@@ -359,7 +370,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Pods-Scribble-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Scribble/Pods-Scribble-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF69E35BD3B32D088B5954D7 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Scribble/Pods-Scribble-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -412,7 +438,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -427,6 +452,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -452,7 +478,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -484,19 +509,16 @@
 		};
 		83F8537C18A3D4AF00AD0E5E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F720FFE0A0D47BF8E67BD6A /* Pods-Scribble.xcconfig */;
+			baseConfigurationReference = 6CEE31CAA57A95F5974E9644 /* Pods-Scribble.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Scribble/Scribble-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers\"",
-					"\"${PODS_ROOT}/Headers/PureWeb\"",
-					"$(SDKROOT)/usr/include/libxml2",
-					../PureWebUI/PureWebUI,
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Scribble/Scribble-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "CalgaryScientific.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -504,19 +526,16 @@
 		};
 		83F8537D18A3D4AF00AD0E5E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F720FFE0A0D47BF8E67BD6A /* Pods-Scribble.xcconfig */;
+			baseConfigurationReference = 2368E2A510F5B94B68894383 /* Pods-Scribble.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Scribble/Scribble-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers\"",
-					"\"${PODS_ROOT}/Headers/PureWeb\"",
-					"$(SDKROOT)/usr/include/libxml2",
-					../PureWebUI/PureWebUI,
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Scribble/Scribble-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "CalgaryScientific.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
