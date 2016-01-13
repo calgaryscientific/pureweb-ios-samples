@@ -213,7 +213,7 @@
     
     self.roundtripPing = [DDxRoundtripPing new];
     
-    [self.roundtripPing ping:^(int numPings, double average, NSArray *times) {
+    [self.roundtripPing ping:^(NSInteger numPings, double average, NSArray *times) {
         
         [self showPingResults:@"Roundtrip Ping" totalPings:numPings withAverageTime:average];
         self.roundtripPing = nil;
@@ -226,7 +226,7 @@
     
     self.serviceServerPing = [DDxServerServicePing new];
     
-    [self.serviceServerPing ping:^(int numPings, double average, NSArray *times) {
+    [self.serviceServerPing ping:^(NSInteger numPings, double average, NSArray *times) {
         
         [self showPingResults:@"Service Server Ping" totalPings:numPings withAverageTime:average];
         self.serviceServerPing = nil;
@@ -240,9 +240,9 @@
     [self.sendingPingsView dismissWithClickedButtonIndex:0 animated:NO];
     self.sendingPingsView = nil;
     
-    NSString *message = [NSString stringWithFormat:@"%@\nTotal Pings: %d\nAverage: %.2fms",
+    NSString *message = [NSString stringWithFormat:@"%@\nTotal Pings: %ld\nAverage: %.2fms",
                          pingType,
-                         numPings,
+                         (long)numPings,
                          pingAverage];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ping Results"
@@ -262,7 +262,7 @@
 #pragma mark MFMailComposeViewControllerDelegate
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error  {
-    if (!result == MFMailComposeResultSent) {
+    if (!(result == MFMailComposeResultSent)) {
         [UIAlertView showAlert:@"Failed to send email!" message:[error localizedDescription] ];
 
     }

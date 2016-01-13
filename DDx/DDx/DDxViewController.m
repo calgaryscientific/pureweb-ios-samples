@@ -114,7 +114,7 @@ static int const kMaxDDxViews = 4;
     return YES;
 }
 
-- (NSUInteger)supportedInterfaceOrientations
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
     return UIInterfaceOrientationMaskAll;
 }
@@ -153,7 +153,8 @@ static int const kMaxDDxViews = 4;
     CGFloat rowWidth = visible.size.width/2.0;
     
     //calculate various offsets
-    CGFloat navBarOffset = [PWUtility navigationbarHeight:self.interfaceOrientation];
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    CGFloat navBarOffset = [PWUtility navigationbarHeight:orientation];
     CGFloat tabBarOffset = [PWUtility tabbarHeight];
     CGFloat statusBarOffset = [PWUtility statusbarHeight]; 
     CGFloat totalOffset = navBarOffset + statusBarOffset;

@@ -6,8 +6,8 @@
 
 #import "PWLoginViewController.h"
 #import "UIAlertView+PWUtils.h"
-#import "NSString+PWUtils.h"
 #import <PureWeb/PureWeb.h>
+#import "NSString+PWUtils.h"
 
 #define kSCROLL_FACTOR                  50
 #define kSCROLL_FACTOR_IPAD             110
@@ -116,7 +116,8 @@ CGRect scrollframe;
     if (_framework.client.isConnected)
         [_framework.client disconnect];
     
-    [self layoutView:self.interfaceOrientation];
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    [self layoutView:orientation];
     
     if ([self isCollabSessionUrl:[NSURL URLWithString:self.serverHref]])
     {
@@ -153,7 +154,7 @@ CGRect scrollframe;
 }
 
 #ifdef __IPHONE_6_0
-- (NSUInteger)supportedInterfaceOrientations
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
     return UIInterfaceOrientationMaskAll;
 }
@@ -293,7 +294,10 @@ CGRect scrollframe;
     NSDictionary* info = [notification userInfo];
     NSValue* aValue = [info objectForKey:UIKeyboardFrameEndUserInfoKey];
     CGSize keyboardSize = [aValue CGRectValue].size;
-    if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation))
+    
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    
+    if (UIInterfaceOrientationIsLandscape(orientation))
     {
         keyboardSize = CGSizeMake(keyboardSize.height, keyboardSize.width);
     }

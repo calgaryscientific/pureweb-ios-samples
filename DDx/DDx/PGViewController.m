@@ -60,8 +60,9 @@
 }
 - (void) resize {
     
-    CGRect screenRect = [PWUtility screenRect:self.interfaceOrientation];
-    CGFloat navBarOffset = [PWUtility navigationbarHeight:self.interfaceOrientation];
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    CGRect screenRect = [PWUtility screenRect:orientation];
+    CGFloat navBarOffset = [PWUtility navigationbarHeight:orientation];
     CGFloat tabBarOffset = [PWUtility tabbarHeight];
     CGFloat statusBarOffset = [PWUtility statusbarHeight];
     CGFloat totalOffset = navBarOffset + statusBarOffset;
@@ -103,7 +104,7 @@
     return YES;
 }
 
-- (NSUInteger)supportedInterfaceOrientations
+- (UIInterfaceOrientationMask) supportedInterfaceOrientations
 {
     return UIInterfaceOrientationMaskAll;
 }

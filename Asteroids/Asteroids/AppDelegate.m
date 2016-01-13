@@ -13,7 +13,6 @@
 #import "NSURL+URLHelpers.h"
 
 #import <PureWeb/PureWeb.h>
-#import <PureWeb/PWLog.h> //(???) why isn't this included in the PureWeb.h file?
 
 @implementation AppDelegate
 
@@ -21,7 +20,6 @@
 {
     //debug wait loop, this is useful if you want to attach and debug the application without launching it
     //[self debugWaitLoop];
-    
     //setup pureweb logging
     [PWLog setLogLevel:PWLogLevelVerbose];
     
