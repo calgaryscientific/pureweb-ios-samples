@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02A96BC31C48007300E81807 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A96BC21C48007300E81807 /* LaunchScreen.storyboard */; };
 		3B7D1718399B4378EFFC08DA /* Pods_DDx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B28239F20E14239D30B36CB /* Pods_DDx.framework */; };
 		43281AF818F44D9300D51044 /* Diagnostics_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43281AF618F44D9300D51044 /* Diagnostics_iPad.storyboard */; };
 		43281AF918F44D9300D51044 /* Diagnostics_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43281AF718F44D9300D51044 /* Diagnostics_iPhone.storyboard */; };
@@ -94,6 +95,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02A96BC21C48007300E81807 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2266C6C0250EB49384EC601E /* Pods-DDx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDx.release.xcconfig"; path = "../Pods/Target Support Files/Pods-DDx/Pods-DDx.release.xcconfig"; sourceTree = "<group>"; };
 		43281AF618F44D9300D51044 /* Diagnostics_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Diagnostics_iPad.storyboard; sourceTree = "<group>"; };
 		43281AF718F44D9300D51044 /* Diagnostics_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Diagnostics_iPhone.storyboard; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 				438075A118E0B96A00A6E8CD /* TabViewController.h */,
 				438075A218E0B96A00A6E8CD /* TabViewController.m */,
 				438075A318E0B96A00A6E8CD /* TabViewController.xib */,
+				02A96BC21C48007300E81807 /* LaunchScreen.storyboard */,
 			);
 			path = DDx;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				438075D718E0BA0800A6E8CD /* 186-ruler.png in Resources */,
 				438075E518E0BA0800A6E8CD /* TemplateIcon.icns in Resources */,
 				43281AF918F44D9300D51044 /* Diagnostics_iPhone.storyboard in Resources */,
+				02A96BC31C48007300E81807 /* LaunchScreen.storyboard in Resources */,
 				438075B318E0B96A00A6E8CD /* TabViewController.xib in Resources */,
 				438075DD18E0BA0800A6E8CD /* Good.png in Resources */,
 				438075DE18E0BA0800A6E8CD /* invalidateShareUrl.png in Resources */,

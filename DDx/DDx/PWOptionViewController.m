@@ -6,7 +6,7 @@
 
 #import "PWOptionViewController.h"
 #import "PWDiagnosticViewDelegate.h"
-#import "PWFramework.h"
+#import <PureWeb/PWFramework.h>
 
 @interface PWOptionViewController ()
 @property (weak, nonatomic) PWMutableEncoderFormat *activeEncoderFormat;

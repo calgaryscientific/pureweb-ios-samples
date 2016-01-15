@@ -5,7 +5,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PWGuid.h"
+#import <PureWeb/PWGuid.h>
 
 @class PWGuid;
 

@@ -10,7 +10,7 @@
 #import <PureWeb/PureWeb.h>
 #import "DDxView.h"
 #import "PWTouchButtonView.h"
-#import "PWLog.h"
+#import <PureWeb/PWLog.h>
 #import "DiagnosticViewDelegate.h"
 
 @interface PGViewController ()

@@ -8,7 +8,7 @@
 
 #import "BabelViewController.h"
 #import "LocaleData.h"
-#import "PWFramework.h"
+#import <PureWeb/PWFramework.h>
 
 static NSString * const kBabelControlCell = @"BabelControlCell";
 static NSInteger const kBabelControlCellRunTag = 5;

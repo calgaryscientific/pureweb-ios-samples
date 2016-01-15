@@ -11,9 +11,9 @@
 #import <PureWeb/PureWeb.h>
 #import "UIAlertView+PWUtils.h"
 #import "OptionsPanelDelegate.h"
-#import "PWCommandResponseEventArgs.h"
+#import <PureWeb/PWCommandResponseEventArgs.h>
 #import "PWDiagnosticViewController.h"
-#import "PWLog.h"
+#import <PureWeb/PWLog.h>
 #import "DDxServerServicePing.h"
 #import "DDxRoundtripPing.h"
 #import "DiagnosticsViewController.h"

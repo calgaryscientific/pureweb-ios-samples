@@ -5,7 +5,7 @@
 //
 
 #import "PWAppStateView.h"
-#import "PWFramework.h"
+#import <PureWeb/PWFramework.h>
 
 @implementation PWAppStateView
 

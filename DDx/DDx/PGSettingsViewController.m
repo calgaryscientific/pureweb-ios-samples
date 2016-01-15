@@ -7,7 +7,7 @@
 //
 
 #import "PGSettingsViewController.h"
-#import "PWLog.h"
+#import <PureWeb/PWLog.h>
 
 @interface PGSettingsViewController ()
 {

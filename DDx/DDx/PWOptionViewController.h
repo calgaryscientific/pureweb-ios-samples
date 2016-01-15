@@ -5,7 +5,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PWMutableEncoderConfiguration.h"
+#import <PureWeb/PWMutableEncoderConfiguration.h>
 
 @class PWApplicationState;
 

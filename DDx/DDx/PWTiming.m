@@ -5,7 +5,7 @@
 //
 
 #import "PWTiming.h"
-#import "PWUtility.h"
+#import <PureWeb/PWUtility.h>
 
 #import <QuartzCore/QuartzCore.h>
 
