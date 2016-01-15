@@ -5,7 +5,7 @@
 //
 
 #import "PWTextEntryViewController.h"
-#import "PWFramework.h"
+#import <PureWeb/PWFramework.h>
 
 
 @implementation PWTextEntryViewController

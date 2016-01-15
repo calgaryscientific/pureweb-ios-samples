@@ -5,7 +5,7 @@
 //
 
 #import "PWTraceView.h"
-#import "PWTraceLogger.h"
+#import <PureWeb/PWTraceLogger.h>
 
 @implementation PWTraceView
 

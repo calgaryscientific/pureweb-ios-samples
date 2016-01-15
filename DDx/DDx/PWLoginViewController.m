@@ -7,7 +7,7 @@
 #import "PWLoginViewController.h"
 #import "UIAlertView+PWUtils.h"
 #import <PureWeb/PureWeb.h>
-#import "NSString+PWUtils.h"
+#import <PureWeb/NSString+PWUtils.h>
 
 #define kSCROLL_FACTOR                  50
 #define kSCROLL_FACTOR_IPAD             110

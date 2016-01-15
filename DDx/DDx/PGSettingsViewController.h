@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PWMutableEncoderConfiguration.h"
-#import "PWViewDelegate.h"
+#import <PureWeb/PWMutableEncoderConfiguration.h>
+#import <PureWeb/PWViewDelegate.h>
 
 @protocol PGSettingsViewControllerDelegate <NSObject>
 

@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PWMutableEncoderConfiguration.h"
-#import "PWViewDelegate.h"
+#import <PureWeb/PWMutableEncoderConfiguration.h>
+#import <PureWeb/PWViewDelegate.h>
 
 @interface PWDiagnosticViewDelegate : NSObject <PWViewDelegate>
 

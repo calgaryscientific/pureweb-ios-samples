@@ -8,7 +8,7 @@
 #import "PWCollaboratorCell.h"
 #import "PWParticipantInfo.h"
 #import <PureWeb/PureWeb.h>
-#import "PWLog.h"
+#import <PureWeb/PWLog.h>
 
 static NSString * const kPWCollaboratorCell = @"PWCollaboratorCell";
 static NSString * const kPWCollaboratorName = @"Name";

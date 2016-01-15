@@ -10,11 +10,6 @@
 #import <PureWeb/PureWeb.h>
 #import <QuartzCore/QuartzCore.h>
 #import "DDxView.h"
-#import "PWAcetateToolset.h"
-#import "PWCursorPositionTool.h"
-#import "PWPolylineTool.h"
-#import "PWClearMarkupTool.h"
-#import "PWLog.h"
 #import "PWDiagnosticViewDelegate.h"
 
 static int const kMaxDDxViews = 4;

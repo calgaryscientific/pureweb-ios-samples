@@ -6,7 +6,7 @@
 
 #import "PWNavigationButtonCollectionView.h"
 #import <QuartzCore/QuartzCore.h>
-#import "PWUtility.h"
+#import <PureWeb/PWUtility.h>
 
 CGFloat const kPadding = 12;
 CGFloat const kIncrement = 55;
