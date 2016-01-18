@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02A96BC11C46F45D00E81807 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A96BC01C46F45D00E81807 /* LaunchScreen.storyboard */; };
 		0D447874FAC3C27DC24A7667 /* Pods_Scribble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30157430949A8DD6615265F /* Pods_Scribble.framework */; };
 		4380755018E0A12700A6E8CD /* NSURL+URLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4380754F18E0A12700A6E8CD /* NSURL+URLHelpers.m */; };
 		438F8FCE18DB8B3B0088C577 /* AppStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8FC018DB8B3B0088C577 /* AppStateViewController.m */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02A96BC01C46F45D00E81807 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ../LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2368E2A510F5B94B68894383 /* Pods-Scribble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scribble.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Scribble/Pods-Scribble.release.xcconfig"; sourceTree = "<group>"; };
 		4380754E18E0A12700A6E8CD /* NSURL+URLHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+URLHelpers.h"; sourceTree = "<group>"; };
 		4380754F18E0A12700A6E8CD /* NSURL+URLHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+URLHelpers.m"; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 		83F8534F18A3D4AF00AD0E5E /* Scribble */ = {
 			isa = PBXGroup;
 			children = (
+				02A96BC01C46F45D00E81807 /* LaunchScreen.storyboard */,
 				438F8FBE18DB8B3B0088C577 /* PureWebUI */,
 				43EEED7618CE530200159074 /* Utilities & Categories */,
 				43EEED7118CE52E500159074 /* Color Selection View Controller */,
@@ -335,6 +338,7 @@
 				43EEED9C18CE53A200159074 /* Settings.bundle in Resources */,
 				43EEEDA918CE53B900159074 /* Files_Icon.png in Resources */,
 				83F8535418A3D4AF00AD0E5E /* InfoPlist.strings in Resources */,
+				02A96BC11C46F45D00E81807 /* LaunchScreen.storyboard in Resources */,
 				43EEED5B18CE524200159074 /* Main_iPhone.storyboard in Resources */,
 				43EEEDA718CE53B900159074 /* Bubble_Icon@2x.png in Resources */,
 			);
