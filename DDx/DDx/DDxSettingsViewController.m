@@ -24,6 +24,14 @@
 @synthesize enabled = _enabled;
 @synthesize doneButton = _doneButton;
 
+- (id) init {
+    if( self = [super init]) {
+        [self _init];
+    }
+    
+    return self;
+}
+
 - (void)_init
 {
     _enabled = [[UISwitch alloc] init];

@@ -25,6 +25,14 @@
 @synthesize showMousePosition = _showMousePosition;
 @synthesize screenshotButton = _screenshotButton;
 
+- (id) init {
+    if( self = [super init]) {
+        [self _init];
+    }
+    
+    return self;
+}
+
 - (void)_init
 {
     _asyncImageGeneration = [[UISwitch alloc] init];
