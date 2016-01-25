@@ -225,14 +225,16 @@
                     
                     [[PWFramework sharedInstance].client retrieveObject:resourceId onComplete:^(PWBinaryObject *screenShot, NSError *error)
                      {
-                        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-
-                        if(!error)
-                        {
-                            [view setImage:[UIImage imageWithData:screenShot.object]];
-                            
-                            [self.navigationController pushViewController:controller animated:YES];
-                        }
+                         dispatch_async(dispatch_get_main_queue(),^{
+                             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+                             
+                             if(!error)
+                             {
+                                 [view setImage:[UIImage imageWithData:screenShot.object]];
+                                 
+                                 [self.navigationController pushViewController:controller animated:YES];
+                             }
+                         });
                      }];
                 }];
         }];
