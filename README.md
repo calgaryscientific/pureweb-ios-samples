@@ -2,8 +2,8 @@
 
 [The PureWeb platform](http://www.calgaryscientific.com/pureweb/) lets you expose your complex or graphics intensive application as a back end service so it can be hosted online and accessed from new interfaces on browsers and mobile devices.
 
-[![Version](https://img.shields.io/cocoapods/v/AFNetworking.svg)](http://cocoadocs.org/docsets/PureWeb)
-[![Platform](https://img.shields.io/cocoapods/p/AFNetworking.svg)](http://cocoadocs.org/docsets/PureWeb)
+[![Version](http://cocoapod-badges.herokuapp.com/v/PureWeb/badge.png)](http://cocoadocs.org/docsets/PureWeb)
+[![Platform]((http://cocoapod-badges.herokuapp.com/p/PureWeb/badge.png)](http://cocoadocs.org/docsets/PureWeb)
 
 ## Requirements
 
