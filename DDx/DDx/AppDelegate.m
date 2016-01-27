@@ -154,8 +154,10 @@
             
             PWLogError(@"Error Code (%i)\n%@", errorCode, message);
             
-            [UIAlertView showAlert:[NSString stringWithFormat:@"Error connecting to server (%i)", errorCode] message:message];
-            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIAlertView showAlert:[NSString stringWithFormat:@"Error connecting to server (%i)", errorCode] message:message];
+                [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+            });
         }
         break;
         case PWSessionStateActive:

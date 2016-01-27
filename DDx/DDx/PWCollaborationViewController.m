@@ -170,14 +170,17 @@ static NSString * const kPWCollaboratorEmail = @"Email";
     
     @synchronized(self)
     {
-        PWParticipantInfo *p = indexPath.section == 0 ? _hostParticipant : [_collaborators objectAtIndex:indexPath.row];
-        PWLogInfo(@"cell: %@ | %@ | %@", p.sessionId, p.name, p.email);
-        cell.sessionId = p.sessionId;
-        cell.name.text = [NSString stringWithFormat:@"%@ (%@)", p.name, p.email];
+        if(self.collaborationManager != nil && self.collaborationManager.isInitialized) {
+            PWParticipantInfo *p = indexPath.section == 0 ? _hostParticipant : [_collaborators objectAtIndex:indexPath.row];
+            PWLogInfo(@"cell: %@ | %@ | %@", p.sessionId, p.name, p.email);
+            cell.sessionId = p.sessionId;
+            cell.name.text = [NSString stringWithFormat:@"%@ (%@)", p.name, p.email];
 
-        UIColor *color = [_collaborationManager getSessionDefaultColor:p.sessionId].uiColor;
-        cell.colorLabel.backgroundColor = color;
-        cell.enabled.on = [_collaborationManager getMarkupVisible:p.sessionId];
+        
+            UIColor *color = [_collaborationManager getSessionDefaultColor:p.sessionId].uiColor;
+            cell.colorLabel.backgroundColor = color;
+            cell.enabled.on = [_collaborationManager getMarkupVisible:p.sessionId];
+        }
     }
 
     return cell;
