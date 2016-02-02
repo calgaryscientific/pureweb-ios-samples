@@ -19,6 +19,7 @@ static NSInteger const kBabelViewCellLanguageTag = 1;
 static NSInteger const kBabelViewCellPhraseTag = 2;
 static NSInteger const kBabelViewCellCommandResponseTag = 3;
 static NSInteger const kBabelViewCellAppStateTag = 4;
+static NSInteger const kBabelViewCellSessionStorageTag = 5;
 
 static NSString * const kGoodImageName = @"Good.png";
 static NSString * const kBadImageName = @"Bad.png";
@@ -69,6 +70,10 @@ static NSString * const kDDxEchoPath = @"/DDx/Echo/";
     {
         NSString *path = [NSString stringWithFormat:@"%@%@", kDDxEchoPath, phrase.key];
         [[PWFramework sharedInstance].state.stateManager addValueChangedHandler:path target:self action:@selector(echoStateHasChanged:)];
+        
+        PWSessionStorage* session = [[PWFramework sharedInstance].client getSessionStorage];
+        [session addValueChangedHandler:phrase.key target:self action:@selector(sessionStorageStateChanged:)];
+        
     }
 
     [super viewDidLoad];
@@ -81,6 +86,9 @@ static NSString * const kDDxEchoPath = @"/DDx/Echo/";
     {
         NSString *path = [NSString stringWithFormat:@"%@%@", kDDxEchoPath, phrase.key];
         [[PWFramework sharedInstance].state.stateManager removeValueChangedHandler:path target:self action:@selector(echoStateHasChanged:)];
+        
+        PWSessionStorage* session = [[PWFramework sharedInstance].client getSessionStorage];
+        [session removeValueChangedHandler:phrase.key target:self action:@selector(sessionStorageStateChanged:)];
     }
 }
 
@@ -137,6 +145,21 @@ static NSString * const kDDxEchoPath = @"/DDx/Echo/";
      
      [self.tableView reloadData];
  }
+
+- (void)sessionStorageStateChanged:(PWSessionStorageChangedEventArgs*)args
+{
+    NSString* key = [args getKey];
+    NSString* value = [args getNewValue];
+    
+    for(LocaleData *phrase in _localeData)
+    {
+        if(![phrase.key isEqualToString:key]) continue;
+        
+        phrase.sessionStorage = value;
+    }
+    
+    [self.tableView reloadData];
+}
 
 - (void)echoDidRespond:(PWCommandResponseEventArgs *)args
 {
@@ -196,11 +219,13 @@ static NSString * const kDDxEchoPath = @"/DDx/Echo/";
     UILabel *phraseLabel = (UILabel *)[cell viewWithTag:kBabelViewCellPhraseTag];
     UIImageView *commandResponseImage = (UIImageView *)[cell viewWithTag:kBabelViewCellCommandResponseTag];
     UIImageView *appStateImage = (UIImageView *)[cell viewWithTag:kBabelViewCellAppStateTag];
+    UIImageView *sessionStorageImage = (UIImageView *)[cell viewWithTag:kBabelViewCellSessionStorageTag];
     
     languageLabel.text = phrase.key;
     phraseLabel.text = phrase.content;
     [self loadStatusImageforView:commandResponseImage phrase:phrase.content response:phrase.commandResponse];
     [self loadStatusImageforView:appStateImage phrase:phrase.content response:phrase.appState];
+    [self loadStatusImageforView:sessionStorageImage phrase:phrase.content response:phrase.sessionStorage];
     
     return cell;
 }
@@ -247,8 +272,13 @@ static NSString * const kDDxEchoPath = @"/DDx/Echo/";
     {
         NSString *path = [NSString stringWithFormat:@"%@%@", kDDxEchoPath, phrase.key];
         [[PWFramework sharedInstance].state.stateManager setValue:path value:@""];
+        
+        PWSessionStorage* session = [[PWFramework sharedInstance].client getSessionStorage];
+        [session removeValue:phrase.key];
+        
         phrase.appState = @"";
         phrase.commandResponse = @"";
+        phrase.sessionStorage = @"";
     }
     
     [self.tableView reloadData];
@@ -268,6 +298,9 @@ static NSString * const kDDxEchoPath = @"/DDx/Echo/";
         { 
             [self echoDidRespond:args];
         }];
+        
+        PWSessionStorage* session = [[PWFramework sharedInstance].client getSessionStorage];
+        [session setKey:phrase.key toValue:phrase.content];
     }
 }
 

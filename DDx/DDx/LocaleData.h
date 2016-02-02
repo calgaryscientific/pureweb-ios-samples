@@ -15,6 +15,7 @@
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, copy) NSString *commandResponse;
 @property (nonatomic, copy) NSString *appState;
+@property (nonatomic, copy) NSString *sessionStorage;
 
 - (id)initWithKey:(NSString *)key type:(NSString *)type content:(NSString *)content;
 + (LocaleData *)localeDataWithKey:(NSString *)key type:(NSString *)type content:(NSString *)content;

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		027191AF1C5FF97E001E25A4 /* SessionStorageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 027191AD1C5FF97E001E25A4 /* SessionStorageViewController.m */; };
+		027191B01C5FF97E001E25A4 /* SessionStorageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027191AE1C5FF97E001E25A4 /* SessionStorageViewController.xib */; };
+		027191B41C600332001E25A4 /* SessionStorageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 027191B21C600332001E25A4 /* SessionStorageViewCell.m */; };
+		027191B51C600332001E25A4 /* SessionStorageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027191B31C600332001E25A4 /* SessionStorageViewCell.xib */; };
+		027191B91C6015CE001E25A4 /* SessionStorageViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 027191B71C6015CE001E25A4 /* SessionStorageViewHeader.m */; };
+		027191BA1C6015CE001E25A4 /* SessionStorageViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027191B81C6015CE001E25A4 /* SessionStorageViewHeader.xib */; };
 		02A96BC31C48007300E81807 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A96BC21C48007300E81807 /* LaunchScreen.storyboard */; };
 		3B7D1718399B4378EFFC08DA /* Pods_DDx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B28239F20E14239D30B36CB /* Pods_DDx.framework */; };
 		43281AF818F44D9300D51044 /* Diagnostics_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43281AF618F44D9300D51044 /* Diagnostics_iPad.storyboard */; };
@@ -95,6 +101,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		027191AC1C5FF97E001E25A4 /* SessionStorageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionStorageViewController.h; sourceTree = "<group>"; };
+		027191AD1C5FF97E001E25A4 /* SessionStorageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionStorageViewController.m; sourceTree = "<group>"; };
+		027191AE1C5FF97E001E25A4 /* SessionStorageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionStorageViewController.xib; sourceTree = "<group>"; };
+		027191B11C600332001E25A4 /* SessionStorageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionStorageViewCell.h; sourceTree = "<group>"; };
+		027191B21C600332001E25A4 /* SessionStorageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionStorageViewCell.m; sourceTree = "<group>"; };
+		027191B31C600332001E25A4 /* SessionStorageViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionStorageViewCell.xib; sourceTree = "<group>"; };
+		027191B61C6015CE001E25A4 /* SessionStorageViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionStorageViewHeader.h; sourceTree = "<group>"; };
+		027191B71C6015CE001E25A4 /* SessionStorageViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionStorageViewHeader.m; sourceTree = "<group>"; };
+		027191B81C6015CE001E25A4 /* SessionStorageViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionStorageViewHeader.xib; sourceTree = "<group>"; };
 		02A96BC21C48007300E81807 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2266C6C0250EB49384EC601E /* Pods-DDx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDx.release.xcconfig"; path = "../Pods/Target Support Files/Pods-DDx/Pods-DDx.release.xcconfig"; sourceTree = "<group>"; };
 		43281AF618F44D9300D51044 /* Diagnostics_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Diagnostics_iPad.storyboard; sourceTree = "<group>"; };
@@ -458,6 +473,15 @@
 				438075A218E0B96A00A6E8CD /* TabViewController.m */,
 				438075A318E0B96A00A6E8CD /* TabViewController.xib */,
 				02A96BC21C48007300E81807 /* LaunchScreen.storyboard */,
+				027191AC1C5FF97E001E25A4 /* SessionStorageViewController.h */,
+				027191AD1C5FF97E001E25A4 /* SessionStorageViewController.m */,
+				027191AE1C5FF97E001E25A4 /* SessionStorageViewController.xib */,
+				027191B11C600332001E25A4 /* SessionStorageViewCell.h */,
+				027191B21C600332001E25A4 /* SessionStorageViewCell.m */,
+				027191B31C600332001E25A4 /* SessionStorageViewCell.xib */,
+				027191B61C6015CE001E25A4 /* SessionStorageViewHeader.h */,
+				027191B71C6015CE001E25A4 /* SessionStorageViewHeader.m */,
+				027191B81C6015CE001E25A4 /* SessionStorageViewHeader.xib */,
 			);
 			path = DDx;
 			sourceTree = "<group>";
@@ -533,6 +557,7 @@
 				438075D018E0BA0800A6E8CD /* 09-chat-2.png in Resources */,
 				438075D818E0BA0800A6E8CD /* 19-gear.png in Resources */,
 				4380761B18E0BB4000A6E8CD /* PWTextEntryViewController.xib in Resources */,
+				027191B51C600332001E25A4 /* SessionStorageViewCell.xib in Resources */,
 				438075D118E0BA0800A6E8CD /* 103-map.png in Resources */,
 				438075D918E0BA0800A6E8CD /* 46-movie-2.png in Resources */,
 				438075D318E0BA0800A6E8CD /* 112-group.png in Resources */,
@@ -542,6 +567,7 @@
 				4380763618E1DB9F00A6E8CD /* persons.png in Resources */,
 				438075D618E0BA0800A6E8CD /* 17-bar-chart.png in Resources */,
 				438075A718E0B96A00A6E8CD /* BabelViewCell.xib in Resources */,
+				027191B01C5FF97E001E25A4 /* SessionStorageViewController.xib in Resources */,
 				438075D718E0BA0800A6E8CD /* 186-ruler.png in Resources */,
 				438075E518E0BA0800A6E8CD /* TemplateIcon.icns in Resources */,
 				43281AF918F44D9300D51044 /* Diagnostics_iPhone.storyboard in Resources */,
@@ -562,6 +588,7 @@
 				4380762E18E0D74000A6E8CD /* PureWeb_Logo.png in Resources */,
 				438075DB18E0BA0800A6E8CD /* 74-location.png in Resources */,
 				438075D218E0BA0800A6E8CD /* 111-user.png in Resources */,
+				027191BA1C6015CE001E25A4 /* SessionStorageViewHeader.xib in Resources */,
 				438075DF18E0BA0800A6E8CD /* sectionheaderbackground.png in Resources */,
 				438075D518E0BA0800A6E8CD /* 16-line-chart.png in Resources */,
 				438075CE18E0BA0800A6E8CD /* Default-568h@2x.png in Resources */,
@@ -627,6 +654,7 @@
 			files = (
 				43281B0F18F44F1C00D51044 /* LoginViewController.m in Sources */,
 				4380761D18E0BB4000A6E8CD /* PWSegmentsController.m in Sources */,
+				027191AF1C5FF97E001E25A4 /* SessionStorageViewController.m in Sources */,
 				4380762B18E0BB4000A6E8CD /* PWAppStateViewController.m in Sources */,
 				438075A818E0B96A00A6E8CD /* BabelViewController.m in Sources */,
 				4380761F18E0BB4000A6E8CD /* PWParticipantInfo.m in Sources */,
@@ -655,6 +683,8 @@
 				438075AF18E0B96A00A6E8CD /* PGSettingsViewController.m in Sources */,
 				43281B0E18F44F1C00D51044 /* DiagnosticViewDelegate.m in Sources */,
 				438075AC18E0B96A00A6E8CD /* DDxView.m in Sources */,
+				027191B41C600332001E25A4 /* SessionStorageViewCell.m in Sources */,
+				027191B91C6015CE001E25A4 /* SessionStorageViewHeader.m in Sources */,
 				4380761718E0BB4000A6E8CD /* PWTraceView.m in Sources */,
 				438075A418E0B96A00A6E8CD /* AppDelegate.m in Sources */,
 				4380762318E0BB4000A6E8CD /* PWNavigationButtonCollectionView.m in Sources */,
