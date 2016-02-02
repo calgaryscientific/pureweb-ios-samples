@@ -16,8 +16,18 @@
 #import "AspectRatioViewController.h"
 #import "BabelViewController.h"
 #import "NSURL+URLHelpers.h"
+#import "SessionStorageViewController.h"
+
+
+@interface AppDelegate()
+
+@property(nonatomic,strong) SessionStorageViewController* sessionStorageController;
+
+@end
 
 @implementation AppDelegate
+
+
 
 #pragma mark -
 #pragma mark Properties
@@ -38,6 +48,8 @@
 //        // In the debugger, change "wait" to NO once the debugger is attached
 //    }
 
+    //[PWLog setLogLevel:PWLogLevelNetwork];
+    
     [PWUtility registerDefaultsFromSettingsBundle];
 
     [PWFramework sharedInstance].delegate = self;
@@ -186,13 +198,19 @@
             [babelViewController.tabBarItem setTitle:@"Babel"];
             [babelViewController.tabBarItem setImage:[UIImage imageNamed:@"08-chat.png"]];
             
+            self.sessionStorageController = [[SessionStorageViewController alloc] init];
+            [self.sessionStorageController.tabBarItem setTitle:@"Session Storage"];
+            [self.sessionStorageController.tabBarItem setImage:[UIImage imageNamed:@"103-map.png"]];
+            
             [tabViewController setViewControllers:[NSArray arrayWithObjects:ddxViewController,
                                                                             pgViewController, 
                                                                             collaborationViewController,
                                                                             aspectViewController,
                                                                             babelViewController,
+                                                                            self.sessionStorageController,
                                                                             nil]];
 
+            
             [self.viewController pushViewController:tabViewController animated:YES];
             
         } break;
@@ -208,6 +226,12 @@
 
 - (void)minimumRequestIntervalChanged
 {
+}
+
+-(void)sessionStorageKeyAdded:(PWSessionStorageChangedEventArgs *)args {
+    
+    [self.sessionStorageController sessionStorageKeyAdded:args];
+    [self.sessionStorageController.tableView reloadData];
 }
 
 @end

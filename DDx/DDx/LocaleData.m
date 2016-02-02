@@ -25,6 +25,7 @@
         _content = content;
         _commandResponse = @"";
         _appState = @"";
+        _sessionStorage = @"";
     }
     
     return self;
