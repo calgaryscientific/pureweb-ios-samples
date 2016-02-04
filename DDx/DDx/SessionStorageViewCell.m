@@ -32,6 +32,22 @@
     [storage removeValue:self.keyLabel.text];
 }
 
+- (IBAction)getValue:(id)sender {
+     PWSessionStorage* storage = [[PWFramework sharedInstance].client getSessionStorage];
+    
+    NSString* value = [storage getValue:self.keyLabel.text];
+    
+    UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Local value in Session Storage"
+                                                       message:[NSString stringWithFormat:@"\n\n%@",value]
+                                                      delegate:self
+                                             cancelButtonTitle:@"OK"
+                                             otherButtonTitles:nil];
+    [theAlert show];
+    return;
+
+    
+}
+
 
 - (void)awakeFromNib {
     // Initialization code
