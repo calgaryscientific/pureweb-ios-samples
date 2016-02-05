@@ -8,20 +8,26 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SessionStorageViewCell" id="KGk-i7-Jjw" customClass="SessionStorageViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SessionStorageViewCell" rowHeight="44" id="KGk-i7-Jjw" customClass="SessionStorageViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="393" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVt-fz-JnE">
+                        <rect key="frame" x="8" y="11" width="56" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" misplaced="YES" text="Value" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvQ-b2-U8Q">
                         <rect key="frame" x="72" y="11" width="111" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gvQ-2J-xu9">
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gvQ-2J-xu9">
                         <rect key="frame" x="201" y="6" width="51" height="31"/>
                         <connections>
                             <action selector="serviceListener:" destination="KGk-i7-Jjw" eventType="valueChanged" id="Si5-ed-W6d"/>
@@ -34,24 +40,28 @@
                             <action selector="deleteKey:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zHb-Qs-jnJ"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVt-fz-JnE">
-                        <rect key="frame" x="8" y="11" width="56" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMc-Pe-kje">
+                        <rect key="frame" x="311" y="7" width="38" height="30"/>
+                        <state key="normal" title="Value"/>
+                        <connections>
+                            <action selector="getValue:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ygz-pO-qw0"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="bf1-Md-eos" secondAttribute="bottom" constant="-2" id="1rP-Nl-rBe"/>
-                    <constraint firstItem="bf1-Md-eos" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-1" id="4yG-fj-GQf"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="bf1-Md-eos" secondAttribute="bottom" constant="-2" id="0um-u4-cJI"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="PMc-Pe-kje" secondAttribute="bottom" constant="-2" id="3gy-rA-GPs"/>
+                    <constraint firstItem="PMc-Pe-kje" firstAttribute="leading" secondItem="bf1-Md-eos" secondAttribute="trailing" constant="8" id="4FT-Fn-CgZ"/>
                     <constraint firstItem="AVt-fz-JnE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="6Cz-Qb-U24"/>
                     <constraint firstAttribute="bottomMargin" secondItem="NvQ-b2-U8Q" secondAttribute="bottom" constant="3" id="9aF-4g-dLy"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="bf1-Md-eos" secondAttribute="trailing" constant="9" id="CRU-az-Vtr"/>
+                    <constraint firstItem="PMc-Pe-kje" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-1" id="ES1-dk-WHx"/>
                     <constraint firstItem="NvQ-b2-U8Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="Jzr-ii-Sgi"/>
                     <constraint firstItem="AVt-fz-JnE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="KcJ-hT-frG"/>
+                    <constraint firstItem="bf1-Md-eos" firstAttribute="leading" secondItem="gvQ-2J-xu9" secondAttribute="trailing" constant="3" id="Kka-Kw-a28"/>
                     <constraint firstItem="gvQ-2J-xu9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-2" id="OeC-U5-pla"/>
                     <constraint firstItem="NvQ-b2-U8Q" firstAttribute="leading" secondItem="AVt-fz-JnE" secondAttribute="trailing" constant="16" id="R8A-ay-6sE"/>
-                    <constraint firstItem="bf1-Md-eos" firstAttribute="leading" secondItem="gvQ-2J-xu9" secondAttribute="trailing" constant="8" id="UoX-kJ-Alf"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="PMc-Pe-kje" secondAttribute="trailing" constant="36" id="TK5-qa-GgC"/>
+                    <constraint firstItem="bf1-Md-eos" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-1" id="Wyq-V6-woF"/>
                     <constraint firstItem="NvQ-b2-U8Q" firstAttribute="leading" secondItem="AVt-fz-JnE" secondAttribute="trailing" constant="8" id="ax2-ym-CcZ"/>
                     <constraint firstItem="gvQ-2J-xu9" firstAttribute="leading" secondItem="NvQ-b2-U8Q" secondAttribute="trailing" constant="77" id="chk-Dp-PlN"/>
                     <constraint firstAttribute="bottomMargin" secondItem="AVt-fz-JnE" secondAttribute="bottom" constant="3" id="fl2-0y-MtH"/>
@@ -72,6 +82,7 @@
                 <outlet property="serviceListenerSwitch" destination="gvQ-2J-xu9" id="FG0-3q-Wj7"/>
                 <outlet property="valueLabel" destination="NvQ-b2-U8Q" id="7pI-yH-HRL"/>
             </connections>
+            <point key="canvasLocation" x="308.5" y="351"/>
         </tableViewCell>
     </objects>
 </document>
