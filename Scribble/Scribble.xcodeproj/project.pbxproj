@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		027191BC1C68F556001E25A4 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027191BB1C68F556001E25A4 /* ColorViewController.swift */; };
+		027191BE1C692D3D001E25A4 /* UIColor+HighlightColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027191BD1C692D3D001E25A4 /* UIColor+HighlightColor.swift */; };
 		02A96BC11C46F45D00E81807 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A96BC01C46F45D00E81807 /* LaunchScreen.storyboard */; };
 		0D447874FAC3C27DC24A7667 /* Pods_Scribble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30157430949A8DD6615265F /* Pods_Scribble.framework */; };
 		4380755018E0A12700A6E8CD /* NSURL+URLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4380754F18E0A12700A6E8CD /* NSURL+URLHelpers.m */; };
@@ -18,13 +20,10 @@
 		438F8FD318DB8B3B0088C577 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 438F8FCB18DB8B3B0088C577 /* Images.xcassets */; };
 		438F8FD418DB8B3B0088C577 /* TraceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438F8FCD18DB8B3B0088C577 /* TraceViewController.m */; };
 		43EEED5918CE524200159074 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED5618CE524200159074 /* AppDelegate.m */; };
-		43EEED5B18CE524200159074 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED5718CE524200159074 /* Main_iPhone.storyboard */; };
-		43EEED5D18CE524200159074 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED5818CE524200159074 /* Main_iPad.storyboard */; };
+		43EEED5D18CE524200159074 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED5818CE524200159074 /* Main.storyboard */; };
 		43EEED6218CE52AE00159074 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6118CE52AE00159074 /* MasterViewController.m */; };
 		43EEED6818CE52C900159074 /* ScribbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6518CE52C900159074 /* ScribbleViewController.m */; };
 		43EEED6A18CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED6718CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m */; };
-		43EEED7418CE52F600159074 /* ColorSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED7318CE52F600159074 /* ColorSelectionViewController.m */; };
-		43EEED7D18CE531300159074 /* UIColor+HighlightedColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEED7A18CE531300159074 /* UIColor+HighlightedColors.m */; };
 		43EEED9C18CE53A200159074 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED9B18CE53A200159074 /* Settings.bundle */; };
 		43EEEDA518CE53B900159074 /* Bubble_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEED9F18CE53B900159074 /* Bubble_Icon.png */; };
 		43EEEDA718CE53B900159074 /* Bubble_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43EEEDA018CE53B900159074 /* Bubble_Icon@2x.png */; };
@@ -40,6 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		027191BB1C68F556001E25A4 /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
+		027191BD1C692D3D001E25A4 /* UIColor+HighlightColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HighlightColor.swift"; sourceTree = "<group>"; };
+		0285B2161C4FFB8C00B1B710 /* Scribble-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Scribble-Bridging-Header.h"; sourceTree = "<group>"; };
 		02A96BC01C46F45D00E81807 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ../LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2368E2A510F5B94B68894383 /* Pods-Scribble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scribble.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Scribble/Pods-Scribble.release.xcconfig"; sourceTree = "<group>"; };
 		4380754E18E0A12700A6E8CD /* NSURL+URLHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+URLHelpers.h"; sourceTree = "<group>"; };
@@ -61,18 +63,13 @@
 		43B7A0EF18CE58A600B817C8 /* Scribble-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Scribble-Info.plist"; sourceTree = "<group>"; };
 		43EEED5518CE524200159074 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
 		43EEED5618CE524200159074 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
-		43EEED5718CE524200159074 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main_iPhone.storyboard; path = ../Main_iPhone.storyboard; sourceTree = "<group>"; };
-		43EEED5818CE524200159074 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main_iPad.storyboard; path = ../Main_iPad.storyboard; sourceTree = "<group>"; };
+		43EEED5818CE524200159074 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		43EEED6018CE52AE00159074 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		43EEED6118CE52AE00159074 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		43EEED6418CE52C900159074 /* ScribbleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScribbleViewController.h; sourceTree = "<group>"; };
 		43EEED6518CE52C900159074 /* ScribbleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScribbleViewController.m; sourceTree = "<group>"; };
 		43EEED6618CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ScribbleViewController+MFMailComposeViewControllerDelegate.h"; sourceTree = "<group>"; };
 		43EEED6718CE52C900159074 /* ScribbleViewController+MFMailComposeViewControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ScribbleViewController+MFMailComposeViewControllerDelegate.m"; sourceTree = "<group>"; };
-		43EEED7218CE52F600159074 /* ColorSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSelectionViewController.h; sourceTree = "<group>"; };
-		43EEED7318CE52F600159074 /* ColorSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSelectionViewController.m; sourceTree = "<group>"; };
-		43EEED7918CE531300159074 /* UIColor+HighlightedColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HighlightedColors.h"; sourceTree = "<group>"; };
-		43EEED7A18CE531300159074 /* UIColor+HighlightedColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HighlightedColors.m"; sourceTree = "<group>"; };
 		43EEED9B18CE53A200159074 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		43EEED9F18CE53B900159074 /* Bubble_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bubble_Icon.png; sourceTree = "<group>"; };
 		43EEEDA018CE53B900159074 /* Bubble_Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bubble_Icon@2x.png"; sourceTree = "<group>"; };
@@ -165,8 +162,7 @@
 		43EEED7118CE52E500159074 /* Color Selection View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				43EEED7218CE52F600159074 /* ColorSelectionViewController.h */,
-				43EEED7318CE52F600159074 /* ColorSelectionViewController.m */,
+				027191BB1C68F556001E25A4 /* ColorViewController.swift */,
 			);
 			name = "Color Selection View Controller";
 			sourceTree = "<group>";
@@ -174,8 +170,7 @@
 		43EEED7618CE530200159074 /* Utilities & Categories */ = {
 			isa = PBXGroup;
 			children = (
-				43EEED7918CE531300159074 /* UIColor+HighlightedColors.h */,
-				43EEED7A18CE531300159074 /* UIColor+HighlightedColors.m */,
+				027191BD1C692D3D001E25A4 /* UIColor+HighlightColor.swift */,
 			);
 			name = "Utilities & Categories";
 			sourceTree = "<group>";
@@ -236,9 +231,9 @@
 				43EEED5F18CE529B00159074 /* Scribble View Controller */,
 				43EEED5518CE524200159074 /* AppDelegate.h */,
 				43EEED5618CE524200159074 /* AppDelegate.m */,
-				43EEED5718CE524200159074 /* Main_iPhone.storyboard */,
-				43EEED5818CE524200159074 /* Main_iPad.storyboard */,
+				43EEED5818CE524200159074 /* Main.storyboard */,
 				83F8535018A3D4AF00AD0E5E /* Supporting Files */,
+				0285B2161C4FFB8C00B1B710 /* Scribble-Bridging-Header.h */,
 			);
 			path = Scribble;
 			sourceTree = "<group>";
@@ -305,6 +300,11 @@
 			attributes = {
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Calgary Scientific Inc";
+				TargetAttributes = {
+					83F8534518A3D4AF00AD0E5E = {
+						DevelopmentTeam = 7YXDF4B95A;
+					};
+				};
 			};
 			buildConfigurationList = 83F8534118A3D4AF00AD0E5E /* Build configuration list for PBXProject "Scribble" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -330,7 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43EEEDAB18CE53B900159074 /* Gear_Icon@2x.png in Resources */,
-				43EEED5D18CE524200159074 /* Main_iPad.storyboard in Resources */,
+				43EEED5D18CE524200159074 /* Main.storyboard in Resources */,
 				43EEEDAD18CE53B900159074 /* Gear_Icon.png in Resources */,
 				43EEEDAF18CE53B900159074 /* PureWeb_Logo.png in Resources */,
 				438F8FD318DB8B3B0088C577 /* Images.xcassets in Resources */,
@@ -339,7 +339,6 @@
 				43EEEDA918CE53B900159074 /* Files_Icon.png in Resources */,
 				83F8535418A3D4AF00AD0E5E /* InfoPlist.strings in Resources */,
 				02A96BC11C46F45D00E81807 /* LaunchScreen.storyboard in Resources */,
-				43EEED5B18CE524200159074 /* Main_iPhone.storyboard in Resources */,
 				43EEEDA718CE53B900159074 /* Bubble_Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,15 +402,15 @@
 				43EEED6818CE52C900159074 /* ScribbleViewController.m in Sources */,
 				438F8FD018DB8B3B0088C577 /* DiagnosticViewDelegate.m in Sources */,
 				43EEED5918CE524200159074 /* AppDelegate.m in Sources */,
-				43EEED7D18CE531300159074 /* UIColor+HighlightedColors.m in Sources */,
 				438F8FD218DB8B3B0088C577 /* OptionsViewController.m in Sources */,
+				027191BE1C692D3D001E25A4 /* UIColor+HighlightColor.swift in Sources */,
 				438F8FCE18DB8B3B0088C577 /* AppStateViewController.m in Sources */,
 				438F8FCF18DB8B3B0088C577 /* DiagnosticsViewController.m in Sources */,
 				4380755018E0A12700A6E8CD /* NSURL+URLHelpers.m in Sources */,
 				438F8FD418DB8B3B0088C577 /* TraceViewController.m in Sources */,
 				43EEED6218CE52AE00159074 /* MasterViewController.m in Sources */,
-				43EEED7418CE52F600159074 /* ColorSelectionViewController.m in Sources */,
 				438F8FD118DB8B3B0088C577 /* LoginViewController.m in Sources */,
+				027191BC1C68F556001E25A4 /* ColorViewController.swift in Sources */,
 				83F8535618A3D4AF00AD0E5E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,13 +516,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Scribble/Scribble-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Scribble/Scribble-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "CalgaryScientific.${PRODUCT_NAME:rfc1034identifier}";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CalgaryScientific.Scribble;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Scribble/Scribble-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -534,13 +540,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Scribble/Scribble-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Scribble/Scribble-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "CalgaryScientific.${PRODUCT_NAME:rfc1034identifier}";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CalgaryScientific.Scribble;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Scribble/Scribble-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

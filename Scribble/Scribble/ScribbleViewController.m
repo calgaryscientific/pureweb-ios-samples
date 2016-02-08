@@ -4,14 +4,14 @@
 #import <PureWeb/PureWeb.h>
 #import <PureWeb/PWLog.h>
 
-#import "ColorSelectionViewController.h"
 #import "ScribbleViewController+MFMailComposeViewControllerDelegate.h"
 #import "DiagnosticViewDelegate.h"
+#import "Scribble-Swift.h"
 
 @interface ScribbleViewController ()
 
 @property (strong, nonatomic) IBOutlet PWView *scribbleView;
-@property (strong, nonatomic) ColorSelectionViewController *colorPanel;
+@property (strong, nonatomic) ColorViewController *colorPanel;
 
 
 @end
@@ -23,8 +23,8 @@
     //cache the color panel which is embedded into the scribble page
     [self.childViewControllers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         
-        if ([obj isKindOfClass:[ColorSelectionViewController class]]) {
-            self.colorPanel = (ColorSelectionViewController *) obj;
+        if ([obj isKindOfClass:[ColorViewController class]]) {
+            self.colorPanel = (ColorViewController *) obj;
         }
     }];
     
@@ -51,7 +51,7 @@
 #pragma mark Button Pressed Methods
 - (IBAction)colorButtonPressed:(UIBarButtonItem *)sender
 {
-    [self.colorPanel traySelected];
+    [self.colorPanel selectTray];
     PWLogInfo(@"Color Button Pressed");
 }
 
