@@ -7,8 +7,10 @@
 
 #import "LoginViewController.h"
 #import "ScribbleViewController.h"
-
+#import "Scribble-Swift.h"
 #import <PureWeb/PWLog.h>
+
+
 
 @interface MasterViewController ()
 
