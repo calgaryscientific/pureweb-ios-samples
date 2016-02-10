@@ -33,6 +33,8 @@
     
     [storage removeValueChangedHandler:self.keyLabel.text target:self.sessionStorageController action:@selector(valueChanged:)];
     [self.sessionStorageController.changeHandlers setObject: [NSNumber numberWithBool:NO] forKey:self.keyLabel.text];
+    
+    [[PWFramework sharedInstance].client queueCommand:@"DetachStorageListener" withParameters:@{@"key": self.keyLabel.text}];
 }
 
 - (IBAction)getValue:(id)sender {
