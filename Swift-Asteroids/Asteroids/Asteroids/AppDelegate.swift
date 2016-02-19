@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 appUrl = components.URL!;
                 
                 print("Launching App From Incoming URL")
+                
+                authenticationRequired = false;
             }
         } else
         if let urlString = NSUserDefaults.standardUserDefaults().stringForKey("pureweb_url") {

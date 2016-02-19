@@ -47,13 +47,15 @@ class ViewController: UIViewController, PWWebClientDelegate {
         let connected = PWFramework.sharedInstance().client().isConnected
         
         if connected {
-            // PWLogInfo(@"Connected Successfully");
+            
             print("Connected Successfully")
             authenticationCompleted = true
             
-            dismissViewControllerAnimated(true, completion: {
-                self.performSegueWithIdentifier("PresentAsteroidsView", sender: self)
-            })
+            if authenticationRequired {
+                dismissViewControllerAnimated(true, completion: {
+                    self.performSegueWithIdentifier("PresentAsteroidsView", sender: self)
+                })
+            }
         }
     }
     
