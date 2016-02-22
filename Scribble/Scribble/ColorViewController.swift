@@ -138,10 +138,12 @@ class ColorViewController: UIViewController {
         unselectButton(currentlySelectedColorButton);
         
         //if a button corresponding to the updated color exists then select it
-        if let chosenButton = buttonForColor(chosenColor!) {
+        if chosenColor != nil {
+            if let chosenButton = buttonForColor(chosenColor!) {
             
-            selectButton(chosenButton);
-            self.currentlySelectedColorButton = chosenButton;
+                selectButton(chosenButton);
+                self.currentlySelectedColorButton = chosenButton;
+            }
         }
         
     }
