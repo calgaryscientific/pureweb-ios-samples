@@ -132,16 +132,17 @@ class ColorViewController: UIViewController {
     func colorDidChange(args : PWValueChangedEventArgs) {
         
         let colorName = args.newValue;
-        let chosenColor = colorDict[colorName];
         
         //regardless of whether the color corresponds, unselect the currently selected color
         unselectButton(currentlySelectedColorButton);
         
         //if a button corresponding to the updated color exists then select it
-        if let chosenButton = buttonForColor(chosenColor!) {
+        if let chosenColor = colorDict[colorName] {
+            if let chosenButton = buttonForColor(chosenColor) {
             
-            selectButton(chosenButton);
-            self.currentlySelectedColorButton = chosenButton;
+                selectButton(chosenButton);
+                self.currentlySelectedColorButton = chosenButton;
+            }
         }
         
     }
