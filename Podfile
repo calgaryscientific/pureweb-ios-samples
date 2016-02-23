@@ -15,9 +15,9 @@ target 'Scribble' do
     pod "#{PUREWEB}"
 end
 
-xcodeproj 'Asteroids/Asteroids.xcodeproj'
+xcodeproj 'Swift-Asteroids/Asteroids/Asteroids.xcodeproj'
 target 'Asteroids' do
-    xcodeproj 'Asteroids/Asteroids.xcodeproj'
+    xcodeproj 'Swift-Asteroids/Asteroids/Asteroids.xcodeproj'
     pod "#{PUREWEB}"
 end 
 
