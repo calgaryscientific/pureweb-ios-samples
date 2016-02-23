@@ -25,7 +25,11 @@
 
     PWSessionStorage* storage = [[PWFramework sharedInstance].client getSessionStorage];
     
-    if( isEmpty(self.keyTextField.text) || isEmpty(self.valueTextField.text) ) {
+    // We don't allow whitespace before or after key and values. So make sure it's trimmed away
+    NSString* key = [self.keyTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSString* value = [self.valueTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
+    if( isEmpty(key) || isEmpty(value) ) {
         UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"DDx"
                                                              message:@"Key or Value cannot be empty!"
                                                             delegate:self
@@ -35,7 +39,7 @@
         return;
     }
     
-    [storage setKey:self.keyTextField.text toValue:self.valueTextField.text];
+    [storage setKey: key toValue: value];
 }
 
 @end
