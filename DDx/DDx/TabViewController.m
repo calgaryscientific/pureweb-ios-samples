@@ -152,17 +152,19 @@
     
     [client invalidateSessionShareUrlAsync:self.sharedURL completion:^(NSError *error) {
         
-        if (error) {
+        dispatch_async(dispatch_get_main_queue(),^{
+            if (error) {
+                
+                [UIAlertView showAlert:@"There was an error while invalidating the application share"
+                               message:[error description]];
+                return;
+            }
             
-            [UIAlertView showAlert:@"There was an error while invalidating the application share"
-                           message:[error description]];
-            return;
-        }
-        
-        self.sharedURL = nil;
-        self.invalidateShareButton.hidden = YES;
-        
-        [UIAlertView showAlert:@"Share Session Deleted" message:@"The share url has been successfully deleted"];
+            self.sharedURL = nil;
+            self.invalidateShareButton.hidden = YES;
+            
+            [UIAlertView showAlert:@"Share Session Deleted" message:@"The share url has been successfully deleted"];
+        });
     }];
 }
 
