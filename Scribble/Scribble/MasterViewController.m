@@ -102,6 +102,17 @@
                 [self performSegueWithIdentifier:@"PresentScribbleView" sender:self];
             }];
         }
+    }else{
+        // Remove value changed handlers to prevent a call to colorChanged when disconnection sends empty args to listeners
+        PWFramework *framework = [PWFramework sharedInstance];
+        [framework.state.stateManager removeAllValueChangedHandlers:@"/ScribbleColor"];
+        
+        // Notify users that the session has been disconnected
+        [self dismissViewControllerAnimated:YES completion:^{
+            NSString *message = @"Session has lost connection to service.\n Reopen the application to begin a new connection.";
+            UIAlertController *alerts = [UIAlertController alertControllerWithTitle:@"Session Disconnected" message:message preferredStyle:UIAlertControllerStyleAlert];
+            [self presentViewController:alerts animated:YES completion:nil];
+        }];
     }
 }
 
