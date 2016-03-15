@@ -153,25 +153,6 @@
 {
     switch ([PWFramework sharedInstance].client.sessionState)
     {
-        case PWSessionStateFailed:
-        {
-            int errorCode = -1;
-            NSDictionary *userInfo = [[PWFramework sharedInstance].client.acquireException userInfo];
-            if (userInfo && [userInfo objectForKey:@"ErrorCode"])
-            {
-                errorCode = [[userInfo objectForKey:@"ErrorCode"] intValue];   
-            }
-            
-            NSString *message = [[PWFramework sharedInstance].client.acquireException description];
-            
-            PWLogError(@"Error Code (%i)\n%@", errorCode, message);
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [UIAlertView showAlert:[NSString stringWithFormat:@"Error connecting to server (%i)", errorCode] message:message];
-                [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-            });
-        }
-        break;
         case PWSessionStateActive:
         {
             TabViewController *tabViewController = [[TabViewController alloc] init];
@@ -214,8 +195,35 @@
             [self.viewController pushViewController:tabViewController animated:YES];
             
         } break;
-        case PWSessionStateUnknown:            
         case PWSessionStateDisconnected:
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSString *message = @"Session has lost connection to service.\n Reopen the application to begin a new connection.";
+                UIAlertController *alerts = [UIAlertController alertControllerWithTitle:@"Session Disconnected" message:message preferredStyle:UIAlertControllerStyleAlert];
+                [self.viewController presentViewController:alerts animated:YES completion:nil];
+            });
+        }
+            break;
+        case PWSessionStateFailed:
+        {
+            int errorCode = -1;
+            NSDictionary *userInfo = [[PWFramework sharedInstance].client.acquireException userInfo];
+            if (userInfo && [userInfo objectForKey:@"ErrorCode"])
+            {
+                errorCode = [[userInfo objectForKey:@"ErrorCode"] intValue];
+            }
+            
+            NSString *message = [[PWFramework sharedInstance].client.acquireException description];
+            
+            PWLogError(@"Error Code (%i)\n%@", errorCode, message);
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIAlertView showAlert:[NSString stringWithFormat:@"Error connecting to server (%i)", errorCode] message:message];
+                [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+            });
+        }
+            break;
+        case PWSessionStateUnknown:
         case PWSessionStateConnecting:
         case PWSessionStateStalled:
         case PWSessionStateTerminated:
