@@ -98,8 +98,13 @@ static int const kMaxDDxViews = 4;
 
 - (void)viewWasPopped
 {
-    for (int i = 0; i < kMaxDDxViews; i++)
-        [((PWView *)[_ddxViews objectAtIndex:i]) detachView];
+    // Clear the active view when cleaning up the view
+    [self.toolset setActiveView: nil];
+    
+    for (int i = 0; i < kMaxDDxViews; i++) {
+        DDxView* view = [_ddxViews objectAtIndex:i];
+        [(PWView*)view detachView];
+    }
 }
 
 #ifdef __IPHONE_6_0
