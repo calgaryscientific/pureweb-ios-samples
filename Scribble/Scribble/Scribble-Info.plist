@@ -27,6 +27,7 @@
 			<string>com.calgaryscientific.pureweb</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>scribbleappqt</string>
 				<string>scribble</string>
 				<string>scribbleapp</string>
 				<string>scribbleappcpp</string>
