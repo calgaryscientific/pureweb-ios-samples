@@ -10,6 +10,6 @@
 
 @interface NSURL (URLHelpers)
 
-- (NSURL *) URLByReplacingScheme;
+- (NSURL *) URLByReplacingScheme:(BOOL) secureScheme;
 
 @end

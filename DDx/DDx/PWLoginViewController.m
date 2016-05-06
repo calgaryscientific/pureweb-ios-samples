@@ -18,7 +18,7 @@ CGRect scrollframe;
 @interface PWLoginViewController ()
 
 - (BOOL)isCollabSessionUrl:(NSURL *)url;
-- (NSURL *)httpSchemeURL:(NSURL *)url;
+- (NSURL *)httpSchemeURL:(NSURL *)url secureScheme:(BOOL)secure;
 
 @end
 
@@ -232,6 +232,7 @@ CGRect scrollframe;
     NSString *password = [NSString trim:passwordTextField.text];
 
     NSURL* launchUrl = [NSURL URLWithString:self.serverHref];
+    BOOL secureScheme = [[NSUserDefaults standardUserDefaults] boolForKey:@"pureweb_collab_secure"];
     
     if ([self isCollabSessionUrl:launchUrl])
     {
@@ -241,12 +242,12 @@ CGRect scrollframe;
             return;
         }
         
-        NSURL *newUrl = [self httpSchemeURL:[NSURL URLWithString:self.serverHref]];
+        NSURL *newUrl = [self httpSchemeURL:[NSURL URLWithString:self.serverHref] secureScheme:secureScheme];
         [_framework.client joinSession:[newUrl absoluteString] sharePassword:password];
     }
     else if ([self isAppSessionUrl:launchUrl])
     {
-        NSURL *newUrl = [self httpSchemeURL:[NSURL URLWithString:self.serverHref]];
+        NSURL *newUrl = [self httpSchemeURL:[NSURL URLWithString:self.serverHref] secureScheme: secureScheme];
         [_framework.client connect:[newUrl absoluteString]];
     }
     else 
@@ -374,14 +375,19 @@ CGRect scrollframe;
     return NO;
 }
 
-- (NSURL *)httpSchemeURL:(NSURL *)url
+- (NSURL *)httpSchemeURL:(NSURL *)url secureScheme:(BOOL)secure
 {
     for (NSString *scheme in [PWUtility urlSchemes])
     {
         if ([url.scheme isEqualToString:scheme])
-        {            
+        {
+            NSString* secureHttpScheme = @"http://";
+            if( secure ) {
+                    secureHttpScheme = @"https://";
+            }
+            
             NSString *path = [[url absoluteString] stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@://",scheme] 
-                                                                             withString:@"http://"];
+                                                                             withString:secureHttpScheme];
             return [NSURL URLWithString:path];
         }
     }

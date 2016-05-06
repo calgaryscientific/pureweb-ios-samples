@@ -31,7 +31,8 @@
     if ([self wasLaunchedFromURL:launchOptions]) {
         
         appURL = [launchOptions objectForKey:@"UIApplicationLaunchOptionsURLKey"];
-        appURL = [appURL URLByReplacingScheme]; //it is necessary to remove the scheme which allows the link to be opened in ios
+        BOOL secureScheme = [[NSUserDefaults standardUserDefaults] boolForKey:@"pureweb_collab_secure"];
+        appURL = [appURL URLByReplacingScheme:secureScheme]; //it is necessary to remove the scheme which allows the link to be opened in ios
         
         authenticationRequired = NO;
         
