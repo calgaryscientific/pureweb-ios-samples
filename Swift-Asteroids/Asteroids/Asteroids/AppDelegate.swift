@@ -24,13 +24,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let url = launchOptions?["UIApplicationLaunchOptionsURLKey"] as? NSURL {
             if let components = NSURLComponents(string: url.absoluteString) {
+                let secureScheme = NSUserDefaults.standardUserDefaults().boolForKey("pureweb_collab_secure")
+                
                 components.scheme = "http";
+                
+                if secureScheme {
+                    components.scheme = "https";
+                }
+                
                 appUrl = components.URL!;
                 
                 print("Launching App From Incoming URL")
                 
                 authenticationRequired = false;
             }
+            
         } else
         if let urlString = NSUserDefaults.standardUserDefaults().stringForKey("pureweb_url") {
             if let url = NSURL(string:urlString) {

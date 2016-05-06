@@ -32,7 +32,7 @@
 
 
 //(???) will 'schemeFree' be returned properly? does it need to be copied onto the 
-- (NSURL *) URLByReplacingScheme {
+- (NSURL *) URLByReplacingScheme: (BOOL) secureScheme {
  
 
     __block NSURL *schemeFree;
@@ -41,7 +41,13 @@
         
         if ([self.scheme isEqualToString:scheme]) {
             
-            NSString *path = [[self absoluteString] stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@://",scheme]                                                                  withString:@"http://"];
+            NSString* httpScheme = @"http://";
+            
+            if( secureScheme ) {
+                    httpScheme = @"https://";
+            }
+            
+            NSString *path = [[self absoluteString] stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@://",scheme]                                                                  withString:httpScheme];
             
             schemeFree = [NSURL URLWithString:path];
         }
