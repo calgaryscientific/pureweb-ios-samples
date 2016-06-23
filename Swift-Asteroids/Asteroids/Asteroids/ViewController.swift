@@ -62,7 +62,7 @@ class ViewController: UIViewController, PWWebClientDelegate {
     func sessionStateChanged() {
         switch PWFramework.sharedInstance().client().sessionState {
             
-        case PWSessionStateDisconnected:
+        case .Disconnected:
             // Notify users that the session has been disconnected
             dispatch_async(dispatch_get_main_queue(),{
                     let message = "Session has lost connection to service.\n Reopen the application to begin a new connection."
@@ -71,7 +71,7 @@ class ViewController: UIViewController, PWWebClientDelegate {
             });
             break
             
-        case PWSessionStateFailed:
+        case .Failed:
             //the attempted session failed, this likely means the supplied credentials were invalid or the connection was lost
             dispatch_async(dispatch_get_main_queue(),{
                 self.dismissViewControllerAnimated(true, completion:{
