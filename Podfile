@@ -9,21 +9,21 @@ platform :ios, '8.0'
 
 PUREWEB='PureWeb'
 
-xcodeproj 'Scribble/Scribble.xcodeproj'
+project 'Scribble/Scribble.xcodeproj'
 target 'Scribble' do
-    xcodeproj 'Scribble/Scribble.xcodeproj'
+    project 'Scribble/Scribble.xcodeproj'
     pod "#{PUREWEB}"
 end
 
-xcodeproj 'Swift-Asteroids/Asteroids/Asteroids.xcodeproj'
+project 'Swift-Asteroids/Asteroids/Asteroids.xcodeproj'
 target 'Asteroids' do
-    xcodeproj 'Swift-Asteroids/Asteroids/Asteroids.xcodeproj'
+    project 'Swift-Asteroids/Asteroids/Asteroids.xcodeproj'
     pod "#{PUREWEB}"
 end 
 
-xcodeproj 'DDx/DDx.xcodeproj'
+project 'DDx/DDx.xcodeproj'
 target 'DDx' do
-    xcodeproj 'DDx/DDx.xcodeproj'
+    project 'DDx/DDx.xcodeproj'
     pod "#{PUREWEB}"
 end
 
