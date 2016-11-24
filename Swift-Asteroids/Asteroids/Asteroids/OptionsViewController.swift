@@ -42,8 +42,8 @@ class OptionsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         setMimePickerRow(encoderConfiguration.interactiveQuality.mimeType, picker: interactiveMimePicker)
         setMimePickerRow(encoderConfiguration.fullQuality.mimeType, picker: nonInteractiveMimePicker)
         
-        encoderConfiguration.interactiveQuality.changed.addSubscriber(self, action: Selector("interactiveQualityChanged:"))
-        encoderConfiguration.fullQuality.changed.addSubscriber(self, action: Selector("nonInteractiveQualityChanged:"))
+        encoderConfiguration.interactiveQuality.changed.addSubscriber(self, action: #selector(OptionsViewController.interactiveQualityChanged(_:)))
+        encoderConfiguration.fullQuality.changed.addSubscriber(self, action: #selector(OptionsViewController.nonInteractiveQualityChanged(_:)))
     }
     
     func setMimePickerRow(mimeType : String, picker : UIPickerView ) {
@@ -53,7 +53,7 @@ class OptionsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
                 picker.selectRow(index, inComponent: 0, animated: false)
             }
             
-            index++;
+            index += 1;
         }
     }
     

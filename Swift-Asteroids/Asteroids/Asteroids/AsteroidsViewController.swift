@@ -91,7 +91,7 @@ class AsteroidsViewController: UIViewController, MFMailComposeViewControllerDele
         mailer.navigationBar.tintColor = UIColor.darkGrayColor()
         mailer.mailComposeDelegate = self
         mailer.setSubject("Please join my shared PureWeb session")
-        mailer.setMessageBody(shareUrl.absoluteString, isHTML: false)
+        mailer.setMessageBody(shareUrl.absoluteString!, isHTML: false)
         mailer.modalPresentationStyle = .FormSheet
         
         presentViewController(mailer, animated: true, completion: nil);

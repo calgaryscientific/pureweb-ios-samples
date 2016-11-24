@@ -57,7 +57,7 @@ class ColorViewController: UIViewController {
         super.viewDidLoad()
         
         PWFramework.sharedInstance().state().stateManager.addValueChangedHandler("/ScribbleColor",target: self,
-            action: Selector("colorDidChange:"));
+            action: #selector(ColorViewController.colorDidChange(_:)));
         for i in 0..<colorNames.count {
             reverseColorDict[colors[i]] = colorNames[i]
             colorDict[colorNames[i]] = colors[i]

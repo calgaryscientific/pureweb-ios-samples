@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         registerDefaultsFromSettingsBundle()
         
         if let url = launchOptions?["UIApplicationLaunchOptionsURLKey"] as? NSURL {
-            if let components = NSURLComponents(string: url.absoluteString) {
+            if let components = NSURLComponents(string: url.absoluteString!) {
                 let secureScheme = NSUserDefaults.standardUserDefaults().boolForKey("pureweb_collab_secure")
                 
                 components.scheme = "http";
