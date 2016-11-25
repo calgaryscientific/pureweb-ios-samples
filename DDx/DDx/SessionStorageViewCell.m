@@ -57,6 +57,7 @@
 - (void)awakeFromNib {
     // Initialization code
     self.serviceListenerSwitch.on = NO;
+    [super awakeFromNib];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

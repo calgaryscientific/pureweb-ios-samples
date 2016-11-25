@@ -24,7 +24,7 @@ class TraceViewController: UIViewController {
             logMessage(message as! String)
         }
         
-        logger.messageLogged().addSubscriber(self, action: Selector("logMessage:"))
+        logger.messageLogged().addSubscriber(self, action: #selector(DDLogger.log(message:)))
     }
 
     func logMessage(msg:String) {
@@ -34,7 +34,7 @@ class TraceViewController: UIViewController {
     
     deinit {
         let logger = PWTraceLogger.sharedInstance()
-        logger.messageLogged().removeSubscriber(self, action: Selector("logMessage:"))
+        logger.messageLogged().removeSubscriber(self, action: #selector(DDLogger.log(message:)))
     }
     
 }
