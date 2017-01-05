@@ -10,33 +10,33 @@ import UIKit
 import PureWeb
 
 enum ActionMode {
-    case Started
-    case Ended
+    case started
+    case ended
 }
 
 class DirectionView: UIVisualEffectView {
 
     // MARK: - Process touches
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         for touch in touches {
     
-            processTouch(touch, withMode:.Started);
+            processTouch(touch, withMode:.started);
         }
     }
     
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         for touch in touches {
     
-            processTouch(touch, withMode:.Ended);
+            processTouch(touch, withMode:.ended);
         }
     }
     
-    func processTouch(touch: UITouch, withMode mode: ActionMode) {
+    func processTouch(_ touch: UITouch, withMode mode: ActionMode) {
     
-        let location = touch.locationInView(self)
+        let location = touch.location(in: self)
     
         if location.y > location.x {
     
@@ -66,60 +66,60 @@ class DirectionView: UIVisualEffectView {
     
     // MARK: - Directional modes
     
-    func leftWithMode(mode: ActionMode) {
+    func leftWithMode(_ mode: ActionMode) {
     
-        if mode == .Started {
+        if mode == .started {
     
-            queueKeyPress("KeyDown",  keycode: .Left,  modifiers:0);
-    
-        }
-        else {
-    
-            queueKeyPress("KeyUp", keycode: .Left, modifiers:0);
-        }
-    }
-    
-    func rightWithMode(mode: ActionMode) {
-    
-        if mode == .Started {
-    
-            queueKeyPress("KeyDown",  keycode: .Right,  modifiers:0);
-        }
-        else {
-    
-            queueKeyPress("KeyUp", keycode: .Right, modifiers:0);
-        }
-    }
-    
-    func topWithMode(mode: ActionMode) {
-    
-        if mode == .Started {
-    
-            queueKeyPress("KeyDown",  keycode: .Up,  modifiers:0);
+            queueKeyPress("KeyDown",  keycode: .left,  modifiers:0);
     
         }
         else {
     
-             queueKeyPress("KeyUp", keycode: .Up, modifiers:0);
+            queueKeyPress("KeyUp", keycode: .left, modifiers:0);
         }
-    
     }
     
-    func bottomWithMode(mode: ActionMode) {
+    func rightWithMode(_ mode: ActionMode) {
     
-        if mode == .Started {
+        if mode == .started {
     
-            queueKeyPress("KeyDown",  keycode: .Down,  modifiers:0);
+            queueKeyPress("KeyDown",  keycode: .right,  modifiers:0);
+        }
+        else {
+    
+            queueKeyPress("KeyUp", keycode: .right, modifiers:0);
+        }
+    }
+    
+    func topWithMode(_ mode: ActionMode) {
+    
+        if mode == .started {
+    
+            queueKeyPress("KeyDown",  keycode: .up,  modifiers:0);
     
         }
         else {
     
-             queueKeyPress("KeyUp", keycode: .Down, modifiers:0);
+             queueKeyPress("KeyUp", keycode: .up, modifiers:0);
         }
     
     }
     
-    func queueKeyPress(eventType: String, keycode: KeyCode, modifiers: Int)
+    func bottomWithMode(_ mode: ActionMode) {
+    
+        if mode == .started {
+    
+            queueKeyPress("KeyDown",  keycode: .down,  modifiers:0);
+    
+        }
+        else {
+    
+             queueKeyPress("KeyUp", keycode: .down, modifiers:0);
+        }
+    
+    }
+    
+    func queueKeyPress(_ eventType: String, keycode: KeyCode, modifiers: Int)
     {
         let cmdParams = [ "EventType" : eventType, "Path" : "AsteroidsView", "KeyCode" : "\(keycode.rawValue)", "Modifiers" : "\(modifiers)" ]
     

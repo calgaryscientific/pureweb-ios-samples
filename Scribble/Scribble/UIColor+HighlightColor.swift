@@ -14,15 +14,15 @@ extension UIColor {
         
         let specialColors = [UIColor(red:0.93333334, green:0.50980395, blue:0.93333334, alpha:1),
             UIColor(red:1.0, green:1.0, blue:1.0, alpha:1),
-            UIColor.yellowColor(),
-            UIColor.whiteColor()];
+            UIColor.yellow,
+            UIColor.white];
         
         for color in specialColors {
             if color == self {
-                return UIColor.blackColor()
+                return UIColor.black
             }
         }
         
-        return UIColor.whiteColor();
+        return UIColor.white;
     }
 }

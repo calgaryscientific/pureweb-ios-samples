@@ -20,9 +20,9 @@ class AppStateViewController: UIViewController {
         
         let xml = "<?xml version=\"1.0\"encoding=\"UTF-8\" ?>\(description)"
         
-        if let data = xml.dataUsingEncoding(NSUTF8StringEncoding) {
+        if let data = xml.data(using: String.Encoding.utf8) {
             
-            appStateWebView.loadData(data, MIMEType:"text/plain", textEncodingName:"utf-8", baseURL: NSURL( string:"http://")! );
+            appStateWebView.load(data, mimeType:"text/plain", textEncodingName:"utf-8", baseURL: URL( string:"http://")! );
         }
     }
 

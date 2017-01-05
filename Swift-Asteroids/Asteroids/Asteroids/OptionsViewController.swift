@@ -36,17 +36,17 @@ class OptionsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         let encoderConfiguration = DiagnosticViewDelegate.encoderConfiguration
         
-        interactiveQualitySlider.value = Float(encoderConfiguration.interactiveQuality.quality) / divisor
-        nonInteractiveQualitySlider.value = Float(encoderConfiguration.fullQuality.quality) / divisor
+        interactiveQualitySlider.value = Float((encoderConfiguration?.interactiveQuality.quality)!) / divisor
+        nonInteractiveQualitySlider.value = Float((encoderConfiguration?.fullQuality.quality)!) / divisor
         
-        setMimePickerRow(encoderConfiguration.interactiveQuality.mimeType, picker: interactiveMimePicker)
-        setMimePickerRow(encoderConfiguration.fullQuality.mimeType, picker: nonInteractiveMimePicker)
+        setMimePickerRow((encoderConfiguration?.interactiveQuality.mimeType)!, picker: interactiveMimePicker)
+        setMimePickerRow((encoderConfiguration?.fullQuality.mimeType)!, picker: nonInteractiveMimePicker)
         
-        encoderConfiguration.interactiveQuality.changed.addSubscriber(self, action: #selector(OptionsViewController.interactiveQualityChanged(_:)))
-        encoderConfiguration.fullQuality.changed.addSubscriber(self, action: #selector(OptionsViewController.nonInteractiveQualityChanged(_:)))
+        encoderConfiguration?.interactiveQuality.changed.addSubscriber(self, action: #selector(OptionsViewController.interactiveQualityChanged(_:)))
+        encoderConfiguration?.fullQuality.changed.addSubscriber(self, action: #selector(OptionsViewController.nonInteractiveQualityChanged(_:)))
     }
     
-    func setMimePickerRow(mimeType : String, picker : UIPickerView ) {
+    func setMimePickerRow(_ mimeType : String, picker : UIPickerView ) {
         var index : Int = 0
         for mime in mimeTypes {
             if mimeType == mime {
@@ -59,53 +59,53 @@ class OptionsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     // MARK: UISlider actions
     
-    @IBAction func interactiveSliderChanged(sender: UISlider) {
-        DiagnosticViewDelegate.encoderConfiguration.interactiveQuality.quality = Int(sender.value * divisor)
+    @IBAction func interactiveSliderChanged(_ sender: UISlider) {
+        DiagnosticViewDelegate.encoderConfiguration?.interactiveQuality.quality = Int(sender.value * divisor)
     }
     
-    @IBAction func nonInteractiveSliderChanged(sender: UISlider) {
-        DiagnosticViewDelegate.encoderConfiguration.fullQuality.quality = Int(sender.value * divisor)
+    @IBAction func nonInteractiveSliderChanged(_ sender: UISlider) {
+        DiagnosticViewDelegate.encoderConfiguration?.fullQuality.quality = Int(sender.value * divisor)
     }
     
     // MARK: UIPickerView actions
     
-    func interactiveQualityChanged(object : NSObject) {
+    func interactiveQualityChanged(_ object : NSObject) {
         let encoderConfiguration = DiagnosticViewDelegate.encoderConfiguration
         
-        interactiveQualitySlider.value = Float(encoderConfiguration.interactiveQuality.quality) / divisor
-        setMimePickerRow(encoderConfiguration.interactiveQuality.mimeType, picker: interactiveMimePicker)
+        interactiveQualitySlider.value = Float((encoderConfiguration?.interactiveQuality.quality)!) / divisor
+        setMimePickerRow((encoderConfiguration?.interactiveQuality.mimeType)!, picker: interactiveMimePicker)
         
     }
     
-    func nonInteractiveQualityChanged(object: NSObject) {
+    func nonInteractiveQualityChanged(_ object: NSObject) {
         let encoderConfiguration = DiagnosticViewDelegate.encoderConfiguration
         
-        nonInteractiveQualitySlider.value = Float(encoderConfiguration.fullQuality.quality) / divisor
-        setMimePickerRow(encoderConfiguration.fullQuality.mimeType, picker: nonInteractiveMimePicker)
+        nonInteractiveQualitySlider.value = Float((encoderConfiguration?.fullQuality.quality)!) / divisor
+        setMimePickerRow((encoderConfiguration?.fullQuality.mimeType)!, picker: nonInteractiveMimePicker)
     }
     
     // MARK: - UIPickerView Delegate and Data source methods
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return 3;
     }
 
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return mimeTypes[row];
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
        
         let encoderConfiguration = DiagnosticViewDelegate.encoderConfiguration
         
         if pickerView == self.interactiveMimePicker {
-            encoderConfiguration.interactiveQuality.mimeType = mimeTypes[row]
+            encoderConfiguration?.interactiveQuality.mimeType = mimeTypes[row]
         } else {
-            encoderConfiguration.fullQuality.mimeType = mimeTypes[row]
+            encoderConfiguration?.fullQuality.mimeType = mimeTypes[row]
         }
     }
     

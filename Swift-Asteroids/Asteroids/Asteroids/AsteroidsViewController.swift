@@ -11,12 +11,12 @@ import PureWeb
 import MessageUI
 
 enum KeyCode : Int {
-    case Left = 37
-    case Right = 39
-    case Up = 38
-    case Down = 40
-    case Space = 32
-    case KeyCodeS = 83
+    case left = 37
+    case right = 39
+    case up = 38
+    case down = 40
+    case space = 32
+    case keyCodeS = 83
 };
 
 
@@ -33,7 +33,7 @@ class AsteroidsViewController: UIViewController, MFMailComposeViewControllerDele
         
         asteroidsView.framework = PWFramework.sharedInstance();
         asteroidsView.viewName = "AsteroidsView"
-        asteroidsView.multipleTouchEnabled = true
+        asteroidsView.isMultipleTouchEnabled = true
         asteroidsView.delegate = DiagnosticViewDelegate.sharedInstance
         
         fireBlurView.layer.cornerRadius = 10.0
@@ -41,23 +41,23 @@ class AsteroidsViewController: UIViewController, MFMailComposeViewControllerDele
         
     }
 
-    @IBAction func fireBegan(sender: AnyObject) {
-        queueKeyPress("KeyDown", keycode: .Space, modifiers: 0)
+    @IBAction func fireBegan(_ sender: AnyObject) {
+        queueKeyPress("KeyDown", keycode: .space, modifiers: 0)
     }
    
-    @IBAction func fireEnd(sender: AnyObject) {
-        queueKeyPress("KeyUp", keycode: .Space, modifiers: 0)
+    @IBAction func fireEnd(_ sender: AnyObject) {
+        queueKeyPress("KeyUp", keycode: .space, modifiers: 0)
     }
 
-    @IBAction func shieldBegan(sender: AnyObject) {
-        queueKeyPress("KeyDown", keycode: .KeyCodeS, modifiers: 0)
+    @IBAction func shieldBegan(_ sender: AnyObject) {
+        queueKeyPress("KeyDown", keycode: .keyCodeS, modifiers: 0)
     }
     
-    @IBAction func shieldEnd(sender: AnyObject) {
-        queueKeyPress("KeyUp", keycode: .KeyCodeS, modifiers: 0)
+    @IBAction func shieldEnd(_ sender: AnyObject) {
+        queueKeyPress("KeyUp", keycode: .keyCodeS, modifiers: 0)
     }
     
-    func queueKeyPress(eventType: String, keycode: KeyCode, modifiers: Int)
+    func queueKeyPress(_ eventType: String, keycode: KeyCode, modifiers: Int)
     {
         let cmdParams = [ "EventType" : eventType, "Path" : "AsteroidsView", "KeyCode" : "\(keycode.rawValue)", "Modifiers" : "\(modifiers)" ]
         
@@ -66,45 +66,45 @@ class AsteroidsViewController: UIViewController, MFMailComposeViewControllerDele
     
     // MARK: - Share action
     
-    @IBAction func shareButtonPressed(sender: AnyObject) {
+    @IBAction func shareButtonPressed(_ sender: AnyObject) {
         
-        PWFramework.sharedInstance().client().getSessionShareUrlAsyncWithPassword("Scientific", shareDescriptor: "", shareTimeout: 1800000, completion: { (shareUrl: NSURL!, error: NSError!) in
+        PWFramework.sharedInstance().client().getSessionShareUrlAsync(withPassword: "Scientific", shareDescriptor: "", shareTimeout: 1800000, completion: { (shareUrl, error) in
             
             if(error != nil) {
                 
-                let alert = UIAlertController(title: "There was an error creating the application share", message : error.description, preferredStyle: .Alert)
+                let alert = UIAlertController(title: "There was an error creating the application share", message : error?.localizedDescription, preferredStyle: .alert)
                 
-                let okAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
                 alert.addAction(okAction)
                 
-                self.presentViewController(alert, animated: true, completion: nil)
+                self.present(alert, animated: true, completion: nil)
                 return
             }
             
-            self.presentMailComposeWithUrl(shareUrl)
+            self.presentMailComposeWithUrl(shareUrl!)
         })
     }
    
-    func presentMailComposeWithUrl(shareUrl: NSURL) {
+    func presentMailComposeWithUrl(_ shareUrl: URL) {
         let mailer = MFMailComposeViewController()
         
-        mailer.navigationBar.tintColor = UIColor.darkGrayColor()
+        mailer.navigationBar.tintColor = UIColor.darkGray
         mailer.mailComposeDelegate = self
         mailer.setSubject("Please join my shared PureWeb session")
-        mailer.setMessageBody(shareUrl.absoluteString!, isHTML: false)
-        mailer.modalPresentationStyle = .FormSheet
+        mailer.setMessageBody(shareUrl.absoluteString, isHTML: false)
+        mailer.modalPresentationStyle = .formSheet
         
-        presentViewController(mailer, animated: true, completion: nil);
+        present(mailer, animated: true, completion: nil);
         
         
     }
     
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        dismissViewControllerAnimated(true, completion: nil)
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        dismiss(animated: true, completion: nil)
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.Landscape
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.landscape
     }
     
 }

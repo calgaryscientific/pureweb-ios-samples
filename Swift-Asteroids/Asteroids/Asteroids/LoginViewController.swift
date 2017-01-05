@@ -27,25 +27,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func loadCredentials() {
-        usernameField.text = NSUserDefaults.standardUserDefaults().stringForKey("pureweb_username")
-        passwordField.text = NSUserDefaults.standardUserDefaults().stringForKey("pureweb_password")
+        usernameField.text = UserDefaults.standard.string(forKey: "pureweb_username")
+        passwordField.text = UserDefaults.standard.string(forKey: "pureweb_password")
         
-        if let username = usernameField.text, let password = passwordField.text
-            where username.characters.count > 0 && password.characters.count > 0 {
-           connectButton.enabled = true
+        if let username = usernameField.text, let password = passwordField.text, username.characters.count > 0 && password.characters.count > 0 {
+           connectButton.isEnabled = true
         } else {
-           connectButton.enabled = false
+           connectButton.isEnabled = false
         }
         
         loadCollaborationCredentials()
     }
     
     func loadCollaborationCredentials() {
-        if let name = NSUserDefaults.standardUserDefaults().stringForKey("pureweb_collab_name") {
+        if let name = UserDefaults.standard.string(forKey: "pureweb_collab_name") {
             PWFramework.sharedInstance().collaborationManager().updateUserInfo("Name", value: name)
         }
         
-        if let email = NSUserDefaults.standardUserDefaults().stringForKey("pureweb_collab_email") {
+        if let email = UserDefaults.standard.string(forKey: "pureweb_collab_email") {
             PWFramework.sharedInstance().collaborationManager().updateUserInfo("Email", value: email)
         }
     }
@@ -53,9 +52,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Button actions
     
-    @IBAction func connectButtonPressed(sender: AnyObject) {
-        if let username = usernameField.text, let password = passwordField.text
-            where username.characters.count > 0 && password.characters.count > 0 {
+    @IBAction func connectButtonPressed(_ sender: AnyObject) {
+        if let username = usernameField.text, let password = passwordField.text, username.characters.count > 0 && password.characters.count > 0 {
          
                 processLoginCredentials!(username,password);
 
@@ -65,17 +63,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - TextField delegate methods
     
-    @IBAction func editingDidChange(sender: AnyObject) {
+    @IBAction func editingDidChange(_ sender: AnyObject) {
         
-        if let username = usernameField.text, let password = passwordField.text
-            where username.characters.count > 0 && password.characters.count > 0 {
-                connectButton.enabled = true
+        if let username = usernameField.text, let password = passwordField.text, username.characters.count > 0 && password.characters.count > 0 {
+                connectButton.isEnabled = true
         } else {
-            connectButton.enabled = false
+            connectButton.isEnabled = false
         }
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
