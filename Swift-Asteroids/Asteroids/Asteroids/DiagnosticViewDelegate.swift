@@ -15,11 +15,11 @@ class DiagnosticViewDelegate: NSObject, PWViewDelegate {
                                                                     fullQuality: PWMutableEncoderFormat(mimeType:"image/png", quality:70))
     static let sharedInstance = DiagnosticViewDelegate()
     
-    override private init() {}
+    override fileprivate init() {}
     
     // MARK - PWView delegate methods
     
-    func preferredEncoderConfigurationForView(view: PWView!) -> PWEncoderConfiguration! {
+    func preferredEncoderConfiguration(for view: PWView!) -> PWEncoderConfiguration! {
         return DiagnosticViewDelegate.encoderConfiguration
     }
 }

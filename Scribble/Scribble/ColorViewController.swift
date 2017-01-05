@@ -17,8 +17,8 @@ class ColorViewController: UIViewController {
     @IBOutlet weak var enclosingView : UIView!
     
     let colorNames = [ "White", "Black","Blue", "Red", "Green", "Purple","Orange", "Yellow"];
-    let colors =  [UIColor.whiteColor(), UIColor.blackColor(),UIColor.blueColor(), UIColor.redColor(),
-        UIColor.greenColor(), UIColor.purpleColor(),UIColor.orangeColor(),UIColor.yellowColor()]
+    let colors =  [UIColor.white, UIColor.black,UIColor.blue, UIColor.red,
+        UIColor.green, UIColor.purple,UIColor.orange,UIColor.yellow]
     
     var colorDict = [String : UIColor]()
     var reverseColorDict = [UIColor : String]()
@@ -39,7 +39,7 @@ class ColorViewController: UIViewController {
             }
             
             //Animation the hiding or showing animation
-            UIView.animateWithDuration(0.3, delay:0, options:.LayoutSubviews,  animations: {
+            UIView.animate(withDuration: 0.3, delay:0, options:.layoutSubviews,  animations: {
                 
                 let destinationFrame = CGRect(x: colorTrayFrame.origin.x, y: (colorTrayFrame.origin.y - offset),
                     width: colorTrayFrame.size.width, height: colorTrayFrame.size.height);
@@ -73,7 +73,7 @@ class ColorViewController: UIViewController {
     // MARK: - Button selection functions
     
     func setupColorButtons() {
-        for(index, subview) in self.enclosingView.subviews.enumerate() {
+        for(index, subview) in self.enclosingView.subviews.enumerated() {
             
             if let button = subview as? UIButton {
                 
@@ -87,17 +87,17 @@ class ColorViewController: UIViewController {
         }
     }
     
-    func selectButton(button: UIButton?) {
+    func selectButton(_ button: UIButton?) {
         if let bttn = button {
-            bttn.layer.borderColor = bttn.backgroundColor!.highlightColor().CGColor;
+            bttn.layer.borderColor = bttn.backgroundColor!.highlightColor().cgColor;
             bttn.layer.borderWidth  = 5.0;
         }
     }
     
-    func buttonForColor(color: UIColor) -> (UIButton?) {
+    func buttonForColor(_ color: UIColor) -> (UIButton?) {
         var chosenButton : UIButton?
         
-        for(_, subview) in self.enclosingView.subviews.enumerate() {
+        for(_, subview) in self.enclosingView.subviews.enumerated() {
             
             if let button = subview as? UIButton {
                 if button.backgroundColor == color {
@@ -110,13 +110,13 @@ class ColorViewController: UIViewController {
         return chosenButton;
     }
     
-    func unselectButton(button: UIButton?) {
+    func unselectButton(_ button: UIButton?) {
         if let bttn = button {
             bttn.layer.borderWidth = 0.0;
         }
     }
     
-    @IBAction func colorButtonSelected(button : UIButton?) {
+    @IBAction func colorButtonSelected(_ button : UIButton?) {
         if let bttn = button {
             updateAppStateWithColor(bttn.backgroundColor!);
         }
@@ -124,14 +124,14 @@ class ColorViewController: UIViewController {
     
     // MARK: - PureWeb methods
     
-    func updateAppStateWithColor(chosenColor : UIColor) {
+    func updateAppStateWithColor(_ chosenColor : UIColor) {
         let colorName = reverseColorDict[chosenColor];
         PWFramework.sharedInstance().state().setAppStatePathWithValue("/ScribbleColor", value: colorName!);
     }
     
-    func colorDidChange(args : PWValueChangedEventArgs) {
+    func colorDidChange(_ args : PWValueChangedEventArgs) {
         
-        let colorName = args.newValue;
+        let colorName = args.newValue as String;
         
         //regardless of whether the color corresponds, unselect the currently selected color
         unselectButton(currentlySelectedColorButton);

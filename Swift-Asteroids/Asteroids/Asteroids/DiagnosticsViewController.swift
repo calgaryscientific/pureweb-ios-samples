@@ -14,8 +14,8 @@ class DiagnosticsViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func doneButtonPressed(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func doneButtonPressed(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
     }
 
 }

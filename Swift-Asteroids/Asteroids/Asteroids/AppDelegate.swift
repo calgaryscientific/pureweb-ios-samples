@@ -15,16 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
        
-        var appUrl = NSURL()
+        var appUrl: URL!
         var authenticationRequired = true;
         
         registerDefaultsFromSettingsBundle()
         
-        if let url = launchOptions?["UIApplicationLaunchOptionsURLKey"] as? NSURL {
-            if let components = NSURLComponents(string: url.absoluteString!) {
-                let secureScheme = NSUserDefaults.standardUserDefaults().boolForKey("pureweb_collab_secure")
+        if let url = launchOptions?[UIApplicationLaunchOptionsKey.url] as? URL {
+            if var components = URLComponents(string: url.absoluteString) {
+                let secureScheme = UserDefaults.standard.bool(forKey: "pureweb_collab_secure")
                 
                 components.scheme = "http";
                 
@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     components.scheme = "https";
                 }
                 
-                appUrl = components.URL!;
+                appUrl = components.url!;
                 
                 print("Launching App From Incoming URL")
                 
@@ -40,8 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
         } else
-        if let urlString = NSUserDefaults.standardUserDefaults().stringForKey("pureweb_url") {
-            if let url = NSURL(string:urlString) {
+        if let urlString = UserDefaults.standard.string(forKey: "pureweb_url") {
+            if let url = URL(string:urlString) {
                 appUrl = url
                 authenticationRequired = true
                 
@@ -58,25 +58,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
 
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         if PWFramework.sharedInstance().client().isConnected {
             PWFramework.sharedInstance().client().disconnectSynchronous()
@@ -86,10 +86,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func registerDefaultsFromSettingsBundle()
     {
-        if let settingsBundle = NSBundle.mainBundle().pathForResource("Settings", ofType: "bundle") {
+        if let settingsBundle = Bundle.main.path(forResource: "Settings", ofType: "bundle") {
 
             if let settings = NSDictionary(contentsOfFile: settingsBundle + "/Root.plist") {
-                if let preferences = settings.objectForKey("PreferenceSpecifiers") as? NSArray {
+                if let preferences = settings.object(forKey: "PreferenceSpecifiers") as? NSArray {
     
                     var defaultsToRegister = [String:AnyObject]()
                         
@@ -98,12 +98,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             if let prefSpecification = value as? NSDictionary {
                                 
                                 if let key = prefSpecification["Key"] as? String {
-                                    defaultsToRegister[key] = prefSpecification["DefaultValue"]
+                                    let value = prefSpecification["DefaultValue"] as AnyObject
+                                    defaultsToRegister[key] = value
                                 }
                             }
                         }
                     
-                    NSUserDefaults.standardUserDefaults().registerDefaults(defaultsToRegister)
+                    UserDefaults.standard.register(defaults: defaultsToRegister)
                 }
             }
         }

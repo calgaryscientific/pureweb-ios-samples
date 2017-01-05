@@ -11,7 +11,7 @@ import PureWeb
 
 class ViewController: UIViewController, PWWebClientDelegate {
 
-    var appUrl = NSURL()
+    var appUrl: URL!
     var authenticationRequired = false
     var authenticationCompleted = false
     
@@ -20,23 +20,23 @@ class ViewController: UIViewController, PWWebClientDelegate {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
         if(authenticationRequired && !authenticationCompleted) {
-            performSegueWithIdentifier("PresentLoginView", sender: self)
+            performSegue(withIdentifier: "PresentLoginView", sender: self)
             
         } else if(!authenticationRequired) {
             let framework = PWFramework.sharedInstance()
             
-            if(!framework.client().isConnected) {
-                framework.client().connect(appUrl.absoluteString)
+            if(!(framework?.client().isConnected)!) {
+                framework?.client().connect(appUrl.absoluteString)
             }
             
-            performSegueWithIdentifier("PresentAsteroidsView", sender: self)
+            performSegue(withIdentifier: "PresentAsteroidsView", sender: self)
         }
     }
     
-    func setupWithAppURL(url: NSURL, authenticationRequired auth:Bool) {
+    func setupWithAppURL(_ url: URL, authenticationRequired auth:Bool) {
         PWFramework.sharedInstance().client().delegate = self;
         
         self.appUrl = url;
@@ -52,8 +52,8 @@ class ViewController: UIViewController, PWWebClientDelegate {
             authenticationCompleted = true
             
             if authenticationRequired {
-                dismissViewControllerAnimated(true, completion: {
-                    self.performSegueWithIdentifier("PresentAsteroidsView", sender: self)
+                dismiss(animated: true, completion: {
+                    self.performSegue(withIdentifier: "PresentAsteroidsView", sender: self)
                 })
             }
         }
@@ -62,19 +62,19 @@ class ViewController: UIViewController, PWWebClientDelegate {
     func sessionStateChanged() {
         switch PWFramework.sharedInstance().client().sessionState {
             
-        case .Disconnected:
+        case .disconnected:
             // Notify users that the session has been disconnected
-            dispatch_async(dispatch_get_main_queue(),{
+            DispatchQueue.main.async(execute: {
                     let message = "Session has lost connection to service.\n Reopen the application to begin a new connection."
-                    let alertController = UIAlertController(title: "Session Disconnected", message: message, preferredStyle: .Alert)
-                    self.presentViewController(alertController, animated: true, completion: nil)
+                    let alertController = UIAlertController(title: "Session Disconnected", message: message, preferredStyle: .alert)
+                    self.present(alertController, animated: true, completion: nil)
             });
             break
             
-        case .Failed:
+        case .failed:
             //the attempted session failed, this likely means the supplied credentials were invalid or the connection was lost
-            dispatch_async(dispatch_get_main_queue(),{
-                self.dismissViewControllerAnimated(true, completion:{
+            DispatchQueue.main.async(execute: {
+                self.dismiss(animated: true, completion:{
                     var message = PWFramework.sharedInstance().client().acquireException.description;
                     //PWLogError(@"Connection Failed With Error %@", message);
                     
@@ -82,16 +82,16 @@ class ViewController: UIViewController, PWWebClientDelegate {
                         message = "Connection attempt failed"
                     }
                     
-                    let alert = UIAlertController(title: "Asteroids", message: message, preferredStyle: .Alert)
+                    let alert = UIAlertController(title: "Asteroids", message: message, preferredStyle: .alert)
                     
-                    let okAction = UIAlertAction(title: "Ok", style: .Default, handler: { (action:UIAlertAction) in
+                    let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (action:UIAlertAction) in
                         self.authenticationRequired = false
                         self.authenticationCompleted = false
                     })
                     
                     alert.addAction(okAction)
                     if ( !self.authenticationCompleted && !PWFramework.sharedInstance().client().isConnected){
-                    self.presentViewController(alert, animated: true, completion: nil)
+                    self.present(alert, animated: true, completion: nil)
                     }
                 });
             });
@@ -101,18 +101,18 @@ class ViewController: UIViewController, PWWebClientDelegate {
     }
     
     
-    func processLoginCredentials(username:String, password:String) {
+    func processLoginCredentials(_ username:String, password:String) {
         let framework = PWFramework.sharedInstance();
         
         let authInfo = PWBasicAuthorizationInfo(name: username, password: password)
-        framework.client().authorizationInfo = authInfo;
+        framework?.client().authorizationInfo = authInfo;
         
         print("Connecting PureWeb framework")
-        framework.client().connect(appUrl.absoluteString);
+        framework?.client().connect(appUrl.absoluteString);
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let destController = segue.destinationViewController as? LoginViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destController = segue.destination as? LoginViewController {
             
             destController.processLoginCredentials = processLoginCredentials
         }
