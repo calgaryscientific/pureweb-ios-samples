@@ -22,6 +22,13 @@
 
 @implementation DDxView
 
+double timeLastUpdate = -1;
+NSMutableArray *interUpdateTimes;
+double cumInterUpdateTimes = 0;
+double fps = 0;
+double bandwidth;
+double latency;
+
 @synthesize showImageDetails = _showImageDetails;
 
 - (id)initWithFramework:(PWFramework *)framework frame:(CGRect)frame
@@ -45,7 +52,7 @@
     
     _imageCounter = [NSNumber numberWithInt:0];
     _numberFormatter = [NSNumberFormatter new];
-    _textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, 150, 150)];
+    _textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, 150, 200)];
     _textLabel.font = [UIFont systemFontOfSize:14.0];
     _textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     _textLabel.textColor = [UIColor whiteColor];
@@ -56,6 +63,10 @@
     [self addSubview:_textLabel];
     
     [self.viewUpdated addSubscriber:self action:@selector(viewWasUpdated:)];
+    
+    //add network stats
+    [self.framework.client.latency.completedEvent  addSubscriber:self action:@selector(updateNetworkInformation)];
+    [self setupFPSCounter];
 }
 
 - (void)viewWasUpdated:(PWViewUpdatedEventArgs *)args
@@ -77,6 +88,38 @@
     }
 }
 
+- (void)updateNetworkInformation {
+    latency = self.framework.client.latency.duration;
+    bandwidth = self.framework.client.mbps.rate;
+}
+
+- (void)setupFPSCounter {
+    interUpdateTimes = [NSMutableArray array];
+    [self.viewUpdated addSubscriber:self action:@selector(updateViewInformation)];
+}
+
+- (void)updateViewInformation {
+    double now = [[NSDate date] timeIntervalSince1970]*1000;
+    
+    if (timeLastUpdate > 0) {
+        double interUpdateTime = now - timeLastUpdate;
+        timeLastUpdate = now;
+        double numInterUpdateTimes = interUpdateTimes.count;
+        
+        if (numInterUpdateTimes == 100) {
+            cumInterUpdateTimes = cumInterUpdateTimes - [interUpdateTimes[0] doubleValue];
+            [interUpdateTimes removeObjectAtIndex:0];
+        }
+        
+        cumInterUpdateTimes += interUpdateTime;
+        NSNumber *tempNumber = [[NSNumber alloc] initWithDouble:interUpdateTime];
+        [interUpdateTimes addObject:tempNumber];
+        fps = 1000.0 / (cumInterUpdateTimes / numInterUpdateTimes);
+    }
+    
+    timeLastUpdate = now;
+}
+
 - (NSString *)getTextWithDefault:(PWXmlElement *)element path:(NSString *)path defaultValue:(id)defaultValue
 {
     id value = [element getText:path];
@@ -93,7 +136,7 @@
         
         if (self.showImageDetails)
         {
-            _textLabel.text = [NSString stringWithFormat:@"Type: %@\nChangedButton: %@\nButtons: %@\nModifiers: %@\nX: %@ Y:%@\nEncoding: %@\nQuality: %@",
+            _textLabel.text = [NSString stringWithFormat:@"Type: %@\nChangedButton: %@\nButtons: %@\nModifiers: %@\nX: %@ Y:%@\nEncoding: %@\nQuality: %@\nMbps: %@\nPing: %@\nFps: %.3f",
                                [self getTextWithDefault:element path:@"Type" defaultValue:@""],
                                [self getTextWithDefault:element path:@"ChangedButton" defaultValue:@""],
                                [self getTextWithDefault:element path:@"Buttons" defaultValue:@""],
@@ -101,7 +144,10 @@
                                [self getTextWithDefault:element path:@"X" defaultValue:@""],
                                [self getTextWithDefault:element path:@"Y" defaultValue:@""],
                                self.encodingType ? self.encodingType.value : @"",
-                               _quality];
+                               _quality,
+                               bandwidth == 0 ? @"" : [NSString stringWithFormat:@"%.3f", bandwidth],
+                               latency == 0 ? @"" : [NSString stringWithFormat:@"%.3f", latency],
+                               fps];
         }
         else
         {
