@@ -12,11 +12,18 @@
 
 @property (strong, nonatomic) IBOutlet PWView *scribbleView;
 @property (strong, nonatomic) ColorViewController *colorPanel;
-
+@property (weak, nonatomic) IBOutlet UILabel *txtMime;
+@property (weak, nonatomic) IBOutlet UILabel *txtBandwidth;
+@property (weak, nonatomic) IBOutlet UILabel *txtLatency;
+@property (weak, nonatomic) IBOutlet UILabel *txtFps;
 
 @end
 
 @implementation ScribbleViewController
+
+double timeLastUpdate = -1;
+NSMutableArray *interUpdateTimes;
+double cumInterUpdateTimes = 0;
 
 - (void)viewDidLoad
 {
@@ -44,7 +51,63 @@
     self.scribbleView.viewName = @"ScribbleView";
     self.scribbleView.delegate = [DiagnosticViewDelegate sharedInstance];
     
+    //add network stats
+    [self.scribbleView.framework.client.latency.completedEvent  addSubscriber:self action:@selector(updateNetworkInformation)];
+    [self setupFPSCounter];
+    [self setNetworkTextColor];
+    
     [super viewDidLoad];
+}
+
+- (void)updateNetworkInformation {
+    self.txtLatency.text = [NSString stringWithFormat: @"Ping: %.3f", self.scribbleView.framework.client.latency.duration];
+    self.txtBandwidth.text = [NSString stringWithFormat: @"Mbps: %.3f", self.scribbleView.framework.client.mbps.rate];
+    self.txtMime.text = [NSString stringWithFormat: @"Mime: %@", self.scribbleView.encodingType.value];
+}
+
+- (void)setupFPSCounter {
+    interUpdateTimes = [NSMutableArray array];
+    [self.scribbleView.viewUpdated addSubscriber:self action:@selector(updateViewInformation)];
+}
+
+- (void)updateViewInformation {
+    double now = [[NSDate date] timeIntervalSince1970]*1000;
+    
+    if (timeLastUpdate > 0) {
+        double interUpdateTime = now - timeLastUpdate;
+        timeLastUpdate = now;
+        double numInterUpdateTimes = interUpdateTimes.count;
+        
+        if (numInterUpdateTimes == 100) {
+            cumInterUpdateTimes = cumInterUpdateTimes - [interUpdateTimes[0] doubleValue];
+            [interUpdateTimes removeObjectAtIndex:0];
+        }
+        
+        cumInterUpdateTimes += interUpdateTime;
+        NSNumber *tempNumber = [[NSNumber alloc] initWithDouble:interUpdateTime];
+        [interUpdateTimes addObject:tempNumber];
+        double fps = 1000.0 / (cumInterUpdateTimes / numInterUpdateTimes);
+        self.txtFps.text = [NSString stringWithFormat: @"Fps: %.3f", fps];
+    }
+    
+    timeLastUpdate = now;
+}
+
+- (void)setNetworkTextColor {
+    UIColor *colorToSet;
+    
+    if ([self.scribbleView.framework.client.href containsString:@"ScribbleAppCpp"]
+        || [self.scribbleView.framework.client.href containsString:@"ScribbleAppJava"]
+        ) {
+        colorToSet = [UIColor blackColor];
+    }else{
+        colorToSet = [UIColor whiteColor];
+    }
+    
+    self.txtFps.textColor = colorToSet;
+    self.txtMime.textColor = colorToSet;
+    self.txtLatency.textColor = colorToSet;
+    self.txtBandwidth.textColor = colorToSet;
 }
 
 

@@ -21,12 +21,26 @@ enum KeyCode : Int {
 
 
 class AsteroidsViewController: UIViewController, MFMailComposeViewControllerDelegate {
-
+    
     @IBOutlet weak var asteroidsView : PWView!
     
     @IBOutlet weak var fireBlurView: UIVisualEffectView!
     
+    @IBOutlet weak var networkBlurView: UIVisualEffectView!
+    
     @IBOutlet weak var actionBlurView: UIVisualEffectView!
+    
+    @IBOutlet weak var txtBandwidth: UILabel!
+    
+    @IBOutlet weak var txtFps: UILabel!
+    
+    @IBOutlet weak var txtLatency: UILabel!
+    
+    @IBOutlet weak var txtMime: UILabel!
+    
+    var timeLastUpdate: Double = -1
+    var interUpdateTimes: NSMutableArray = []
+    var cumInterUpdateTimes: Double = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,19 +50,23 @@ class AsteroidsViewController: UIViewController, MFMailComposeViewControllerDele
         asteroidsView.isMultipleTouchEnabled = true
         asteroidsView.delegate = DiagnosticViewDelegate.sharedInstance
         
+        asteroidsView.framework.client().latency.completedEvent.addSubscriber(self, action: #selector(updateNetworkInformation))
+        setupFPSCounter()
+        
         fireBlurView.layer.cornerRadius = 10.0
+        networkBlurView.layer.cornerRadius = 10.0
         actionBlurView.layer.cornerRadius = actionBlurView.bounds.width/2
         
     }
-
+    
     @IBAction func fireBegan(_ sender: AnyObject) {
         queueKeyPress("KeyDown", keycode: .space, modifiers: 0)
     }
-   
+    
     @IBAction func fireEnd(_ sender: AnyObject) {
         queueKeyPress("KeyUp", keycode: .space, modifiers: 0)
     }
-
+    
     @IBAction func shieldBegan(_ sender: AnyObject) {
         queueKeyPress("KeyDown", keycode: .keyCodeS, modifiers: 0)
     }
@@ -84,7 +102,7 @@ class AsteroidsViewController: UIViewController, MFMailComposeViewControllerDele
             self.presentMailComposeWithUrl(shareUrl!)
         })
     }
-   
+    
     func presentMailComposeWithUrl(_ shareUrl: URL) {
         let mailer = MFMailComposeViewController()
         
@@ -105,6 +123,38 @@ class AsteroidsViewController: UIViewController, MFMailComposeViewControllerDele
     
     override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.landscape
+    }
+    
+    func updateNetworkInformation() {
+        self.txtLatency.text = "Ping: " + String(format: "%.3f", asteroidsView.framework.client().latency.duration())
+        self.txtBandwidth.text = "Mbps: " + String(format: "%.3f", asteroidsView.framework.client().mbps.rate)
+    }
+    
+    func setupFPSCounter(){
+        asteroidsView.viewUpdated.addSubscriber(self, action: #selector(updateViewInformation))
+    }
+    
+    func updateViewInformation() {
+        let now: Double = Double(NSDate().timeIntervalSince1970*1000)
+        
+        if (timeLastUpdate > 0) {
+            let interUpdateTime = now - timeLastUpdate
+            timeLastUpdate = now
+            let numInterUpdateTimes = interUpdateTimes.count
+            
+            if (numInterUpdateTimes == 100) {
+                cumInterUpdateTimes = cumInterUpdateTimes - Double(interUpdateTimes[0] as! NSNumber)
+                interUpdateTimes.removeObject(at: 0)
+            }
+            
+            cumInterUpdateTimes += interUpdateTime
+            interUpdateTimes.add(interUpdateTime)
+            let fps = 1000.0 / (cumInterUpdateTimes / Double(numInterUpdateTimes))
+            self.txtMime.text = "Mime: " + asteroidsView.mimeType
+            self.txtFps.text = "Fps: " + String(format: "%.3f", fps)
+        }
+        
+        timeLastUpdate = now
     }
     
 }
