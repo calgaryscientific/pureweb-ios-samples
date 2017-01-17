@@ -126,8 +126,9 @@ class AsteroidsViewController: UIViewController, MFMailComposeViewControllerDele
     }
     
     func updateNetworkInformation() {
-        self.txtLatency.text = "Ping: " + String(format: "%.3f", asteroidsView.framework.client().latency.duration())
-        self.txtBandwidth.text = "Mbps: " + String(format: "%.3f", asteroidsView.framework.client().mbps.rate)
+        //Multiply by 1000 because iOS SDK uses seconds instead of millisecnods for profiler rates
+        self.txtLatency.text = "Ping: " + String(format: "%.3f", asteroidsView.framework.client().latency.duration() * 1000)
+        self.txtBandwidth.text = "Mbps: " + String(format: "%.3f", asteroidsView.framework.client().mbps.rate * 1000)
     }
     
     func setupFPSCounter(){
