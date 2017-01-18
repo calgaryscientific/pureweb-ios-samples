@@ -89,8 +89,9 @@ double latency;
 }
 
 - (void)updateNetworkInformation {
-    latency = self.framework.client.latency.duration;
-    bandwidth = self.framework.client.mbps.rate;
+    //Multiply by 1000 because iOS SDK uses seconds instead of millisecnods for profiler rates
+    latency = self.framework.client.latency.duration * 1000;
+    bandwidth = self.framework.client.mbps.rate * 1000;
 }
 
 - (void)setupFPSCounter {

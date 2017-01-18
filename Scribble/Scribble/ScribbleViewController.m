@@ -60,8 +60,9 @@ double cumInterUpdateTimes = 0;
 }
 
 - (void)updateNetworkInformation {
-    self.txtLatency.text = [NSString stringWithFormat: @"Ping: %.3f", self.scribbleView.framework.client.latency.duration];
-    self.txtBandwidth.text = [NSString stringWithFormat: @"Mbps: %.3f", self.scribbleView.framework.client.mbps.rate];
+    //Multiply by 1000 because iOS SDK uses seconds instead of millisecnods for profiler rates
+    self.txtLatency.text = [NSString stringWithFormat: @"Ping: %.3f", self.scribbleView.framework.client.latency.duration * 1000];
+    self.txtBandwidth.text = [NSString stringWithFormat: @"Mbps: %.3f", self.scribbleView.framework.client.mbps.rate * 1000];
     self.txtMime.text = [NSString stringWithFormat: @"Mime: %@", self.scribbleView.encodingType.value];
 }
 
