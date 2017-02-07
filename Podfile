@@ -5,7 +5,7 @@ workspace 'PureWebSamples'
 
 use_frameworks!
 
-platform :ios, '8.0'
+platform :ios, '9.0'
 
 PUREWEB='PureWeb'
 
