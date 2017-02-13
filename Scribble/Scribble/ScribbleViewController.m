@@ -22,8 +22,9 @@
 @implementation ScribbleViewController
 
 double timeLastUpdate = -1;
-NSMutableArray *interUpdateTimes;
 double cumInterUpdateTimes = 0;
+NSMutableArray *interUpdateTimes;
+NSTimer *fpsTimer;
 
 - (void)viewDidLoad
 {
@@ -72,6 +73,10 @@ double cumInterUpdateTimes = 0;
 }
 
 - (void)updateViewInformation {
+    // if the view isn't updated within 0.5 seconds, show fps as 0
+    [fpsTimer invalidate];
+    fpsTimer = nil;
+    fpsTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(clearFpsBuffer) userInfo:nil repeats:NO];
     double now = [[NSDate date] timeIntervalSince1970]*1000;
     
     if (timeLastUpdate > 0) {
@@ -92,6 +97,12 @@ double cumInterUpdateTimes = 0;
     }
     
     timeLastUpdate = now;
+}
+
+- (void) clearFpsBuffer {
+    [interUpdateTimes removeAllObjects];
+    timeLastUpdate = 0;
+    self.txtFps.text = @"Fps: 0";
 }
 
 - (void)setNetworkTextColor {

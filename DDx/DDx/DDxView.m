@@ -23,11 +23,12 @@
 @implementation DDxView
 
 double timeLastUpdate = -1;
-NSMutableArray *interUpdateTimes;
 double cumInterUpdateTimes = 0;
 double fps = 0;
 double bandwidth;
 double latency;
+NSMutableArray *interUpdateTimes;
+NSTimer *fpsTimer;
 
 @synthesize showImageDetails = _showImageDetails;
 
@@ -100,6 +101,10 @@ double latency;
 }
 
 - (void)updateViewInformation {
+    // if the view isn't updated within 0.5 seconds, show fps as 0
+    [fpsTimer invalidate];
+    fpsTimer = nil;
+    fpsTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(clearFpsBuffer) userInfo:nil repeats:NO];
     double now = [[NSDate date] timeIntervalSince1970]*1000;
     
     if (timeLastUpdate > 0) {
@@ -119,6 +124,13 @@ double latency;
     }
     
     timeLastUpdate = now;
+}
+
+- (void) clearFpsBuffer {
+    [interUpdateTimes removeAllObjects];
+    timeLastUpdate = 0;
+    fps = 0;
+    [self updateLabel:nil];
 }
 
 - (NSString *)getTextWithDefault:(PWXmlElement *)element path:(NSString *)path defaultValue:(id)defaultValue
