@@ -108,9 +108,7 @@ NSTimer *fpsTimer;
 - (void)setNetworkTextColor {
     UIColor *colorToSet;
     
-    if ([self.scribbleView.framework.client.href containsString:@"ScribbleAppCpp"]
-        || [self.scribbleView.framework.client.href containsString:@"ScribbleAppJava"]
-        ) {
+    if ([self.scribbleView.framework.client.href containsString:@"ScribbleAppCpp"]) {
         colorToSet = [UIColor blackColor];
     }else{
         colorToSet = [UIColor whiteColor];
